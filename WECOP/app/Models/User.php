@@ -16,28 +16,70 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $fillable = ['user_name','name','credit_card','email','password'];
 
     /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
      */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    protected $hidden = ['password','remember_token'];
 
     /**
      * The attributes that should be cast to native types.
      *
      * @var array
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    protected $casts = ['email_verified_at' => 'datetime'];
+
+    public function getName()
+    {
+        return $this->attributes['name'];
+    }
+
+    public function setName($name)
+    {
+        $this->attributes['name'] = $name;
+    }
+
+    public function getUserName()
+    {
+        return $this->attributes['user_name'];
+    }
+
+    public function setUserName($user_name)
+    {
+        $this->attributes['user_name'] = $user_name;
+    }
+
+    public function getCreditCard()
+    {
+        return $this->attributes['credit_card'];
+    }
+
+    public function setCreditCard($credit_card)
+    {
+        $this->attributes['credit_card'] = $credit_card;
+    }
+
+    public function getEmail()
+    {
+        return $this->attributes['email'];
+    }
+
+    public function setEmail($email)
+    {
+        $this->attributes['email'] = $email;
+    }
+
+    public static function validate(Request $request)
+    {
+
+        $request->validate([
+            "user_name" => "required",
+            "name" => "required",
+            "email"  => "required",
+            "password"  => "required",
+        ]);
+    }
 }
