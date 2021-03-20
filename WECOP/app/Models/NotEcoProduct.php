@@ -1,16 +1,26 @@
 <?php
 
+/** 
+ * @author clopezr9
+ * PHP version: 8.0.2
+ * */
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
+/** 
+ * Class NotEcoProduct
+ * @package App/Models
+ */
 class NotEcoProduct extends Model
 {
     use HasFactory;
 
     //Attributes id, name, emision, productLife
-    protected $fillable = ['name', 'price', 'emision', 'productLife'];
+    protected $fillable = ['name', 'emision', 'product_life'];
 
     public function getId()
     {
@@ -44,11 +54,27 @@ class NotEcoProduct extends Model
 
     public function getProductLife()
     {
-        return $this->attributes['productLife'];
+        return $this->attributes['product_life'];
     }
 
-    public function setProductLife($productLife)
+    public function setProductLife($product_life)
     {
-        $this->attributes['productLife'] = $productLife;
+        $this->attributes['product_life'] = $product_life;
+    }
+
+    /** 
+     * This static function validates that the data sent has specific data type and is required.
+     *  
+     * @param request 
+     * */
+    public static function validation(Request $request) 
+    {
+        $request->validate(
+            [
+            "name" => "required",
+            "emision" => "required | numeric | gt:0",
+            "productLife" => "required | numeric |gt:0"
+            ]
+        );
     }
 }
