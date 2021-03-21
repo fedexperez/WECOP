@@ -13,7 +13,7 @@
         </div>
         <div class="row">
             <div class="col-md-6 col-lg-4">
-                <img class="img-fluid" src="{{ $data['ecoProduct']->getPhoto() }}" alt="product" />
+                <img class="img-fluid" src="{{ url('img/ecoProducts/'.$data['ecoProduct']->getPhoto()) }}" alt="product" />
             </div>
             <div class="col-md-6 col-lg-8 mb-5">
                 <p class="lead">{{ $data['ecoProduct']->getDescription() }}</p> 
