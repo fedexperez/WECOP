@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name("home.index");
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
+
+//Review routes
 Route::get('/review/show/{id}', 'App\Http\Controllers\ReviewController@show')->name("review.show");
 Route::get('/review/create', 'App\Http\Controllers\ReviewController@create')->name("review.create");
 Route::get('/review/list', 'App\Http\Controllers\ReviewController@list')->name("review.list");
