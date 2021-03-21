@@ -18,6 +18,8 @@ return [
     'Return' => 'Return',
     'Great' => 'Great',
     'Send' => 'Send',
+     
+    //For order
     'Order' => 'Order',
     'Status' => 'Status',
     'PaymentType' => 'Payment Type',
@@ -27,6 +29,4 @@ return [
     'Date' => 'Date',
     'Back' => 'Go back',
     
-    
-
 ];
