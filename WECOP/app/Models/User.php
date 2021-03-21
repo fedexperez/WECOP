@@ -1,5 +1,10 @@
 <?php
 
+/** 
+ * @author Shiroke-013
+ * PHP version: 8.0.2
+ * */
+
 namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -31,6 +36,16 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = ['email_verified_at' => 'datetime'];
+
+    public function getId()
+    {
+        return $this->attributes['id'];
+    }
+
+    public function setId($id)
+    {
+        $this->attributes['id'] = $id;
+    }
 
     public function getName()
     {
@@ -78,6 +93,7 @@ class User extends Authenticatable
         $request->validate([
             "user_name" => "required",
             "name" => "required",
+            "credit_card" => "required",
             "email"  => "required",
             "password"  => "required",
         ]);
