@@ -14,8 +14,19 @@
                     <b>@lang('messages.Address'): </b>{{ $data["order"]->getAddress() }}<br />
                     <b>@lang('messages.Date'): </b>{{ $data["order"]->getDate() }}<br />
                     <b>@lang('messages.Total'): </b>{{ $data["order"]->getTotal() }}<br /><br />
+                    <div class="row">
+                        <div class="col-5">
+                            <form action="{{ route('order.list')}}">
+                                <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('messages.Back')</button>
+                            </form>
+                        </div>
+                        <div class="col-5">
+                            <form action="{{ route('order.return', $data['order']->getId()) }}">
+                                <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('messages.ReturnOrder')</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <a href="{{ route('order.delete', $data['order']->getId()) }}"> @lang('messages.Delete') </a>
             </div>
         </div>
     </div>

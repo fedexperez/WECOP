@@ -23,6 +23,9 @@ return [
     'PaymentType' => 'Payment Type',
     'Address' => 'Address',
     'Total' => 'Total',
+    'ReturnOrder' => 'Return Order',
+    'Date' => 'Date',
+    'Back' => 'Go back',
     
     
 
