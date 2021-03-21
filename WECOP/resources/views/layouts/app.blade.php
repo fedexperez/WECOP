@@ -21,7 +21,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="{{ route('home.index') }}">Home</a>
+                <a class="navbar-brand js-scroll-trigger" href="{{ route('home.index') }}">WECOP</a>
                 <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -48,7 +48,7 @@
         <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">Home</h1>
+                <h1 class="masthead-heading text-uppercase mb-0">WECOP</h1>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
@@ -56,7 +56,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">Website - Home</p>
+                <p class="masthead-subheading font-weight-light mb-0">For achieving a change</p>
             </div>
         </header>
 
@@ -70,9 +70,9 @@
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <h4 class="text-uppercase mb-4">Location</h4>
                         <p class="lead mb-0">
-                            2215 John Daniel Drive
+                        Carrera 49 # 7 sur - 50, EAFIT
                             <br />
-                            Clark, MO 65243
+                            Medellín, Antioquia, Colombia
                         </p>
                     </div>
                     <!-- Footer Social Icons-->
@@ -85,7 +85,7 @@
                     </div>
                     <!-- Footer About Text-->
                     <div class="col-lg-4">
-                        <h4 class="text-uppercase mb-4">About Freelancer</h4>
+                        <h4 class="text-uppercase mb-4">About WECOP</h4>
                         <p class="lead mb-0">
                             Freelance is a free to use, MIT licensed Bootstrap theme created by
                             <a href="http://startbootstrap.com">Start Bootstrap</a>
