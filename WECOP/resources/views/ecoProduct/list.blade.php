@@ -12,9 +12,9 @@
         </div>
     </div>
     <div class="row">
-        <div class="col">
+        <div class="col-md-6 col-lg-4">
             @foreach ($data['ecoProducts'] as $ecoProduct)
-            <a href="{{ route('ecoProduct.show', ['id'=> $ecoProduct->getId() ]) }}">{{ $ecoProduct->getName() }}</>
+            <a href="{{ route('ecoProduct.show', ['id'=> $ecoProduct->getId() ]) }}">{{ $ecoProduct->getName() }}</a>
             @endforeach
         </div>
     </div>
