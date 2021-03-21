@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->text('status');
             $table->text('payment_type');
-            $table->timestamp('date')->useCurrent();           
+            $table->timestamp('date')->useCurrent();
             $table->double('total');
             $table->unsignedInteger('address_id');
             $table->unsignedInteger('item_id');
