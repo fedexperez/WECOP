@@ -9,6 +9,7 @@
 
 namespace App\Models;
 
+use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -122,6 +123,22 @@ class EcoProduct extends Model
     public function setPhoto($photo)
     {
         $this->attributes['photo'] = $photo;
+    }
+
+    public static function validate(Request $request)
+    {
+        //['name', 'price', 'stock', 'facts', 'description', 'categories', 'emision', 'product_life', 'photo']
+        $request->validate([
+            "name" => "required",
+            "price" => "required | numeric | gt:0",
+            "stock" => "required | numeric | min:0",
+            "facts" => "required",
+            "description" => "required",
+            "categories" => "required",
+            "emision" => "required | numeric | gt:0",
+            "product_life" => "required",
+            "photo" => "required",
+        ]);
     }
 
 }

@@ -22,7 +22,6 @@ class EcoProductController extends Controller
     public function list()
     {
         $data = [];
-        $data["title"] = "List of EcoProducts";
         $data["ecoProducts"] = ecoProduct::all();
 
         return view('ecoProduct.list')->with("data", $data);

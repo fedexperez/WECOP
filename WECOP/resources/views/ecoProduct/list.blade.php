@@ -11,10 +11,12 @@
             <div class="divider-custom-line"></div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-6 col-lg-4">
+    <div class="row p-5">
+        <div class="col-md-9 col-lg-4">
             @foreach ($data['ecoProducts'] as $ecoProduct)
-            <a href="{{ route('ecoProduct.show', ['id'=> $ecoProduct->getId() ]) }}">{{ $ecoProduct->getName() }}</a>
+            <li>
+                <a href="{{ route('ecoProduct.show', $ecoProduct->getId()) }}">{{ $ecoProduct->getName() }}</a>
+            </li>
             @endforeach
         </div>
     </div>

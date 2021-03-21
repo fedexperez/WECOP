@@ -16,13 +16,13 @@ class CreateEcoProductTable extends Migration
         Schema::create('eco_products', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('name');
-            $table->integer('price');
+            $table->float('price');
             $table->integer('stock');
             $table->text('facts');
             $table->text('description');
             $table->text('categories');
             $table->float('emision');
-            $table->integer('productLife');
+            $table->integer('product_life');
             $table->text('photo');
             $table->timestamps();
         });
