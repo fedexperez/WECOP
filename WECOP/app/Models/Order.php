@@ -58,14 +58,14 @@ class Order extends Model
         $this->attributes['date'] = $date;
     }    
     
-    public function getShipping()
+    public function getAddress()
     {
-        return $this->attributes['shipping'];
+        return $this->attributes['address_id'];
     }
 
-    public function setShipping($shipping)
+    public function setAddress($address)
     {
-        $this->attributes['shipping'] = $shipping;
+        $this->attributes['address_id'] = $address;
     }
 
     public function getTotal()
