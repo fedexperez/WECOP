@@ -20,12 +20,12 @@ class Order extends Model
 
     public function getId()
     {
-        return $this->attributes['order_id'];
+        return $this->attributes['id'];
     }
 
     public function setId($id)
     {
-        $this->attributes['order_id'] = $id;
+        $this->attributes['id'] = $id;
     }
 
     public function getStatus()
