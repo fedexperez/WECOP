@@ -1,13 +1,13 @@
 @extends('layouts.master')
 
-@section("title", $data["order"]->getTitle())
+@section("title", $data["order"]->getId())
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"> @lang('messages.Review') {{ $data["order"]->getId() }}</div>
+                <div class="card-header"> @lang('messages.Order') {{ $data["order"]->getId() }}</div>
                 <div class="card-body">
                     <b>@lang('messages.Status'): </b> {{ $data["order"]->getStatus() }}<br />
                     <b>@lang('messages.PaymentType'): </b>{{ $data["order"]->getPaymentType() }}<br />
