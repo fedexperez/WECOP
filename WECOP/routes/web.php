@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name("home.index");
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 
-Route::get('order/show/{id}', 'App\Http\Controllers\HomeController@show')->name('order.show');
-Route::get('order/list', 'App\Http\Controllers\HomeController@index')->name('order.list');
-Route::get('order/return/{id}', 'App\Http\Controllers\HomeController@index')->name('order.return');
+Route::get('order/show/{id}', 'App\Http\Controllers\OrderController@show')->name('order.show');
+Route::get('order/list', 'App\Http\Controllers\OrderController@list')->name('order.list');
+Route::get('order/return/{id}', 'App\Http\Controllers\OrderController@return')->name('order.return');
 
 Auth::routes();
