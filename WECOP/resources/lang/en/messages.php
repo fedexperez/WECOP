@@ -18,6 +18,15 @@ return [
     'Return' => 'Return',
     'Great' => 'Great',
     'Send' => 'Send',
+     
+    //For order
+    'Order' => 'Order',
+    'Status' => 'Status',
+    'PaymentType' => 'Payment Type',
+    'Address' => 'Address',
+    'Total' => 'Total',
+    'ReturnOrder' => 'Return Order',
+    'Date' => 'Date',
+    'Back' => 'Go back',
     
-
 ];
