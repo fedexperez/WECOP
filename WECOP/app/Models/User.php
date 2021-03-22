@@ -1,9 +1,11 @@
 <?php
 
 /** 
+ * WECOP
+ * 
  * @author Shiroke-013
  * PHP version: 8.0.2
- * */
+ */
 
 namespace App\Models;
 
@@ -115,7 +117,6 @@ class User extends Authenticatable
 
     public static function validate(Request $request)
     {
-
         $request->validate([
             "user_name" => "required",
             "name" => "required",

@@ -1,9 +1,11 @@
 <?php
 
 /** 
+ * WECOP
+ * 
  * @author clopezr9
  * PHP version: 8.0.2
- * */
+ */
 
 namespace App\Models;
 
@@ -20,7 +22,15 @@ class NotEcoProduct extends Model
     use HasFactory;
 
     //Attributes id, name, emision, productLife
-    protected $fillable = ['name', 'emision', 'product_life'];
+    protected $fillable = ['name', 'emision', 'price', 'product_life'];
+
+    /**
+     * Get the EcoProduct that owns the NotEcoProduct.
+     */
+    public function ecoProduct()
+    {
+        return $this->belongsTo(EcoProduct::class);
+    }
 
     public function getId()
     {
@@ -67,13 +77,14 @@ class NotEcoProduct extends Model
      *  
      * @param request 
      * */
-    public static function validation(Request $request) 
+    public static function validate(Request $request) 
     {
         $request->validate(
             [
             "name" => "required",
             "emision" => "required | numeric | gt:0",
-            "productLife" => "required | numeric |gt:0"
+            "product_life" => "required | numeric |gt:0",
+            "price" => "required | numeric | gt:0 ",
             ]
         );
     }

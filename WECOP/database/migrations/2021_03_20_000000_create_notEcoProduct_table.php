@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEcoProductTable extends Migration
+class CreateNotEcoProductTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,12 @@ class CreateEcoProductTable extends Migration
      */
     public function up()
     {
-        Schema::create('eco_products', function (Blueprint $table) {
+        Schema::create('not_eco_products', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('name');
-            $table->float('price');
-            $table->integer('stock');
-            $table->text('facts');
-            $table->text('description');
-            $table->text('categories');
-            $table->float('emision');
+            $table->integer('price');
+            $table->integer('emision');
             $table->integer('product_life');
-            $table->text('photo');
             $table->timestamps();
         });
     }
@@ -35,6 +30,6 @@ class CreateEcoProductTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('eco_products');
+        Schema::dropIfExists('not_eco_products');
     }
 }

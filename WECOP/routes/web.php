@@ -35,10 +35,13 @@ Route::get('/review/filter/4', 'App\Http\Controllers\ReviewController@fourStars'
 Route::get('/review/filter/5', 'App\Http\Controllers\ReviewController@fiveStars')->name("review.filter5");
 Route::post('/review/save', 'App\Http\Controllers\ReviewController@save')->name("review.save");
 
-//NotEcoProduct routes
-Route::get('/notEcoProduct/show/{id}', 'App\Http\Controllers\NotEcoProductController@show')->name("notEcoProduct.show");
-Route::get('/notEcoProduct/list', 'App\Http\Controllers\NotEcoProductController@list')->name("notEcoProduct.list");
-Route::get('/notEcoProduct/show/{id}/NotFound', 'App\Http\Controllers\NotEcoProductController@notFound')->name("notEcoProduct.notFound");
+//AdminNotEcoProduct routes
+Route::get('/admin/notEcoProduct/show/{id}', 'App\Http\Controllers\Admin\NotEcoProductAdminController@show')->name("admin.notEcoProduct.show");
+Route::get('/admin/notEcoProduct/list', 'App\Http\Controllers\Admin\NotEcoProductAdminController@list')->name("admin.notEcoProduct.list");
+Route::get('/admin/notEcoProduct/show/{id}/NotFound', 'App\Http\Controllers\Admin\NotEcoProductAdminController@notFound')->name("admin.notEcoProduct.notFound");
+Route::get('/admin/notEcoProduct/create', 'App\Http\Controllers\Admin\NotEcoProductAdminController@create')->name('admin.notEcoProduct.create');
+Route::get('/admin/notEcoProduct/delete/{id}', 'App\Http\Controllers\Admin\NotEcoProductAdminController@delete')->name("admin.notEcoProduct.delete");
+Route::post('/admin/notEcoProduct/save', 'App\Http\Controllers\Admin\NotEcoProductAdminController@save')->name('admin.notEcoProduct.save');
 
 //EcoProduct routes
 Route::get('/ecoProduct/show/{id}', 'App\Http\Controllers\EcoProductController@show')->name('ecoProduct.show');
@@ -56,4 +59,7 @@ Route::get('/admin/ecoProduct/create', 'App\Http\Controllers\Admin\EcoProductAdm
 Route::get('/admin/ecoProduct/delete/{id}', 'App\Http\Controllers\Admin\EcoProductAdminController@delete')->name("admin.ecoProduct.delete");
 Route::post('/admin/ecoProduct/save', 'App\Http\Controllers\Admin\EcoProductAdminController@save')->name('admin.ecoProduct.save');
 
+//Address routes
+Route::get('/address/create', 'App\Http\Controllers\AddressController@create')->name("address.create");
+Route::post('/address/save', 'App\Http\Controllers\AddressController@save')->name("address.save");
 Auth::routes();
