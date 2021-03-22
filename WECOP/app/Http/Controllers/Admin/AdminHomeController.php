@@ -12,7 +12,8 @@ class AdminHomeController extends Controller
     {
         $this->middleware('auth');
         $this->middleware(function ($request, $next) {
-            if(Auth::user()->getRole()=="client"){
+            if(Auth::user()->getRole() == "client")
+            {
                 return redirect()->route('home.index');
             }
     

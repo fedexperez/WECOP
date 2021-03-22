@@ -13,6 +13,8 @@ use App\Http\Controllers\Controller;
 use App\Models\EcoProduct;  
 use App\Models\NotEcoProduct;  
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;  
 
 /**
  * class ecoProductAdminController
@@ -21,6 +23,18 @@ use Illuminate\Http\Request;
  */
 class EcoProductAdminController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware(function ($request, $next) {
+            if(Auth::user()->getRole() == "client"){
+                return redirect()->route('home.index');
+            }
+    
+            return $next($request);
+        });
+    }
 
     public function create()
     {
