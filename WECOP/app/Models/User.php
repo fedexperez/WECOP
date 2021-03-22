@@ -87,6 +87,16 @@ class User extends Authenticatable
         $this->attributes['email'] = $email;
     }
 
+    public function getRole()
+    {
+        return $this->attributes['role'];
+    }
+
+    public function setRole($role)
+    {
+        $this->attributes['role'] = $role;
+    }
+
     public static function validate(Request $request)
     {
 

@@ -28,6 +28,7 @@ class CreateUsersTable extends Migration
             $table->unsignedInteger('address_id');
             $table->unsignedInteger('order_id');
             $table->unsignedInteger('review_id');
+            $table->text('role');
             $table->timestamps()->useCurrent();;
         });
     }
