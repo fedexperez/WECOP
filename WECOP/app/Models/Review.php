@@ -1,7 +1,14 @@
 <?php
 
-namespace App\Models;
+/** 
+ * WECOP
+ * 
+ * @author fperezm1
+ * PHP version: 8.0.2
+ */
 
+namespace App\Models;
+ 
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
