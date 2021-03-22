@@ -19,6 +19,13 @@ class Address extends Model
 
     protected $fillable = ['postal_code', 'address', 'country', 'city'];
     
+    /**
+     * Get the user that owns the address.
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
     public function getId()
     {

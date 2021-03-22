@@ -26,7 +26,7 @@ class CreateAddressesTable extends Migration
             $table->text('address');
             $table->text('country');
             $table->text('city');
-            $table->unsignedBigInteger("user_id");
+            $table->unsignedBigInteger("user_id")->references('id')->on('users');
         });
     }
 
