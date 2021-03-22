@@ -50,8 +50,24 @@ class ReviewController extends Controller
     public function list()
     {
         $data = []; //to be sent to the view
-        $data["reviews"] = Review::all();
 
         return view('review.list')->with("data", $data);
     }
+
+    public function filter()
+    {
+        $data = []; //to be sent to the view
+        $data["reviews"] = Review::all();
+        $data["review1"] = Review::where('rating', 1.00)->get();
+        $data["review2"] = Review::where('rating', 2.00)->get();
+        $data["review3"] = Review::where('rating', 3.00)->get();
+        $data["review4"] = Review::where('rating', 4.00)->get();
+        $data["review5"] = Review::where('rating', 5.00)->get();
+
+        $filter = 0;
+        $data["filter"] = $filter;
+
+        return view('review.filter')->with("data", $data);
+    }
+
 }
