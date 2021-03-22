@@ -12,6 +12,8 @@ namespace App\Models;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Address;
+use App\Item;
 
 class Order extends Model
 {
@@ -78,6 +80,18 @@ class Order extends Model
     public function setTotal($total)
     {
         $this->attributes['total'] = $total;
+    }
+
+    public function items(){
+        return $this->hasMany(Item::class);
+    }
+
+    public function addresses(){
+        return $this->hasMany(Address::class);
+    }
+
+    public function users(){
+        return $this->hasMany(User::class);
     }
 
     public static function validate(Request $request)

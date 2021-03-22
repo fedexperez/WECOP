@@ -20,8 +20,9 @@ class CreateOrdersTable extends Migration
             $table->timestamp('date')->useCurrent();
             $table->double('total');
             $table->unsignedInteger('address_id');
-            $table->unsignedInteger('item_id');
+            $table->foreign('address_id')->references('id')->on('addresses');
             $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users'); 
         });
     }
 
