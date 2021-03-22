@@ -21,14 +21,16 @@
                     <form method="POST" action="{{ route('admin.ecoProduct.save') }}">
                         @csrf
                         <input type="text" placeholder="Enter name" name="name" value="{{ old('name') }}" />
-                        <input type="number" placeholder="Enter price" name="price" value="{{ old('price') }}" />
+                        <input type="number" step="0.01" placeholder="Enter price" name="price"
+                            value="{{ old('price') }}" />
                         <input type="number" placeholder="Enter stock" name="stock" value="{{ old('stock') }}" />
                         <input type="text" placeholder="Enter facts" name="facts" value="{{ old('facts') }}" />
                         <input type="text" placeholder="Enter description" name="description"
                             value="{{ old('description') }}" />
                         <input type="text" placeholder="Enter categories" name="categories"
                             value="{{ old('categories') }}" />
-                        <input type="number" placeholder="Enter emision" name="emision" value="{{ old('emision') }}" />
+                        <input type="number" step="0.01" placeholder="Enter emision" name="emision"
+                            value="{{ old('emision') }}" />
                         <input type="number" placeholder="Enter product life" name="product_life"
                             value="{{ old('product_life') }}" />
                         <input type="text" placeholder="Enter photo name" name="photo" value="{{ old('photo') }}" />
