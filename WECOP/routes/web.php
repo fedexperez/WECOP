@@ -21,6 +21,7 @@ Route::get('/review/show/{id}', 'App\Http\Controllers\ReviewController@show')->n
 Route::get('/review/create', 'App\Http\Controllers\ReviewController@create')->name("review.create");
 Route::get('/review/list', 'App\Http\Controllers\ReviewController@list')->name("review.list");
 Route::get('/review/delete/{id}', 'App\Http\Controllers\ReviewController@delete')->name("review.delete");
+Route::get('/review/filtered', 'App\Http\Controllers\ReviewController@filter')->name("review.filtered");
 
 Route::post('/review/save', 'App\Http\Controllers\ReviewController@save')->name("review.save");
 
