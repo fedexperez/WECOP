@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateItemTable extends Migration
+class CreateReviewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateItemTable extends Migration
      */
     public function up()
     {
-        Schema::create('items', function (Blueprint $table) {
+        Schema::create('reviews', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->float('subtotal');
-            $table->integer('quantity');
-            $table->integer('product_id');
-            $table->text('order_id');
+            $table->float('rating');
+            $table->text('title');
+            $table->text('message');
+            $table->unsignedBigInteger('eco_product');
+            $table->foreign('eco_product')->references('id')->on('eco_products');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreateItemTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('items');
+        Schema::dropIfExists('reviews');
     }
 }

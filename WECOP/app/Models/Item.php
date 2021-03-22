@@ -24,6 +24,14 @@ class EcoProduct extends Model
     //Attributes subtotal, quantity, product_id, order_id
     protected $fillable = ['subtotal', 'quantity', 'product_id', 'order_id'];
 
+    /**
+     * Get the EcoProduct that owns the Item.
+     */
+    public function ecoProduct()
+    {
+        return $this->belogsTo(EcoProduct::class);
+    }
+
     public function getSubtotal()
     {
         return $this->attributes['subtotal'];
