@@ -35,7 +35,7 @@
                         <label for="cars">Choose a NotEcoProduct:</label>
                         <select name="not_eco_product" id="not_eco_product">
                             @foreach($data["notEcoProducts"] as $notEcoProduct)
-                            <option value="{{ old('not_eco_product') }}">{{ $notEcoProduct->getName() }}</option>
+                            <option value="{{ $notEcoProduct->getId() }}">{{ $notEcoProduct->getName() }}</option>
                             @endforeach
                         </select>
                         <input type="submit" value="Send" />
