@@ -20,7 +20,7 @@ class CreateOrdersTable extends Migration
             $table->timestamp('date')->useCurrent();
             $table->double('total');
             $table->unsignedInteger('address');
-            $table->foreign('address')->references('id')->on('addresses');
+            $table->foreign('address')->references('id')->on('addresses'); 
             $table->unsignedInteger('user');
             $table->foreign('user')->references('id')->on('users'); 
         });

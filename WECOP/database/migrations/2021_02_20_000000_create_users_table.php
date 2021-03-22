@@ -20,12 +20,6 @@ class CreateUsersTable extends Migration
             $table->text('credit_card')->nullable();
             $table->text('email');
             $table->text('password');
-            $table->unsignedInteger('address');
-            $table->foreign('address')->references('id')->on('addresses');
-            $table->unsignedInteger('order');
-            $table->foreign('order')->references('id')->on('orders');
-            $table->unsignedInteger('review');
-            $table->foreign('review')->references('id')->on('reviews');
             $table->text('role');
             $table->timestamps();
         });
