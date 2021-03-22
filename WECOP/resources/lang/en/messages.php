@@ -18,6 +18,12 @@ return [
     'Return' => 'Return',
     'Great' => 'Great',
     'Send' => 'Send',
+    'All' => 'All',
+    'Review1' => '1 star',
+    'Review2' => '2 stars',
+    'Review3' => '3 stars',
+    'Review4' => '4 stars',
+    'Review5' => '5 stars',
     
 
 ];
