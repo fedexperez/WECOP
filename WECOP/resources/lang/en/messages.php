@@ -18,14 +18,12 @@ return [
     'Return' => 'Return',
     'Great' => 'Great',
     'Send' => 'Send',
-<<<<<<< HEAD
     'All' => 'All',
     'Review1' => '1 star',
     'Review2' => '2 stars',
     'Review3' => '3 stars',
     'Review4' => '4 stars',
     'Review5' => '5 stars',
-=======
      
     //For order
     'Order' => 'Order',
@@ -36,6 +34,5 @@ return [
     'ReturnOrder' => 'Return Order',
     'Date' => 'Date',
     'Back' => 'Go back',
->>>>>>> e291b73fcfe508074df5e8c5f6761cb0125cdf38
     
 ];
