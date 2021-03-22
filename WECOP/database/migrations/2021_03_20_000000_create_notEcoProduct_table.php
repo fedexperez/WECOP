@@ -16,8 +16,8 @@ class CreateNotEcoProductTable extends Migration
         Schema::create('not_eco_products', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('name');
-            $table->integer('price');
-            $table->integer('emision');
+            $table->float('price');
+            $table->float('emision');
             $table->integer('product_life');
             $table->timestamps();
         });
