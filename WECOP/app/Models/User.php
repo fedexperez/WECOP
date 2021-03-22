@@ -37,6 +37,21 @@ class User extends Authenticatable
      */
     protected $casts = ['email_verified_at' => 'datetime'];
 
+    public function address()
+    {
+        return $this->hasMany(Address::class);
+    }
+
+    public function review()
+    {
+        return $this->hasMany(Review::class);
+    }
+
+    public function order()
+    {
+        return $this->hasMany(Order::class);
+    }
+
     public function getId()
     {
         return $this->attributes['id'];
@@ -62,9 +77,9 @@ class User extends Authenticatable
         return $this->attributes['user_name'];
     }
 
-    public function setUserName($user_name)
+    public function setUserName($userName)
     {
-        $this->attributes['user_name'] = $user_name;
+        $this->attributes['user_name'] = $userName;
     }
 
     public function getCreditCard()
@@ -72,9 +87,9 @@ class User extends Authenticatable
         return $this->attributes['credit_card'];
     }
 
-    public function setCreditCard($credit_card)
+    public function setCreditCard($creditCard)
     {
-        $this->attributes['credit_card'] = $credit_card;
+        $this->attributes['credit_card'] = $creditCard;
     }
 
     public function getEmail()
