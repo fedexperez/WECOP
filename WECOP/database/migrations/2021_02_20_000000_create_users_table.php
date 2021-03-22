@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->text('credit_card')->nullable();
             $table->text('email');
             $table->text('password');
-            $table->text('role');
+            $table->string('role')->default('client');
             $table->timestamps();
         });
     }
