@@ -19,6 +19,8 @@ class Address extends Model
 
     protected $fillable = ['postal_code', 'address', 'country', 'city'];
     
+    public $timestamps = false;
+    
     /**
      * Get the user that owns the address.
      */

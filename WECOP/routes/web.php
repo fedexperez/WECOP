@@ -52,4 +52,7 @@ Route::get('/admin/ecoProduct/create', 'App\Http\Controllers\Admin\EcoProductAdm
 Route::get('/admin/ecoProduct/delete/{id}', 'App\Http\Controllers\Admin\EcoProductAdminController@delete')->name("admin.ecoProduct.delete");
 Route::post('/admin/ecoProduct/save', 'App\Http\Controllers\Admin\EcoProductAdminController@save')->name('admin.ecoProduct.save');
 
+//Address routes
+Route::get('/address/create', 'App\Http\Controllers\AddressController@create')->name("address.create");
+Route::post('/address/save', 'App\Http\Controllers\AddressController@save')->name("address.save");
 Auth::routes();
