@@ -10,6 +10,8 @@ namespace App\Http\Controllers\Admin;
 use App\Models\NotEcoProduct;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;  
 
 /** 
  * Class NotEcoProductAdminController
@@ -17,6 +19,17 @@ use Illuminate\Http\Request;
  */
 class NotEcoProductAdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware(function ($request, $next) {
+            if(Auth::user()->getRole() == "client"){
+                return redirect()->route('home.index');
+            }
+    
+            return $next($request);
+        });
+    }
 
     public function create()
     {
