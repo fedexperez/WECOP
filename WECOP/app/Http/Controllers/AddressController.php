@@ -11,7 +11,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Address;
+use App\Models\User;
 use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\Auth;
 
 class AddressController extends Controller
 {
@@ -27,12 +29,29 @@ class AddressController extends Controller
         return view('address.show')->with('data', $data);
     }
 
-    public function save(Request $request)
+    public function create()
     {
-        Address::create($request->only(["postal_code", "address", "country", "city"]));
+        $data = []; //to be sent to the view
+        $data["pageTitle"] = "Add an Address";
+
+        return view('address.create')->with("data", $data);
+    }
+
+    public function save(Request $request)
+    { 
         Address::validate($request);
 
-        $message = Lang::get("messages.SuccesfullAddress");
+        $user = User::findOrFail(Auth::user()->getId());
+
+        $address = new Address;
+        $address->postal_code = $request['postal_code'];
+        $address->address = $request['address'];
+        $address->city = $request['city'];
+        $address->country = $request['country'];
+        $address->user = $user->getId();
+        $address->save();
+        
+        $message = Lang::get("Succesfull added Address");
         return back()->with('success', $message);
     }
 
