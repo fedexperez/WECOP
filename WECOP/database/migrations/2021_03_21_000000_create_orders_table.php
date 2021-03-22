@@ -19,9 +19,9 @@ class CreateOrdersTable extends Migration
             $table->text('payment_type');
             $table->timestamp('date')->useCurrent();
             $table->double('total');
-            $table->unsignedInteger('address');
+            $table->unsignedBigInteger('address');
             $table->foreign('address')->references('id')->on('addresses'); 
-            $table->unsignedInteger('user');
+            $table->unsignedBigInteger('user');
             $table->foreign('user')->references('id')->on('users'); 
         });
     }
