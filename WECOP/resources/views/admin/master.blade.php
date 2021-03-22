@@ -20,8 +20,10 @@
                 <a class="navbar-brand" href="{{ route('home.index') }}">
                     Admin-WECOP
                 </a>
-                <a class="nav-link" href="{{ route('admin.ecoProduct.create') }}">Create</a>
-                <a class="nav-link" href="{{ route('admin.ecoProduct.list') }}">List</a>
+                <a class="nav-link" href="{{ route('admin.ecoProduct.create') }}">CreateEco</a>
+                <a class="nav-link" href="{{ route('admin.ecoProduct.list') }}">ListEco</a>
+                <a class="nav-link" href="{{ route('admin.notEcoProduct.create') }}">CreateNotEco</a>
+                <a class="nav-link" href="{{ route('admin.notEcoProduct.list') }}">ListNotEco</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="{{ __('Toggle navigation') }}">

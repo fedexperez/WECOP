@@ -28,10 +28,13 @@ Route::get('/review/list', 'App\Http\Controllers\ReviewController@list')->name("
 Route::get('/review/delete/{id}', 'App\Http\Controllers\ReviewController@delete')->name("review.delete");
 Route::post('/review/save', 'App\Http\Controllers\ReviewController@save')->name("review.save");
 
-//NotEcoProduct routes
-Route::get('/notEcoProduct/show/{id}', 'App\Http\Controllers\NotEcoProductController@show')->name("notEcoProduct.show");
-Route::get('/notEcoProduct/list', 'App\Http\Controllers\NotEcoProductController@list')->name("notEcoProduct.list");
-Route::get('/notEcoProduct/show/{id}/NotFound', 'App\Http\Controllers\NotEcoProductController@notFound')->name("notEcoProduct.notFound");
+//AdminNotEcoProduct routes
+Route::get('/admin/notEcoProduct/show/{id}', 'App\Http\Controllers\Admin\NotEcoProductAdminController@show')->name("admin.notEcoProduct.show");
+Route::get('/admin/notEcoProduct/list', 'App\Http\Controllers\Admin\NotEcoProductAdminController@list')->name("admin.notEcoProduct.list");
+Route::get('/admin/notEcoProduct/show/{id}/NotFound', 'App\Http\Controllers\Admin\NotEcoProductAdminController@notFound')->name("admin.notEcoProduct.notFound");
+Route::get('/admin/notEcoProduct/create', 'App\Http\Controllers\Admin\NotEcoProductAdminController@create')->name('admin.notEcoProduct.create');
+Route::get('/admin/notEcoProduct/delete/{id}', 'App\Http\Controllers\Admin\NotEcoProductAdminController@delete')->name("admin.notEcoProduct.delete");
+Route::post('/admin/notEcoProduct/save', 'App\Http\Controllers\Admin\NotEcoProductAdminController@save')->name('admin.notEcoProduct.save');
 
 //EcoProduct routes
 Route::get('/ecoProduct/show/{id}', 'App\Http\Controllers\EcoProductController@show')->name('ecoProduct.show');
