@@ -39,6 +39,9 @@ class NotEcoProductAdminController extends Controller
         $data = []; //to be sent to the view
         $data["title"] = "List of NotEcoProduct";
 
+        $notEcoProducts = NotEcoProduct::All();
+        $data["notEcoProducts"] = $notEcoProducts;
+
         return view('admin.notEcoProduct.list')->with("data",$data);
     }
 
