@@ -1,10 +1,17 @@
 <?php
 
+/** 
+ * WECOP
+ * 
+ * @author Shiroke-013
+ * PHP version: 8.0.2
+ */
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEcoProductTable extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +20,14 @@ class CreateEcoProductTable extends Migration
      */
     public function up()
     {
-        Schema::create('eco_products', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->text('user_name');
             $table->text('name');
-            $table->float('price');
-            $table->integer('stock');
-            $table->text('facts');
-            $table->text('description');
-            $table->text('categories');
-            $table->float('emision');
-            $table->integer('product_life');
-            $table->text('photo');
+            $table->text('credit_card')->nullable();
+            $table->text('email');
+            $table->text('password');
+            $table->string('role')->default('client');
             $table->timestamps();
         });
     }
@@ -35,6 +39,6 @@ class CreateEcoProductTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('eco_products');
+        Schema::dropIfExists('users');
     }
 }

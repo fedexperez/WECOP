@@ -1,9 +1,11 @@
 <?php
 
 /** 
+ * WECOP
+ * 
  * @author clopezr9
  * PHP version: 8.0.2
- * */
+ */
 
 namespace App\Models;
 
@@ -21,6 +23,14 @@ class NotEcoProduct extends Model
 
     //Attributes id, name, emision, productLife
     protected $fillable = ['name', 'emision', 'price', 'product_life'];
+
+    /**
+     * Get the EcoProduct that owns the NotEcoProduct.
+     */
+    public function ecoProduct()
+    {
+        return $this->belongsTo(EcoProduct::class);
+    }
 
     public function getId()
     {

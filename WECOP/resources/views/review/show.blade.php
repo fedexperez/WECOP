@@ -13,7 +13,12 @@
                     <b>@lang('messages.Title'): </b>{{ $data["review"]->getTitle() }}<br />
                     <b>@lang('messages.Message'): </b>{{ $data["review"]->getMessage() }}<br /><br />
                 </div>
-                <a href="{{ route('review.delete', $data['review']->getId()) }}"> @lang('messages.Delete') </a>
+                <div class="col-md-3">
+                    <form action="{{ route('review.delete', $data['review']->getId()) }}">
+                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('messages.Delete')</button>
+                        </br>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

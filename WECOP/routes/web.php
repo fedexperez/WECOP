@@ -26,6 +26,12 @@ Route::get('/review/show/{id}', 'App\Http\Controllers\ReviewController@show')->n
 Route::get('/review/create', 'App\Http\Controllers\ReviewController@create')->name("review.create");
 Route::get('/review/list', 'App\Http\Controllers\ReviewController@list')->name("review.list");
 Route::get('/review/delete/{id}', 'App\Http\Controllers\ReviewController@delete')->name("review.delete");
+Route::get('/review/filter/all', 'App\Http\Controllers\ReviewController@all')->name("review.filter");
+Route::get('/review/filter/1', 'App\Http\Controllers\ReviewController@oneStar')->name("review.filter1");
+Route::get('/review/filter/2', 'App\Http\Controllers\ReviewController@twoStars')->name("review.filter2");
+Route::get('/review/filter/3', 'App\Http\Controllers\ReviewController@threeStars')->name("review.filter3");
+Route::get('/review/filter/4', 'App\Http\Controllers\ReviewController@fourStars')->name("review.filter4");
+Route::get('/review/filter/5', 'App\Http\Controllers\ReviewController@fiveStars')->name("review.filter5");
 Route::post('/review/save', 'App\Http\Controllers\ReviewController@save')->name("review.save");
 
 //AdminNotEcoProduct routes
@@ -49,4 +55,7 @@ Route::get('/admin/ecoProduct/create', 'App\Http\Controllers\Admin\EcoProductAdm
 Route::get('/admin/ecoProduct/delete/{id}', 'App\Http\Controllers\Admin\EcoProductAdminController@delete')->name("admin.ecoProduct.delete");
 Route::post('/admin/ecoProduct/save', 'App\Http\Controllers\Admin\EcoProductAdminController@save')->name('admin.ecoProduct.save');
 
+//Address routes
+Route::get('/address/create', 'App\Http\Controllers\AddressController@create')->name("address.create");
+Route::post('/address/save', 'App\Http\Controllers\AddressController@save')->name("address.save");
 Auth::routes();

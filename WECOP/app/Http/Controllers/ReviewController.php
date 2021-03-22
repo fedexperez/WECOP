@@ -49,9 +49,73 @@ class ReviewController extends Controller
 
     public function list()
     {
+        return view('review.list');
+    }    
+    
+    public function all()
+    {
         $data = []; //to be sent to the view
         $data["reviews"] = Review::all();
 
-        return view('review.list')->with("data", $data);
+        $filter = 0;
+        $data["filter"] = $filter;
+
+        return view('review.filter')->with("data", $data);
     }
+
+    public function oneStar()
+    {
+        $data = []; //to be sent to the view
+        $data["reviews"] = Review::where('rating', 1.00)->get();
+
+        $filter = 1;
+        $data["filter"] = $filter;
+
+        return view('review.filter')->with("data", $data);
+    }
+
+    public function twoStars()
+    {
+        $data = []; //to be sent to the view
+        $data["reviews"] = Review::where('rating', 2.00)->get();
+
+        $filter = 2;
+        $data["filter"] = $filter;
+
+        return view('review.filter')->with("data", $data);
+    }
+
+    public function threeStars()
+    {
+        $data = []; //to be sent to the view
+        $data["reviews"] = Review::where('rating', 3.00)->get();
+
+        $filter = 3;
+        $data["filter"] = $filter;
+
+        return view('review.filter')->with("data", $data);
+    }
+
+    public function fourStars()
+    {
+        $data = []; //to be sent to the view
+        $data["reviews"] = Review::where('rating', 4.00)->get();
+
+        $filter = 4;
+        $data["filter"] = $filter;
+
+        return view('review.filter')->with("data", $data);
+    }
+
+    public function fiveStars()
+    {
+        $data = []; //to be sent to the view
+        $data["reviews"] = Review::where('rating', 5.00)->get();
+
+        $filter = 5;
+        $data["filter"] = $filter;
+
+        return view('review.filter')->with("data", $data);
+    }
+
 }
