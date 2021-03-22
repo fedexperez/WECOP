@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.master')
 
 @section("title", $data["title"])
 
@@ -11,7 +11,7 @@
                 <div class="card-body">
                     @foreach($data["notEcoProducts"] as $notEcoProduct)
                     <li>
-                    <a href="{{ route('notEcoProduct.show', ['id'=> $notEcoProduct->getId() ]) }}"> {{ $notEcoProduct->getId() }} </a>
+                    <a href="{{ route('admin.notEcoProduct.show',  $notEcoProduct->getId()) }}"> {{ $notEcoProduct->getName() }} </a>
                     </li>
                     @endforeach
                 </div>

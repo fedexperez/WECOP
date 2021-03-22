@@ -22,8 +22,8 @@ class EcoProduct extends Model
 {
     use HasFactory;
 
-    //Attributes id, name, price, stock, description, facts, categories, emision, productLife, photo
-    protected $fillable = ['name', 'price', 'stock', 'facts', 'description', 'categories', 'emision', 'product_life', 'photo'];
+    //Attributes id, name, price, stock, description, facts, categories, emision, product_life, photo
+    protected $fillable = ['name', 'price', 'stock', 'facts', 'description', 'categories', 'emision', 'not_eco_product', 'product_life', 'photo'];
 
     /**
      * Get the NotEcoProduct associated with the EcoProduct.
@@ -157,7 +157,8 @@ class EcoProduct extends Model
     public static function validate(Request $request)
     {
         //['name', 'price', 'stock', 'facts', 'description', 'categories', 'emision', 'product_life', 'photo']
-        $request->validate([
+        $request->validate(
+            [
             "name" => "required",
             "price" => "required | numeric | gt:0",
             "stock" => "required | numeric | min:0",
@@ -167,7 +168,8 @@ class EcoProduct extends Model
             "emision" => "required | numeric | gt:0",
             "product_life" => "required",
             "photo" => "required",
-        ]);
+            ]
+        );
     }
 
 }

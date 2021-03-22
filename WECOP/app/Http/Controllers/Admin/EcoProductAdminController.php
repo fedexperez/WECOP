@@ -11,6 +11,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\EcoProduct;  
+use App\Models\NotEcoProduct;  
 use Illuminate\Http\Request;
 
 /**
@@ -25,6 +26,7 @@ class EcoProductAdminController extends Controller
     {
         $data = []; //to be sent to the view
         $data["title"] = "Create EcoProduct";
+      
         $notEcoProducts = EcoProduct::all();
         $data["notEcoProducts"] = $notEcoProducts;
 
@@ -34,7 +36,7 @@ class EcoProductAdminController extends Controller
     public function save(Request $request)
     {
         EcoProduct::validate($request);
-        EcoProduct::create($request->only(['name', 'price', 'stock', 'facts', 'description', 'categories', 'emision', 'product_life', 'photo']));
+        EcoProduct::create($request->only(['name', 'price', 'stock', 'facts', 'description', 'categories', 'emision', 'not_eco_product', 'product_life', 'photo']));
 
         return back()->with('success','Item created successfully!');
     }
