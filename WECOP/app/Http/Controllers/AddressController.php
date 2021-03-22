@@ -51,7 +51,7 @@ class AddressController extends Controller
         $address->user = $user->getId();
         $address->save();
         
-        $message = Lang::get("Succesfull added Address");
+        $message = Lang::get("Succesfully added Address");
         return back()->with('success', $message);
     }
 
