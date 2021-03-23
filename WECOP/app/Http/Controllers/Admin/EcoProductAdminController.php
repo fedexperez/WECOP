@@ -41,7 +41,7 @@ class EcoProductAdminController extends Controller
         $data = []; //to be sent to the view
         $data["title"] = "Create EcoProduct";
       
-        $notEcoProducts = EcoProduct::all();
+        $notEcoProducts = NotEcoProduct::all();
         $data["notEcoProducts"] = $notEcoProducts;
 
         return view('admin.ecoProduct.create')->with("data",$data);
