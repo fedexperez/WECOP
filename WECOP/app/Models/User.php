@@ -115,6 +115,16 @@ class User extends Authenticatable
         $this->attributes['role'] = $role;
     }
 
+    public function getRemember()
+    {
+        return $this->attributes['remember'];
+    }
+
+    public function setRemember($remember)
+    {
+        $this->attributes['remember'] = $remember;
+    }
+
     public static function validate(Request $request)
     {
         $request->validate([
