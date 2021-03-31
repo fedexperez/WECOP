@@ -18,22 +18,26 @@ use Illuminate\Support\Facades\Auth;
 class AddressController extends Controller
 {
 
+    public function options()
+    {
+        $data = []; 
+        $data["pageTitle"] = "Address Options";
+        return view('address.options')->with("data", $data);
+    }
+
     public function show($id)
     {
-        $data = []; //to be sent to the view
+        $data = []; 
+        $data["pageTitle"] = "Show Address";
         $address = Address::findOrFail($id);
-
         $data['address'] = $address;
-        $data['address_id'] = $address->getId();
-        
         return view('address.show')->with('data', $data);
     }
 
     public function create()
     {
-        $data = []; //to be sent to the view
+        $data = []; 
         $data["pageTitle"] = "Add an Address";
-
         return view('address.create')->with("data", $data);
     }
 
@@ -42,7 +46,6 @@ class AddressController extends Controller
         Address::validate($request);
 
         $user = User::findOrFail(Auth::user()->getId());
-
         $address = new Address;
         $address->postal_code = $request['postal_code'];
         $address->address = $request['address'];
@@ -59,14 +62,14 @@ class AddressController extends Controller
     {
         $data = Address::find($id);
         $data->delete();
-        return redirect()->route('address.list');
+        return redirect()->route('address.options');
     }
 
     public function list()
-    {       
+    {   
         $data = [];
+        $data["pageTitle"] = "Addresses List";
         $data["address"] = Address::all();
-        
         return view('address.list')->with("data", $data);
     }
 }

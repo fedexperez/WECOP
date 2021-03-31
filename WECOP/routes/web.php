@@ -60,6 +60,11 @@ Route::get('/admin/ecoProduct/delete/{id}', 'App\Http\Controllers\Admin\EcoProdu
 Route::post('/admin/ecoProduct/save', 'App\Http\Controllers\Admin\EcoProductAdminController@save')->name('admin.ecoProduct.save');
 
 //Address routes
+Route::get('/address/options', 'App\Http\Controllers\AddressController@options')->name("address.options");
 Route::get('/address/create', 'App\Http\Controllers\AddressController@create')->name("address.create");
 Route::post('/address/save', 'App\Http\Controllers\AddressController@save')->name("address.save");
+Route::get('/address/delete/{id}', 'App\Http\Controllers\AddressController@delete')->name("address.delete");
+Route::get('/address/list', 'App\Http\Controllers\AddressController@list')->name("address.list");
+Route::get('/address/show/{id}', 'App\Http\Controllers\AddressController@show')->name("address.show");
+
 Auth::routes();
