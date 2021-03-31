@@ -23,16 +23,17 @@ Route::get('order/list', 'App\Http\Controllers\OrderController@list')->name('ord
 Route::get('order/return/{id}', 'App\Http\Controllers\OrderController@return')->name('order.return');
 
 //Review routes
+Route::get('/ecoProduct/show/{id}/review/{rating}', 'App\Http\Controllers\ReviewController@filter')->name("review.filter");
 Route::get('/review/show/{id}', 'App\Http\Controllers\ReviewController@show')->name("review.show");
 Route::get('/review/create', 'App\Http\Controllers\ReviewController@create')->name("review.create");
 Route::get('/review/list', 'App\Http\Controllers\ReviewController@list')->name("review.list");
 Route::get('/review/delete/{id}', 'App\Http\Controllers\ReviewController@delete')->name("review.delete");
-Route::get('/review/filter/all', 'App\Http\Controllers\ReviewController@all')->name("review.filter");
-Route::get('/review/filter/1', 'App\Http\Controllers\ReviewController@oneStar')->name("review.filter1");
-Route::get('/review/filter/2', 'App\Http\Controllers\ReviewController@twoStars')->name("review.filter2");
-Route::get('/review/filter/3', 'App\Http\Controllers\ReviewController@threeStars')->name("review.filter3");
-Route::get('/review/filter/4', 'App\Http\Controllers\ReviewController@fourStars')->name("review.filter4");
-Route::get('/review/filter/5', 'App\Http\Controllers\ReviewController@fiveStars')->name("review.filter5");
+// Route::get('/review/filter/all', 'App\Http\Controllers\ReviewController@all')->name("review.filter");
+// Route::get('/review/filter/1', 'App\Http\Controllers\ReviewController@oneStar')->name("review.filter1");
+// Route::get('/review/filter/2', 'App\Http\Controllers\ReviewController@twoStars')->name("review.filter2");
+// Route::get('/review/filter/3', 'App\Http\Controllers\ReviewController@threeStars')->name("review.filter3");
+// Route::get('/review/filter/4', 'App\Http\Controllers\ReviewController@fourStars')->name("review.filter4");
+// Route::get('/review/filter/5', 'App\Http\Controllers\ReviewController@fiveStars')->name("review.filter5");
 Route::post('/review/save', 'App\Http\Controllers\ReviewController@save')->name("review.save");
 
 //AdminNotEcoProduct routes

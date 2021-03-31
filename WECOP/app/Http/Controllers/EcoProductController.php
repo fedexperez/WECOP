@@ -10,6 +10,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\EcoProduct;
+use App\Models\Review;
 
 /**
  * class ecoProductController
@@ -30,12 +31,13 @@ class EcoProductController extends Controller
     public function show($id)
     {
         $data = [];
+        $data["reviews"] = Review::where('eco_product', $id)->get();
         $ecoProduct = EcoProduct::find($id);
         if ($ecoProduct == null) {
-            return redirect() -> route('ecoProduct.notFound', ['id' => $id]);
+            return redirect()->route('ecoProduct.notFound', ['id' => $id]);
         } else {
             $data['ecoProduct'] = $ecoProduct;
-            return view('ecoProduct.show') -> with('data', $data);
+            return view('ecoProduct.show')->with('data', $data);
         }
     }
 

@@ -118,4 +118,11 @@ class ReviewController extends Controller
         return view('review.filter')->with("data", $data);
     }
 
+    public function filter($id, $rating)
+    {
+        $data = []; //to be sent to the view
+        $data["reviews"] = Review::where('eco_product', $id)->where('rating', $rating)->get();
+
+        return view('review.filter')->with("data", $data);
+    }
 }

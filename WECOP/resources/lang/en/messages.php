@@ -12,6 +12,7 @@ return [
     'MessageInput' => 'Enter Message',
     'Rating' => 'Rating',
     'Review' => 'Review',
+    'Reviews' => 'Reviews',
     'Title' => 'Title',
     'Message' => 'Message',
     'SuccesfullReview' => 'Review successfully created',
