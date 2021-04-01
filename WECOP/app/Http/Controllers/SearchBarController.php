@@ -27,7 +27,6 @@ class SearchBarController extends Controller
             ->orWhere('emision', 'LIKE', "%{$search}%")
             ->get();
     
-            echo $ecoProducts;
         // Return the search view with the results compacted
         return view('searchBar.results', compact('ecoProducts'));
     }
