@@ -67,4 +67,8 @@ Route::get('/address/delete/{id}', 'App\Http\Controllers\AddressController@delet
 Route::get('/address/list', 'App\Http\Controllers\AddressController@list')->name("address.list");
 Route::get('/address/show/{id}', 'App\Http\Controllers\AddressController@show')->name("address.show");
 
+//SearchBar routes
+Route::get('/searchBar/results', 'App\Http\Controllers\SearchBarController@search')->name("searchBar.results");
+
+//Auth routes
 Auth::routes();
