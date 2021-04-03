@@ -1,14 +1,16 @@
 @extends('layouts.app')
-@section('content')
 
+@section('content')
 <section class="page-section">
     <div class="container">
-        @if($ecoProducts->isNotEmpty())
-            @foreach ($ecoProducts as $ecoProduct)
+        @if($data['ecoProducts']->isNotEmpty())
+            @foreach ($data['ecoProducts'] as $ecoProduct)
                 <h1 class="text-center text-uppercase text-secondary">{{ $ecoProduct->getName() }}</h1>
                 <div class="row">
                         <div class="col-md-6 col-lg-4">
-                            <img class="img-fluid" src="{{ url('img/ecoProducts/'.$ecoProduct->getPhoto()) }}" alt="product"/>
+                            <a class="row" href="{{ route('ecoProduct.show', $ecoProduct->getId()) }}">
+                                <img class="img-fluid" src="{{ url('img/ecoProducts/'.$ecoProduct->getPhoto()) }}" alt="product"/>
+                            </a>
                         </div>
                         <div class="col-md-6 col-lg-8 mb-5">
                             <p class="lead">{{ $ecoProduct->getDescription() }}</p> 
