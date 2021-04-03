@@ -31,7 +31,7 @@
         <div class="col-md-12">
             <div class="row p-5">
                 <div class="col-1">
-                    <a href="{{ route('review.filter', $data['ecoProduct']->getId(), 5)}}"> 5 </a>
+                    <a href="{{ route('review.filter', ['id'=> $data['ecoProduct']->getId(),'rating'=> $data['ecoProduct']->getId()])}}"> 5 </a>
                 </div>
                 <!-- <div class="col-1">
                     <form action="{{ route('review.filter'), ['id'=> $data['ecoProduct']->getId(), 'rating' => '2']}}">
