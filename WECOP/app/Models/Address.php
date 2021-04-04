@@ -17,7 +17,10 @@ class Address extends Model
 {
     use HasFactory;
 
+    //Attributes id, postañ_code, address, country and city
     protected $fillable = ['postal_code', 'address', 'country', 'city'];
+    
+    public $timestamps = false;
     
     /**
      * Get the user that owns the address.

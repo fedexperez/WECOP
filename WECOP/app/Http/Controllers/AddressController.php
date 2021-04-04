@@ -11,28 +11,58 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Address;
+use App\Models\User;
 use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\Auth;
 
+/** 
+ * Class AddressController
+ * 
+ * @package App\Http\Controllers
+ */
 class AddressController extends Controller
 {
 
+    public function options()
+    {
+        $data = []; 
+        $title = Lang::get('messages.AddressOptions');
+        $data["pageTitle"] = $title;
+        return view('address.options')->with("data", $data);
+    }
+
     public function show($id)
     {
-        $data = []; //to be sent to the view
+        $data = [];
+        $title = Lang::get('messages.ShowAddress');
+        $data["pageTitle"] = $title;
         $address = Address::findOrFail($id);
-
         $data['address'] = $address;
-        $data['address_id'] = $address->getId();
-        
         return view('address.show')->with('data', $data);
     }
 
-    public function save(Request $request)
+    public function create()
     {
-        Address::create($request->only(["postal_code", "address", "country", "city"]));
+        $data = [];
+        $title = Lang::get('messages.CreateAddress');
+        $data["pageTitle"] = $title;
+        return view('address.create')->with("data", $data);
+    }
+
+    public function save(Request $request)
+    { 
         Address::validate($request);
 
-        $message = Lang::get("messages.SuccesfullAddress");
+        $user = User::findOrFail(Auth::user()->getId());
+        $address = new Address;
+        $address->postal_code = $request['postal_code'];
+        $address->address = $request['address'];
+        $address->city = $request['city'];
+        $address->country = $request['country'];
+        $address->user = $user->getId();
+        $address->save();
+        
+        $message = Lang::get("Succesfully added Address");
         return back()->with('success', $message);
     }
 
@@ -40,14 +70,15 @@ class AddressController extends Controller
     {
         $data = Address::find($id);
         $data->delete();
-        return redirect()->route('address.list');
+        return redirect()->route('address.options');
     }
 
     public function list()
-    {       
+    {   
         $data = [];
+        $title = Lang::get('messages.AddressList');
+        $data["pageTitle"] = $title;
         $data["address"] = Address::all();
-        
         return view('address.list')->with("data", $data);
     }
 }

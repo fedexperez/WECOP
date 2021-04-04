@@ -50,14 +50,6 @@ class ReviewController extends Controller
         return redirect()->route('review.list');
     }
 
-    public function list($id)
-    {
-        $data = []; //to be sent to the view
-        $data["reviews"] = Review::where('rating', 1.00)->where('eco_product', $id)->get();
-        $data["ecoProduct"] = EcoProduct::find($id);
-
-        return view('review.list');
-    }    
     
     public function all($id)
     {

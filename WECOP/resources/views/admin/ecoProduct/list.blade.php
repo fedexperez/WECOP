@@ -1,15 +1,15 @@
 @extends('admin.master')
 
-@section("title", $data["title"])
+@section('title', $data['title'])
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">list of ecoProducts</div>
+                <div class="card-header">@lang('messages.ListEcoProducts')</div>
                 <div class="card-body">
-                    @foreach($data["ecoProducts"] as $ecoProduct)
+                    @foreach($data['ecoProducts'] as $ecoProduct)
                     <li>
                     <a href="{{ route('admin.ecoProduct.show', $ecoProduct->getId()) }}"> {{ $ecoProduct->getName() }} </a>
                     </li>

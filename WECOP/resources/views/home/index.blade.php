@@ -1,79 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- Portfolio Section-->
+<!-- emision calculator Section-->
 <section class="page-section portfolio" id="portfolio">
     <div class="container">
         <!-- Portfolio Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">@lang('messages.EmisionCalculator')</h2>
         <!-- Icon Divider-->
         <div class="divider-custom">
             <div class="divider-custom-line"></div>
             <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
             <div class="divider-custom-line"></div>
         </div>
-        <!-- Portfolio Grid Items-->
-        <div class="row">
-            <!-- Portfolio Item 1-->
-            <div class="col-md-6 col-lg-4 mb-5">
-                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white"><i
-                                class="fas fa-plus fa-3x"></i></div>
-                    </div>
-                    <img class="img-fluid" src="{{ asset('/img/portfolio/cabin.png') }}" alt="" />
-                </div>
-            </div>
-            <!-- Portfolio Item 2-->
-            <div class="col-md-6 col-lg-4 mb-5">
-                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
-                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white"><i
-                                class="fas fa-plus fa-3x"></i></div>
-                    </div>
-                    <img class="img-fluid" src="{{ asset('/img/portfolio/cake.png') }}" alt="" />
-                </div>
-            </div>
-            <!-- Portfolio Item 3-->
-            <div class="col-md-6 col-lg-4 mb-5">
-                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
-                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white"><i
-                                class="fas fa-plus fa-3x"></i></div>
-                    </div>
-                    <img class="img-fluid" src="{{ asset('/img/portfolio/circus.png') }}" alt="" />
-                </div>
-            </div>
-            <!-- Portfolio Item 4-->
-            <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
-                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white"><i
-                                class="fas fa-plus fa-3x"></i></div>
-                    </div>
-                    <img class="img-fluid" src="{{ asset('/img/portfolio/game.png') }}" alt="" />
-                </div>
-            </div>
-            <!-- Portfolio Item 5-->
-            <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
-                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white"><i
-                                class="fas fa-plus fa-3x"></i></div>
-                    </div>
-                    <img class="img-fluid" src="{{ asset('/img/portfolio/safe.png') }}" alt="" />
-                </div>
-            </div>
-            <!-- Portfolio Item 6-->
-            <div class="col-md-6 col-lg-4">
-                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6">
-                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white"><i
-                                class="fas fa-plus fa-3x"></i></div>
-                    </div>
-                    <img class="img-fluid" src="{{ asset('/img/portfolio/submarine.png') }}" alt="" />
-                </div>
-            </div>
+        <h4 class="text-center  text-secondary mb-0">@lang('messages.CalculatorInstructions')</h2><br>
+        <div class="text-center lead">
+            <!-- EmsionCalculator-->
+            <form method="POST" action="{{ route('home.emisionCalculator') }}">
+                @csrf
+                <label for="eco_product">@lang('messages.CalculatorChooseProduct')</label>
+                <select name="eco_product_id" id="eco_product_id">
+                    @foreach($data['ecoProducts'] as $ecoProduct)
+                    <option value="{{ $ecoProduct->getId() }}"> {{ $ecoProduct->getName() }} </option>
+                    @endforeach
+                </select><br>
+                <input class="btn btn-primary" type="submit" value="Calculate" />
+            </form><br>
+            @include('util.emision')
         </div>
     </div>
 </section>

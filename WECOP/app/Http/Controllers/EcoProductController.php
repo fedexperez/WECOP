@@ -13,7 +13,7 @@ use App\Models\EcoProduct;
 use App\Models\Review;
 
 /**
- * class ecoProductController
+ * Class ecoProductController
  * 
  * @package App\Http\Controllers
  */
@@ -44,6 +44,6 @@ class EcoProductController extends Controller
 
     public function notFound()
     {
-        return view('ecoProduct.notFound');
+        return view('util.notFound');
     }
 }

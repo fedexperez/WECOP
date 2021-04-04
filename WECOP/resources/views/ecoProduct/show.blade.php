@@ -3,8 +3,7 @@
 @section('content')
 <section class="page-section">
     <div class="container">
-        <h1 class="text-center text-uppercase text-secondary">{{ $data['ecoProduct']->getName() }}
-        </h1>
+        <h1 class="text-center text-uppercase text-secondary">{{ $data['ecoProduct']->getName() }}</h1>
         <!-- Icon Divider-->
         <div class="divider-custom">
             <div class="divider-custom-line"></div>
@@ -19,12 +18,16 @@
                 <p class="lead">{{ $data['ecoProduct']->getDescription() }}</p>
                 <p class="lead">$ {{ $data['ecoProduct']->getPrice() }}</p>
                 @if( $data['ecoProduct']->getStock() > 0)
-                    <p class="lead" style="color:green">In stock!</p><br>
+                <p class="lead" style="color:green">@lang('messages.InStock')</p><br>
                 @else
-                    <p class="lead" style="color:red">Out of stock</p><br>
+                <p class="lead" style="color:red">@lang('messages.OutStock')</p><br>
                 @endif
                 <p class="lead">{{ $data['ecoProduct']->getFacts() }}</p><br>
             </div>
+        </div>
+        <br><br>
+        <div>
+            <h1 class="text-center text-uppercase text-secondary">@lang('messages.Reviews')</h1>
         </div>
         <div class="col-md-12">
             <div class="row p-5">

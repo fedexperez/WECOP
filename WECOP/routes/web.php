@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,13 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Home
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home.index');
-//Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
+Route::post('/home/emisionCalculator/', 'App\Http\Controllers\HomeController@calculateEmision')->name('home.emisionCalculator');
 
 //Order routes
 Route::get('order/show/{id}', 'App\Http\Controllers\OrderController@show')->name('order.show');
 Route::get('order/list', 'App\Http\Controllers\OrderController@list')->name('order.list');
 Route::get('order/return/{id}', 'App\Http\Controllers\OrderController@return')->name('order.return');
+
+//AdminReview routes
+Route::get('/admin/review/list/ecoProduct/{id}', 'App\Http\Controllers\Admin\ReviewAdminController@list')->name('admin.review.list');
+Route::get('/admin/review/show/{id}', 'App\Http\Controllers\Admin\ReviewAdminController@show')->name('admin.review.show');
+Route::get('/admin/review/delete/{id}', 'App\Http\Controllers\Admin\ReviewAdminController@delete')->name('admin.review.delete');
 
 //Review routes
 Route::get('/review/show/{id}', 'App\Http\Controllers\ReviewController@show')->name('review.show');
@@ -30,15 +37,21 @@ Route::get('/review/product/{id}/filter/all', 'App\Http\Controllers\ReviewContro
 Route::get('/review/product/{id}/filter/{filter}', 'App\Http\Controllers\ReviewController@filter')->name('review.filter');
 Route::post('/review/save', 'App\Http\Controllers\ReviewController@save')->name('review.save');
 
-//NotEcoProduct routes
-Route::get('/notEcoProduct/show/{id}', 'App\Http\Controllers\NotEcoProductController@show')->name('notEcoProduct.show');
-Route::get('/notEcoProduct/list', 'App\Http\Controllers\NotEcoProductController@list')->name('notEcoProduct.list');
-Route::get('/notEcoProduct/show/{id}/NotFound', 'App\Http\Controllers\NotEcoProductController@notFound')->name('notEcoProduct.notFound');
+//AdminNotEcoProduct routes
+Route::get('/admin/notEcoProduct/show/{id}', 'App\Http\Controllers\Admin\NotEcoProductAdminController@show')->name('admin.notEcoProduct.show');
+Route::get('/admin/notEcoProduct/list', 'App\Http\Controllers\Admin\NotEcoProductAdminController@list')->name('admin.notEcoProduct.list');
+Route::get('/admin/notEcoProduct/show/{id}/NotFound', 'App\Http\Controllers\Admin\NotEcoProductAdminController@notFound')->name('admin.notEcoProduct.notFound');
+Route::get('/admin/notEcoProduct/create', 'App\Http\Controllers\Admin\NotEcoProductAdminController@create')->name('admin.notEcoProduct.create');
+Route::get('/admin/notEcoProduct/delete/{id}', 'App\Http\Controllers\Admin\NotEcoProductAdminController@delete')->name('admin.notEcoProduct.delete');
+Route::post('/admin/notEcoProduct/save', 'App\Http\Controllers\Admin\NotEcoProductAdminController@save')->name('admin.notEcoProduct.save');
 
 //EcoProduct routes
 Route::get('/ecoProduct/show/{id}', 'App\Http\Controllers\EcoProductController@show')->name('ecoProduct.show');
 Route::get('/ecoProduct/list', 'App\Http\Controllers\EcoProductController@list')->name('ecoProduct.list');
 Route::get('/ecoProduct/show/{id}/NotFound', 'App\Http\Controllers\EcoProductController@notFound')->name('ecoProduct.notFound');
+
+//Admin index
+Route::get('/admin', 'App\Http\Controllers\Admin\AdminHomeController@index')->name('admin.home.index');
 
 //AdminEcoProduct routes
 Route::get('/admin/ecoProduct/show/{id}', 'App\Http\Controllers\Admin\EcoProductAdminController@show')->name('admin.ecoProduct.show');
@@ -48,4 +61,16 @@ Route::get('/admin/ecoProduct/create', 'App\Http\Controllers\Admin\EcoProductAdm
 Route::get('/admin/ecoProduct/delete/{id}', 'App\Http\Controllers\Admin\EcoProductAdminController@delete')->name('admin.ecoProduct.delete');
 Route::post('/admin/ecoProduct/save', 'App\Http\Controllers\Admin\EcoProductAdminController@save')->name('admin.ecoProduct.save');
 
+//Address routes
+Route::get('/address/options', 'App\Http\Controllers\AddressController@options')->name('address.options');
+Route::get('/address/create', 'App\Http\Controllers\AddressController@create')->name('address.create');
+Route::post('/address/save', 'App\Http\Controllers\AddressController@save')->name('address.save');
+Route::get('/address/delete/{id}', 'App\Http\Controllers\AddressController@delete')->name('address.delete');
+Route::get('/address/list', 'App\Http\Controllers\AddressController@list')->name('address.list');
+Route::get('/address/show/{id}', 'App\Http\Controllers\AddressController@show')->name('address.show');
+
+//SearchBar routes
+Route::get('/searchBar/results', 'App\Http\Controllers\SearchBarController@search')->name('searchBar.results');
+
+//Auth routes
 Auth::routes();

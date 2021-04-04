@@ -11,30 +11,56 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\EcoProduct;  
+use App\Models\NotEcoProduct;  
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Lang;
+use App\Models\User;  
 
 /**
- * class ecoProductAdminController
+ * Class ecoProductAdminController
  * 
  * @package App\Http\Controllers
  */
 class EcoProductAdminController extends Controller
 {
+    /**
+     * This function is run every time an AdminHomeController is instanced. It checks
+     * if the user is a client or an admin for access permisions.
+     * 
+     * @return next with the previous request.
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware(
+            function ($request, $next) {
+                if (Auth::user()->getRole() == "client") {
+                    return redirect()->route('home.index');
+                }
+                return $next($request);
+            }
+        );
+    }
 
     public function create()
     {
         $data = []; //to be sent to the view
-        $data["title"] = "Create EcoProduct";
+        $title = Lang::get('messages.CreateEcoProducts');
+        $data['title'] = $title;
+      
+        $notEcoProducts = NotEcoProduct::all();
+        $data["notEcoProducts"] = $notEcoProducts;
 
-        return view('admin.ecoProduct.create')->with("data",$data);
+        return view('admin.ecoProduct.create')->with("data", $data);
     }
 
     public function save(Request $request)
     {
         EcoProduct::validate($request);
-        EcoProduct::create($request->only(['name', 'price', 'stock', 'facts', 'description', 'categories', 'emision', 'product_life', 'photo']));
+        EcoProduct::create($request->only(['name', 'price', 'stock', 'facts', 'description', 'categories', 'emision', 'not_eco_product', 'product_life', 'photo']));
 
-        return back()->with('success','Item created successfully!');
+        return back()->with('success', 'Item created successfully!');
     }
 
     public function delete($id)
@@ -48,7 +74,8 @@ class EcoProductAdminController extends Controller
     public function list()
     {
         $data = [];
-        $data["title"] = "List of EcoProducts";
+        $title = Lang::get('messages.ListEcoProducts');
+        $data["title"] = $title;
         $data["ecoProducts"] = ecoProduct::all();
 
         return view('admin.ecoProduct.list')->with("data", $data);
@@ -58,17 +85,18 @@ class EcoProductAdminController extends Controller
     {
         $data = []; //to be sent to the view
         $ecoProduct = EcoProduct::find($id);
-        if($ecoProduct == NULL){
+        if ($ecoProduct == null) {
             return redirect()->route('admin.ecoProduct.notFound', ['id' => $id]);
         } else {
             $data["title"] = $ecoProduct->getName();
             $data["ecoProduct"] = $ecoProduct;
-            return view('admin.ecoProduct.show')->with("data",$data);
+            return view('admin.ecoProduct.show')->with("data", $data);
         }
     }
 
-    public function notFound(){
-        return view('admin.ecoProduct.notFound');
+    public function notFound()
+    {
+        return view('admin.notFound');
     }
 
 }

@@ -22,8 +22,32 @@ class EcoProduct extends Model
 {
     use HasFactory;
 
-    //Attributes id, name, price, stock, description, facts, categories, emision, productLife, photo
-    protected $fillable = ['name', 'price', 'stock', 'facts', 'description', 'categories', 'emision', 'product_life', 'photo'];
+    //Attributes id, name, price, stock, description, facts, categories, emision, product_life, photo
+    protected $fillable = ['name', 'price', 'stock', 'facts', 'description', 'categories', 'emision', 'not_eco_product', 'product_life', 'photo'];
+
+    /**
+     * Get the NotEcoProduct associated with the EcoProduct.
+     */
+    public function notEcoProduct()
+    {
+        return $this->hasOne(NotEcoProduct::class);
+    }
+
+    /**
+     * Get the Items associated with the EcoProduct.
+     */
+    public function items()
+    {
+        return $this->hasMany(Item::class);
+    }
+
+    /**
+     * Get the Reviews associated with the EcoProduct.
+     */
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 
     public function getId()
     {
@@ -105,6 +129,16 @@ class EcoProduct extends Model
         $this->attributes['emision'] = $emision;
     }
 
+    public function getNotEcoProduct()
+    {
+        return $this->attributes['not_eco_product'];
+    }
+
+    public function setNotEcoProduct($not_eco_product)
+    {
+        $this->attributes['not_eco_product'] = $not_eco_product;
+    }
+
     public function getProductLife()
     {
         return $this->attributes['product_life'];
@@ -125,10 +159,16 @@ class EcoProduct extends Model
         $this->attributes['photo'] = $photo;
     }
 
+    /** 
+     * This static function validates that the data sent has specific data type and is required.
+     *  
+     * @param request 
+     * */
     public static function validate(Request $request)
     {
         //['name', 'price', 'stock', 'facts', 'description', 'categories', 'emision', 'product_life', 'photo']
-        $request->validate([
+        $request->validate(
+            [
             "name" => "required",
             "price" => "required | numeric | gt:0",
             "stock" => "required | numeric | min:0",
@@ -138,7 +178,8 @@ class EcoProduct extends Model
             "emision" => "required | numeric | gt:0",
             "product_life" => "required",
             "photo" => "required",
-        ]);
+            ]
+        );
     }
 
 }

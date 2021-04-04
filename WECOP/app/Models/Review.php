@@ -1,7 +1,14 @@
 <?php
 
-namespace App\Models;
+/** 
+ * WECOP
+ * 
+ * @author fperezm1
+ * PHP version: 8.0.2
+ */
 
+namespace App\Models;
+ 
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -14,6 +21,14 @@ class Review extends Model
 
     //attributes id, rating, title, message
     protected $fillable = ['rating', 'title', 'message'];
+
+    /**
+     * Get the EcoProduct that owns the Review.
+     */
+    public function EcoProduct()
+    {
+        return $this->belongsTo(EcoProduct::class);
+    }
 
     public function getId()
     {
