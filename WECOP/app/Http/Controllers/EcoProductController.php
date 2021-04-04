@@ -41,6 +41,6 @@ class EcoProductController extends Controller
 
     public function notFound()
     {
-        return view('ecoProduct.notFound');
+        return view('util.notFound');
     }
 }

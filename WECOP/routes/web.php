@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Auth;
 
 //Home
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home.index'); // DRY?
-//Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 Route::post('/home/emisionCalculator/', 'App\Http\Controllers\HomeController@calculateEmision')->name('home.emisionCalculator');
 
 //Order routes
@@ -42,7 +41,7 @@ Route::get('/admin/notEcoProduct/show/{id}', 'App\Http\Controllers\Admin\NotEcoP
 Route::get('/admin/notEcoProduct/list', 'App\Http\Controllers\Admin\NotEcoProductAdminController@list')->name('admin.notEcoProduct.list');
 Route::get('/admin/notEcoProduct/show/{id}/NotFound', 'App\Http\Controllers\Admin\NotEcoProductAdminController@notFound')->name('admin.notEcoProduct.notFound');
 Route::get('/admin/notEcoProduct/create', 'App\Http\Controllers\Admin\NotEcoProductAdminController@create')->name('admin.notEcoProduct.create');
-Route::get('/admin/notEcoProduct/delete/{id}', 'App\Http\Controllers\Admin\NotEcoProductAdminController@delete')->name("admin.notEcoProduct.delete");
+Route::get('/admin/notEcoProduct/delete/{id}', 'App\Http\Controllers\Admin\NotEcoProductAdminController@delete')->name('admin.notEcoProduct.delete');
 Route::post('/admin/notEcoProduct/save', 'App\Http\Controllers\Admin\NotEcoProductAdminController@save')->name('admin.notEcoProduct.save');
 
 //EcoProduct routes
@@ -58,7 +57,7 @@ Route::get('/admin/ecoProduct/show/{id}', 'App\Http\Controllers\Admin\EcoProduct
 Route::get('/admin/ecoProduct/list', 'App\Http\Controllers\Admin\EcoProductAdminController@list')->name('admin.ecoProduct.list');
 Route::get('/admin/ecoProduct/show/{id}/NotFound', 'App\Http\Controllers\Admin\EcoProductAdminController@notFound')->name('admin.ecoProduct.notFound');
 Route::get('/admin/ecoProduct/create', 'App\Http\Controllers\Admin\EcoProductAdminController@create')->name('admin.ecoProduct.create');
-Route::get('/admin/ecoProduct/delete/{id}', 'App\Http\Controllers\Admin\EcoProductAdminController@delete')->name("admin.ecoProduct.delete");
+Route::get('/admin/ecoProduct/delete/{id}', 'App\Http\Controllers\Admin\EcoProductAdminController@delete')->name('admin.ecoProduct.delete');
 Route::post('/admin/ecoProduct/save', 'App\Http\Controllers\Admin\EcoProductAdminController@save')->name('admin.ecoProduct.save');
 
 //Address routes
