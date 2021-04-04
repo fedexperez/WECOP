@@ -63,7 +63,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">For achieving a change</p>
+                <p class="masthead-subheading font-weight-light mb-0">@lang('messages.Slogan')</p>
             </div>
         </header>
 

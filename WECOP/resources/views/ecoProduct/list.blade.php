@@ -10,7 +10,7 @@
             <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
             <div class="divider-custom-line"></div>
         </div>
-    </div>
+    </div><br><br>
     <div class="text-center row">
         <div class="text-center col-6 mx-auto">
             @foreach ($data['ecoProducts'] as $ecoProduct)
