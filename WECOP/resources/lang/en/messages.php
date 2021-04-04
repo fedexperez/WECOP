@@ -24,6 +24,7 @@ return [
     'Review3' => '3 stars',
     'Review4' => '4 stars',
     'Review5' => '5 stars',
+    'ReviewOf' => 'Review of the product:',
      
     //For order
     'Order' => 'Order',

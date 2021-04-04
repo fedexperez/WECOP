@@ -1,4 +1,4 @@
-@extends('review.list')
+@extends('ecoproduct.show')
 
 @section('reviewsfiltered')
 <div class="col-md-12">
@@ -6,42 +6,48 @@
     @if($data["filter"] == "0" )
         @foreach($data["reviews"] as $review)
         <li>
-            @lang('messages.Review') <a href="{{ route('review.show', $review->getId()) }}"> {{ $review->getId() }} </a>
+            <a href="{{ route('review.show', $review->getId()) }}"> {{ $review->getTitle() }} - {{ $review->getRating() }}</a>
+            <p class="lead">{{ $review->getMessage() }}</p>
         </li>
         @endforeach
     @endif
     @if($data["filter"] == "1" )
         @foreach($data["reviews"] as $review)
         <li>
-            @lang('messages.Review') <a href="{{ route('review.show', $review->getId()) }}"> {{ $review->getId() }} </a>
+            <a href="{{ route('review.show', $review->getId()) }}"> {{ $review->getTitle() }} - {{ $review->getRating() }}</a>
+            <p class="lead">{{ $review->getMessage() }}</p>
         </li>
         @endforeach
     @endif
     @if($data["filter"] == "2" )
         @foreach($data["reviews"] as $review)
         <li>
-            @lang('messages.Review') <a href="{{ route('review.show', $review->getId()) }}"> {{ $review->getId() }} </a>
+            <a href="{{ route('review.show', $review->getId()) }}"> {{ $review->getTitle() }} - {{ $review->getRating() }}</a>
+            <p class="lead">{{ $review->getMessage() }}</p>
         </li>
         @endforeach
     @endif
     @if($data["filter"] == "3" )
         @foreach($data["reviews"] as $review)
         <li>
-            @lang('messages.Review') <a href="{{ route('review.show', $review->getId()) }}"> {{ $review->getId() }} </a>
+        <a href="{{ route('review.show', $review->getId()) }}"> {{ $review->getTitle() }} - {{ $review->getRating() }}</a>
+        <p class="lead">{{ $review->getMessage() }}</p>
         </li>
         @endforeach
     @endif
     @if($data["filter"] == "4" )
         @foreach($data["reviews"] as $review)
         <li>
-            @lang('messages.Review') <a href="{{ route('review.show', $review->getId()) }}"> {{ $review->getId() }} </a>
+            <a href="{{ route('review.show', $review->getId()) }}"> {{ $review->getTitle() }} - {{ $review->getRating() }}</a>
+            <p class="lead">{{ $review->getMessage() }}</p>
         </li>
         @endforeach
     @endif
     @if($data["filter"] == "5" )
         @foreach($data["reviews"] as $review)
         <li>
-            @lang('messages.Review') <a href="{{ route('review.show', $review->getId()) }}"> {{ $review->getId() }} </a>
+            <a href="{{ route('review.show', $review->getId()) }}"> {{ $review->getTitle() }} - {{ $review->getRating() }}</a>
+            <p class="lead">{{ $review->getMessage() }}</p>
         </li>
         @endforeach
     @endif

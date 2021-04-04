@@ -53,6 +53,16 @@ class Review extends Model
     public function setMessage($message)
     {
         $this->attributes['message'] = $message;
+    }    
+    
+    public function getEcoProduct()
+    {
+        return $this->attributes['eco_product'];
+    }
+
+    public function setEcoProduct($message)
+    {
+        $this->attributes['eco_product'] = $message;
     }
 
     public static function validate(Request $request)
