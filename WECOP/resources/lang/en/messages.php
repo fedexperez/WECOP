@@ -63,5 +63,5 @@ return [
     'Search'            => 'Search',
     'InStock'           => 'In Stock!',
     'OutStock'          => 'Out of Stock :C',
-    'NotEcoProFound'    => 'Not EcoProducts found'
+    'ProductNotFound'    => 'Not EcoProducts found'
 ];

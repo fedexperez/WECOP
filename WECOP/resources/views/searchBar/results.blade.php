@@ -28,7 +28,7 @@
         @endforeach
         @else
         <div>
-            <a>@lang('messages.NotEcoProFound')</a>
+            @include('util.notFound')
         </div>
         @endif
     </div>
