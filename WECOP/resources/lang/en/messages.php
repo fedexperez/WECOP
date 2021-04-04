@@ -51,10 +51,16 @@ return [
 
     //For ecoProducts
     'EcoProducts'  => 'EcoProducts',
+    'PriceLowHigh' => 'Price, Lowest to Highest',
+    'PriceHighLow' => 'Price, Highest to Lowest',
+    'DateNewestOldest' => 'Date, Newest to Oldest',
+    'DateOldestNewest' => 'Date, Oldest to Newest',
+    'EmissionLowHigh' => 'Emission, Lowest to Highest',
+    'EmissionHighLow' => 'Emission, Highest to Lowest',
 
     //FOR ADMIN
     'ProductName'   => 'Product name:',
-    'ProductEmision'=> 'Product emision:',
+    'ProductEmision'=> 'Product emission:',
     'ProductLife'   => 'Product life:',
     'AdminWECOP'    => 'Admin-WECOP',
     'CreateECO'     => 'CreateECO',
@@ -65,7 +71,7 @@ return [
     'AdminDescription' => 'Description',
     'EnterName'     => 'Enter Name',
     'EnterPrice'    => 'Enter Price',
-    'EnterEmision'  => 'Enter Emision',
+    'EnterEmision'  => 'Enter Emission',
     'EnterProductLife'=> 'Enter Product Life (days)',
     'ProductNotExits'   => 'Product Does Not Exist',
     //ecoProducts

@@ -17,7 +17,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ route('home.index') }}">
+                <a class="navbar-brand" href="{{ route('admin.home.index') }}">
                     @lang('messages.AdminWECOP')
                 </a>
                 <a class="nav-link" href="{{ route('admin.ecoProduct.create') }}">@lang('messages.CreateECO')</a>

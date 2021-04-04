@@ -19,10 +19,33 @@ use App\Models\EcoProduct;
 class EcoProductController extends Controller
 {
 
-    public function list()
+    public function list($filter)
     {
         $data = [];
-        $data["ecoProducts"] = ecoProduct::all();
+        if ($filter == 'All') {
+            $data['ecoProducts'] = ecoProduct::all();
+        } elseif ($filter == 'Price-Low-High') {
+            $ecoProducts = ecoProduct::orderBy('price', 'ASC')->get();
+            $data['ecoProducts'] = $ecoProducts;
+        } elseif ($filter == 'Price-High-Low') {
+            $ecoProducts = ecoProduct::orderBy('price', 'DESC')->get();
+            $data['ecoProducts'] = $ecoProducts;
+        } elseif ($filter == 'Date-Newest-Oldest') {
+            $ecoProducts = ecoProduct::orderBy('created_at', 'DESC')->get();
+            $data['ecoProducts'] = $ecoProducts;
+        } elseif ($filter == 'Date-Oldest-Newest') {
+            $ecoProducts = ecoProduct::orderBy('created_at', 'ASC')->get();
+            $data['ecoProducts'] = $ecoProducts;
+        } elseif ($filter == 'Emission-Low-High') {
+            $ecoProducts = ecoProduct::orderBy('emision', 'ASC')->get();
+            $data['ecoProducts'] = $ecoProducts;
+        } elseif ($filter == 'Emission-High-Low') {
+            $ecoProducts = ecoProduct::orderBy('emision', 'DESC')->get();
+            $data['ecoProducts'] = $ecoProducts;
+        } elseif ($filter == 'In-Stock') {
+            $ecoProducts = ecoProduct::where('stock', '>', '0')->get();
+            $data['ecoProducts'] = $ecoProducts;
+        } 
 
         return view('ecoProduct.list')->with("data", $data);
     }
@@ -43,4 +66,5 @@ class EcoProductController extends Controller
     {
         return view('util.notFound');
     }
+
 }
