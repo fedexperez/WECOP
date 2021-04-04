@@ -9,6 +9,7 @@ return [
     'Brand'      => 'WECOP',
     'EcoProducts'=> 'WECOP',
     'ProductNotFound'=> 'The product you are looking for was not found',
+    'Slogan'      => 'For achieving a change',
 
     //For index
     'EmisionCalculator'      =>'Emision Calculator',
