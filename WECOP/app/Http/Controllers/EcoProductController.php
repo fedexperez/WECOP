@@ -12,7 +12,7 @@ namespace App\Http\Controllers;
 use App\Models\EcoProduct;
 
 /**
- * class ecoProductController
+ * Class ecoProductController
  * 
  * @package App\Http\Controllers
  */

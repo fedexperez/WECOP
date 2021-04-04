@@ -18,6 +18,7 @@ use App\Models\User;
 
 /** 
  * Class NotEcoProductAdminController
+ * 
  * @package App\Http\Controllers
  */
 class NotEcoProductAdminController extends Controller

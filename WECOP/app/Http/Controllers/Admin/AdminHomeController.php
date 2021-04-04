@@ -16,6 +16,7 @@ use App\Models\User;
 
 /**
  * Class AdminHomeController
+ * 
  * @package App\Http\Controllers
  */
 class AdminHomeController extends Controller
