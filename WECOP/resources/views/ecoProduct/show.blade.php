@@ -28,5 +28,4 @@
         </div>
     </div>
 </section>
-@yiel('oli')
 @endsection

@@ -44,7 +44,7 @@ class HomeController extends Controller
         //Calculate emision
         $emision = $notEcoProductEmision * ($ecoProductLife/$notEcoProductLife) - $ecoProductEmision;
 
-        $message = "If you buy a/an " . $ecoProduct->getName() . " you stop ejecting " . strval($emision) . " grams of CO2 to the atmosphere";
+        $message = "If you buy a/an " . $ecoProduct->getName() . " you stop ejecting " . strval($emision) . " grams of CO2 to the atmosphere per unit used";
 
         return back()->with('emision', $message);
     }
