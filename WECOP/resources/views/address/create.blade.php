@@ -43,7 +43,7 @@
                                 <label for="address" class="col-md-4 col-form-label text-md-right">@lang('messages.Address')</label>
 
                                 <div class="col-md-6">
-                                    <input id="address" type="address" class="form-control @error('address') is-invalid @enderror" name="address" required autocomplete="new-address">
+                                    <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" required autocomplete="new-address">
 
                                     @error('address')
                                     <span class="invalid-feedback" role="alert">
@@ -57,7 +57,8 @@
                                 <label for="postal_code" class="col-md-4 col-form-label text-md-right">@lang('messages.PostalCode')</label>
 
                                 <div class="col-md-6">
-                                    <input id="postal_code" type="postal_code" class="form-control @error('postal_code') is-invalid @enderror" name="postal_code" value="{{ old('postal_code') }}" required autocomplete="postal_code">
+                                    <input id="postal_code" type="number" class="form-control @error('postal_code') is-invalid @enderror" 
+                                    name="postal_code" value="{{ old('postal_code') }}" required autocomplete="postal_code">
 
                                     @error('postal_code')
                                     <span class="invalid-feedback" role="alert">

@@ -18,9 +18,9 @@
                 <p class="lead">{{ $ecoProduct->getDescription() }}</p>
                 <p class="lead">$ {{ $ecoProduct->getPrice() }}</p>
                 @if( $ecoProduct->getStock() > 0)
-                <p class="lead" style="color:green">In stock!</p><br>
+                <p class="lead" style="color:green">@lang('messages.InStock')</p><br>
                 @else
-                <p class="lead" style="color:red">Out of stock :(</p><br>
+                <p class="lead" style="color:red">@lang('messages.OutStock')</p><br>
                 @endif
                 <p class="lead">{{ $ecoProduct->getFacts() }}</p><br>
             </div>
@@ -28,7 +28,7 @@
         @endforeach
         @else
         <div>
-            <a>Not EcoProducts found</a>
+            <a>@lang('messages.NotEcoProFound')</a>
         </div>
         @endif
     </div>

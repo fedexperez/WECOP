@@ -61,5 +61,7 @@ return [
 
     //SearchBar
     'Search'            => 'Search',
-    
+    'InStock'           => 'In Stock!',
+    'OutStock'          => 'Out of Stock :C',
+    'NotEcoProFound'    => 'Not EcoProducts found'
 ];
