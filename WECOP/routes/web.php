@@ -14,8 +14,10 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\HomeController@index')->name("home.index");
+//Home
+Route::get('/', 'App\Http\Controllers\HomeController@index')->name("home.index"); // DRY?
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
+Route::post('/home/emisionCalculator/', 'App\Http\Controllers\HomeController@calculateEmision')->name('home.emisionCalculator');
 
 //Order routes
 Route::get('order/show/{id}', 'App\Http\Controllers\OrderController@show')->name('order.show');

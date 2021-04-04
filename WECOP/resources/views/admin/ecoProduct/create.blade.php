@@ -34,7 +34,7 @@
                         <input type="number" placeholder="Enter product life" name="product_life"
                             value="{{ old('product_life') }}" />
                         <input type="text" placeholder="Enter photo name" name="photo" value="{{ old('photo') }}" />
-                        <label for="cars">Choose a NotEcoProduct:</label>
+                        <label for="not_eco_product">Choose a NotEcoProduct:</label>
                         <select name="not_eco_product" id="not_eco_product">
                             @foreach($data["notEcoProducts"] as $notEcoProduct)
                             <option value="{{ $notEcoProduct->getId() }}">{{ $notEcoProduct->getName() }}</option>

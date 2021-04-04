@@ -129,6 +129,16 @@ class EcoProduct extends Model
         $this->attributes['emision'] = $emision;
     }
 
+    public function getNotEcoProduct()
+    {
+        return $this->attributes['not_eco_product'];
+    }
+
+    public function setNotEcoProduct($not_eco_product)
+    {
+        $this->attributes['not_eco_product'] = $not_eco_product;
+    }
+
     public function getProductLife()
     {
         return $this->attributes['product_life'];
