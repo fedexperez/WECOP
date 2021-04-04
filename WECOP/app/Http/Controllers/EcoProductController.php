@@ -12,7 +12,7 @@ namespace App\Http\Controllers;
 use App\Models\EcoProduct;
 
 /**
- * class ecoProductController
+ * Class ecoProductController
  * 
  * @package App\Http\Controllers
  */
@@ -41,6 +41,6 @@ class EcoProductController extends Controller
 
     public function notFound()
     {
-        return view('ecoProduct.notFound');
+        return view('util.notFound');
     }
 }
