@@ -35,7 +35,7 @@ class EcoProductAdminController extends Controller
         $this->middleware('auth');
         $this->middleware(
             function ($request, $next) {
-                if (Auth::user()->getRole() == "client") {
+                if (Auth::user()->getRole() == 'client') {
                     return redirect()->route('home.index');
                 }
                 return $next($request);
@@ -50,9 +50,9 @@ class EcoProductAdminController extends Controller
         $data['title'] = $title;
       
         $notEcoProducts = NotEcoProduct::all();
-        $data["notEcoProducts"] = $notEcoProducts;
+        $data['notEcoProducts'] = $notEcoProducts;
 
-        return view('admin.ecoProduct.create')->with("data", $data);
+        return view('admin.ecoProduct.create')->with('data', $data);
     }
 
     public function save(Request $request)
@@ -75,10 +75,10 @@ class EcoProductAdminController extends Controller
     {
         $data = [];
         $title = Lang::get('messages.ListEcoProducts');
-        $data["title"] = $title;
-        $data["ecoProducts"] = ecoProduct::all();
+        $data['title'] = $title;
+        $data['ecoProducts'] = ecoProduct::all();
 
-        return view('admin.ecoProduct.list')->with("data", $data);
+        return view('admin.ecoProduct.list')->with('data', $data);
     }
 
     public function show($id)
@@ -88,9 +88,9 @@ class EcoProductAdminController extends Controller
         if ($ecoProduct == null) {
             return redirect()->route('admin.ecoProduct.notFound', ['id' => $id]);
         } else {
-            $data["title"] = $ecoProduct->getName();
-            $data["ecoProduct"] = $ecoProduct;
-            return view('admin.ecoProduct.show')->with("data", $data);
+            $data['title'] = $ecoProduct->getName();
+            $data['ecoProduct'] = $ecoProduct;
+            return view('admin.ecoProduct.show')->with('data', $data);
         }
     }
 

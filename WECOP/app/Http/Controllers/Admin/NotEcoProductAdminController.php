@@ -34,7 +34,7 @@ class NotEcoProductAdminController extends Controller
         $this->middleware('auth');
         $this->middleware(
             function ($request, $next) {
-                if (Auth::user()->getRole() == "client") {
+                if (Auth::user()->getRole() == 'client') {
                     return redirect()->route('home.index');
                 }
                 return $next($request);
@@ -46,9 +46,9 @@ class NotEcoProductAdminController extends Controller
     {
         $data = []; //to be sent to the view
         $title = Lang::get('messages.CreateNotEcoProducts');
-        $data["title"] = $title;
+        $data['title'] = $title;
 
-        return view('admin.notEcoProduct.create')->with("data", $data);
+        return view('admin.notEcoProduct.create')->with('data', $data);
     }
 
     public function save(Request $request)
@@ -63,12 +63,12 @@ class NotEcoProductAdminController extends Controller
     {
         $data = []; //to be sent to the view
         $title = Lang::get('messages.ListNotEcoProducts');
-        $data["title"] = $title;
+        $data['title'] = $title;
 
         $notEcoProducts = NotEcoProduct::All();
-        $data["notEcoProducts"] = $notEcoProducts;
+        $data['notEcoProducts'] = $notEcoProducts;
 
-        return view('admin.notEcoProduct.list')->with("data", $data);
+        return view('admin.notEcoProduct.list')->with('data', $data);
     }
 
     public function show($id)
@@ -78,9 +78,9 @@ class NotEcoProductAdminController extends Controller
         if ($notEcoProduct == null) {
             return redirect()->route('admin.notEcoProduct.notFound', ['id' => $id]);
         } else {
-            $data["title"] = $notEcoProduct->getName();
-            $data["notEcoProduct"] = $notEcoProduct;
-            return view('admin.notEcoProduct.show')->with("data", $data);
+            $data['title'] = $notEcoProduct->getName();
+            $data['notEcoProduct'] = $notEcoProduct;
+            return view('admin.notEcoProduct.show')->with('data', $data);
         }
     }
 

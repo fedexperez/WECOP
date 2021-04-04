@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
-
 use App\Http\Controllers\Controller;
 use App\Models\Review;
 use App\Models\EcoProduct;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Lang;
 
 class ReviewAdminController extends Controller
 {
@@ -23,7 +20,7 @@ class ReviewAdminController extends Controller
         $this->middleware('auth');
         $this->middleware(
             function ($request, $next) {
-                if (Auth::user()->getRole() == "client") {
+                if (Auth::user()->getRole() == 'client') {
                     return redirect()->route('home.index');
                 }
                 return $next($request);
@@ -34,11 +31,11 @@ class ReviewAdminController extends Controller
     public function list($id)
     {
         $data = []; //to be sent to the view
-        $data["reviews"] = Review::where('eco_product', $id)->get();
+        $data['reviews'] = Review::where('eco_product', $id)->get();
         $ecoProduct = EcoProduct::findOrFail($id);
-        $data["ecoProduct"] = $ecoProduct;
+        $data['ecoProduct'] = $ecoProduct;
 
-        return view('admin.review.list')->with("data", $data);
+        return view('admin.review.list')->with('data', $data);
     }
 
 
@@ -47,12 +44,12 @@ class ReviewAdminController extends Controller
         $data = []; //to be sent to the viewS
         $review = Review::findOrFail($id);
         $ecoProduct = EcoProduct::findOrFail($review->getEcoProduct());
-        $data["ecoProduct"] = $ecoProduct;
+        $data['ecoProduct'] = $ecoProduct;
 
-        $data["review"] = $review;
-        $data["title"] = $review->getTitle();
+        $data['review'] = $review;
+        $data['title'] = $review->getTitle();
 
-        return view('admin.review.show')->with("data", $data);
+        return view('admin.review.show')->with('data', $data);
     }
 
 

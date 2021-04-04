@@ -34,7 +34,7 @@ class SearchBarController extends Controller
 
         $data = [];
         $title = Lang::get('messages.Results');
-        $data["pageTitle"] = $title;
+        $data['pageTitle'] = $title;
 
         // Get the search value from the request.
         $search = $request->input('search');

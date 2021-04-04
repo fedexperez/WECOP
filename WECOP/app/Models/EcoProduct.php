@@ -169,15 +169,15 @@ class EcoProduct extends Model
         //['name', 'price', 'stock', 'facts', 'description', 'categories', 'emision', 'product_life', 'photo']
         $request->validate(
             [
-            "name" => "required",
-            "price" => "required | numeric | gt:0",
-            "stock" => "required | numeric | min:0",
-            "facts" => "required",
-            "description" => "required",
-            "categories" => "required",
-            "emision" => "required | numeric | gt:0",
-            "product_life" => "required",
-            "photo" => "required",
+            'name' => 'required',
+            'price' => 'required | numeric | gt:0',
+            'stock' => 'required | numeric | min:0',
+            'facts' => 'required',
+            'description' => 'required',
+            'categories' => 'required',
+            'emision' => 'required | numeric | gt:0',
+            'product_life' => 'required',
+            'photo' => 'required',
             ]
         );
     }

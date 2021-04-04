@@ -27,15 +27,15 @@ class AddressController extends Controller
     {
         $data = []; 
         $title = Lang::get('messages.AddressOptions');
-        $data["pageTitle"] = $title;
-        return view('address.options')->with("data", $data);
+        $data['pageTitle'] = $title;
+        return view('address.options')->with('data', $data);
     }
 
     public function show($id)
     {
         $data = [];
         $title = Lang::get('messages.ShowAddress');
-        $data["pageTitle"] = $title;
+        $data['pageTitle'] = $title;
         $address = Address::findOrFail($id);
         $data['address'] = $address;
         return view('address.show')->with('data', $data);
@@ -45,8 +45,8 @@ class AddressController extends Controller
     {
         $data = [];
         $title = Lang::get('messages.CreateAddress');
-        $data["pageTitle"] = $title;
-        return view('address.create')->with("data", $data);
+        $data['pageTitle'] = $title;
+        return view('address.create')->with('data', $data);
     }
 
     public function save(Request $request)
@@ -62,7 +62,7 @@ class AddressController extends Controller
         $address->user = $user->getId();
         $address->save();
         
-        $message = Lang::get("Succesfully added Address");
+        $message = Lang::get('Succesfully added Address');
         return back()->with('success', $message);
     }
 
@@ -77,8 +77,8 @@ class AddressController extends Controller
     {   
         $data = [];
         $title = Lang::get('messages.AddressList');
-        $data["pageTitle"] = $title;
-        $data["address"] = Address::all();
-        return view('address.list')->with("data", $data);
+        $data['pageTitle'] = $title;
+        $data['address'] = Address::all();
+        return view('address.list')->with('data', $data);
     }
 }

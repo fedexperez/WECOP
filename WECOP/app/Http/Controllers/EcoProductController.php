@@ -23,16 +23,16 @@ class EcoProductController extends Controller
     public function list()
     {
         $data = [];
-        $data["ecoProducts"] = ecoProduct::all();
+        $data['ecoProducts'] = ecoProduct::all();
 
-        return view('ecoProduct.list')->with("data", $data);
+        return view('ecoProduct.list')->with('data', $data);
     }
 
     public function show($id)
     {
         $data = [];
-        $data["reviews"] = Review::where('eco_product', $id)->get()->take(5);
-        $data["filter"] = [0,1,2,3,4,5];
+        $data['reviews'] = Review::where('eco_product', $id)->get()->take(5);
+        $data['filter'] = [0,1,2,3,4,5];
         $ecoProduct = EcoProduct::find($id);
         if ($ecoProduct == null) {
             return redirect() -> route('ecoProduct.notFound', ['id' => $id]);

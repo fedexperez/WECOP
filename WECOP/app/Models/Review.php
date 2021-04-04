@@ -84,9 +84,9 @@ class Review extends Model
     {
 
         $request->validate([
-            "rating" => "required|numeric|gt:0|max:5",
-            "title" => "required",
-            "message" => "required",
+            'rating' => 'required|numeric|gt:0|max:5',
+            'title' => 'required',
+            'message' => 'required',
         ]);
     }
     

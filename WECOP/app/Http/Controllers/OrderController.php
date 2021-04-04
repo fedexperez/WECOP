@@ -40,8 +40,8 @@ class OrderController extends Controller
     public function list()
     {       
         $data = [];
-        $data["orders"] = Order::all();
+        $data['orders'] = Order::all();
         
-        return view('order.list')->with("data", $data);
+        return view('order.list')->with('data', $data);
     }
 }

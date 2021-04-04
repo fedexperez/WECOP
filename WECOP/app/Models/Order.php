@@ -98,8 +98,8 @@ class Order extends Model
     {
 
         $request->validate([
-            "paymentType" => "required",
-            "shipping" => "required",
+            'paymentType' => 'required',
+            'shipping' => 'required',
         ]);
     }
     

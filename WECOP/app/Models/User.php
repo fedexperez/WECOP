@@ -128,11 +128,11 @@ class User extends Authenticatable
     public static function validate(Request $request)
     {
         $request->validate([
-            "user_name" => "required",
-            "name" => "required",
-            "credit_card" => "required",
-            "email"  => "required",
-            "password"  => "required",
+            'user_name' => 'required',
+            'name' => 'required',
+            'credit_card' => 'required',
+            'email'  => 'required',
+            'password'  => 'required',
         ]);
     }
 }
