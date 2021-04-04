@@ -3,6 +3,7 @@
 return [
 
     //FOR FINAL USER
+    'Menu' => 'Menu',
     'HomePage'   => 'Home Page',
     'Delete'     => 'Delete',
     'Brand'      => 'WECOP',
@@ -85,5 +86,38 @@ return [
     'CreateNotEcoProducts'=> 'Create NotEcoProducts',
     'ListNotEcoProducts'=> 'List of NotEcoProducts',
 
+    //For address
+    'CreateAddress'     => 'Create an Address',
+    'SuccesfullAddress' => 'Address successfully created',
+    'Create'            => 'Create',
+    'List'              => 'List',
+    'Country'           => 'Country',
+    'City'              => 'City',
+    'Address'           => 'Address',
+    'PostalCode'        => 'Postal Code',
+    'YourAddresses'     => 'Your Addresses',
+    'AddressOptions'    => 'Address Options',
+    'ShowAddress'       => 'Show Address',
+    'AddressList'       => 'Addresses List',
+
+    //For User
+    'Login'             => 'Login',
+    'Register'          => 'Register',
+    'LogOut'            => 'Logout',
+    'Name'              => 'Name',
+    'EmailAddress'      => 'E-Mail Address',
+    'Password'          => 'Password',
+    'ConfirmPass'       => 'Confirm Password',
+    'UserName'          => 'User Name',
+    'RememberMe'        => 'Remember Me',
+    'ForgotPassword'    => 'Forgot Your Password?',
+    
+
+    //SearchBar
+    'Search'            => 'Search',
+    'Results'           => 'Results',
+    'InStock'           => 'In Stock!',
+    'OutStock'          => 'Out of Stock :C',
+    'ProductNotFound'   => 'Not EcoProducts found'
 
 ];

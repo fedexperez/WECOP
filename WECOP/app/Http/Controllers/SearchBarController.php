@@ -11,29 +11,41 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Address;
 use App\Models\EcoProduct;
+use Illuminate\Support\Facades\Lang;
 
+/** 
+ * Class SearchBarController
+ * 
+ * @package App\Http\Controllers
+ */
 class SearchBarController extends Controller
 {
-    public function search(Request $request){
+
+    /**
+     * Searchs the input of the search bar in the database table eco_products
+     * and returns the a view with all the elements that match the input.
+     *
+     * @param  $request
+     * @return view
+     */
+    public function search(Request $request)
+    {
 
         $data = [];
+        $title = Lang::get('messages.Results');
+        $data["pageTitle"] = $title;
 
-        // Get the search value from the request
+        // Get the search value from the request.
         $search = $request->input('search');
 
-        // Search in the name and id columns from the EcoProduct table
-        //$ecoProducts = EcoProduct::query()->where('name', 'LIKE', "%{$search}%")
+        // Search in the name, categories and emision columns from the EcoProduct table.
         $ecoProducts = EcoProduct::query()->where('name', 'LIKE', "%{$search}%")
-        ->orWhere('categories', 'LIKE', "%{$search}%")
-        ->orWhere('emision', 'LIKE', "%{$search}%")
-        ->get();
+            ->orWhere('categories', 'LIKE', "%{$search}%")
+            ->orWhere('emision', 'LIKE', "%{$search}%")
+            ->get();
 
         $data ['ecoProducts'] = $ecoProducts;
-    
-        // Return the search view with the results compacted
-        //return view('searchBar.results', compact('ecoProducts'));
 
         return view('searchBar.results') -> with('data', $data);
     }

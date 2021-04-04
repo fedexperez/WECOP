@@ -62,7 +62,8 @@ class RegisterController extends Controller
             "credit_card" => ['string', 'max:150'], 
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+            ]
+        );
     }
 
     /**
@@ -78,6 +79,7 @@ class RegisterController extends Controller
             'user_name' => $data['user_name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-        ]);
+            ]
+        );
     }
 }

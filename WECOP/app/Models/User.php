@@ -18,7 +18,7 @@ use Illuminate\Http\Request;
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
-
+    //Attributes id, name, user_name, credit_card, email, password and role.
     /**
      * The attributes that are mass assignable.
      *
