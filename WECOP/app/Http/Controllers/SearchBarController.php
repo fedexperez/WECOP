@@ -11,7 +11,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Address;
 use App\Models\EcoProduct;
 
 class SearchBarController extends Controller
@@ -24,16 +23,12 @@ class SearchBarController extends Controller
         $search = $request->input('search');
 
         // Search in the name and id columns from the EcoProduct table
-        //$ecoProducts = EcoProduct::query()->where('name', 'LIKE', "%{$search}%")
         $ecoProducts = EcoProduct::query()->where('name', 'LIKE', "%{$search}%")
         ->orWhere('categories', 'LIKE', "%{$search}%")
         ->orWhere('emision', 'LIKE', "%{$search}%")
         ->get();
 
         $data ['ecoProducts'] = $ecoProducts;
-    
-        // Return the search view with the results compacted
-        //return view('searchBar.results', compact('ecoProducts'));
 
         return view('searchBar.results') -> with('data', $data);
     }
