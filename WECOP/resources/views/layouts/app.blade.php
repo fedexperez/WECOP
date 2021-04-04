@@ -21,7 +21,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="{{ route('home.index') }}">WECOP</a>
+                <a class="navbar-brand js-scroll-trigger" href="{{ route('home.index') }}">@lang('messages.Brand')</a>
                 <form class="form-inline" action="{{ route('searchBar.results') }}" method="GET">
                     <div class="form-group mx-sm-3 mb-2">
                         <input type="text" class="form-control" name="search" required/>
@@ -34,7 +34,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('ecoProduct.list') }}">{{ __('ecoproducts') }}</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('ecoProduct.list') }}">@lang('messages.EcoProducts')</a></li>
                     @guest
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('register') }}">{{ __('Register') }}</a></li>
@@ -55,7 +55,7 @@
         <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">WECOP</h1>
+                <h1 class="masthead-heading text-uppercase mb-0">@lang('messages.Brand')</h1>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>

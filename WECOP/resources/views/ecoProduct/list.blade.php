@@ -3,7 +3,7 @@
 @section('content')
 <section class="page-section">
     <div class="container">
-        <h1 class="text-center text-uppercase text-secondary">EcoProducts</h1>
+        <h1 class="text-center text-uppercase text-secondary">@lang('messages.EcoProducts')</h1>
         <!-- Icon Divider-->
         <div class="divider-custom">
             <div class="divider-custom-line"></div>

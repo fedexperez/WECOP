@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Auth;
 */
 
 //Home
-Route::get('/', 'App\Http\Controllers\HomeController@index')->name("home.index"); // DRY?
-Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
+Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home.index'); // DRY?
+//Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 Route::post('/home/emisionCalculator/', 'App\Http\Controllers\HomeController@calculateEmision')->name('home.emisionCalculator');
 
 //Order routes
@@ -38,9 +38,9 @@ Route::get('/review/filter/5', 'App\Http\Controllers\ReviewController@fiveStars'
 Route::post('/review/save', 'App\Http\Controllers\ReviewController@save')->name("review.save");
 
 //AdminNotEcoProduct routes
-Route::get('/admin/notEcoProduct/show/{id}', 'App\Http\Controllers\Admin\NotEcoProductAdminController@show')->name("admin.notEcoProduct.show");
-Route::get('/admin/notEcoProduct/list', 'App\Http\Controllers\Admin\NotEcoProductAdminController@list')->name("admin.notEcoProduct.list");
-Route::get('/admin/notEcoProduct/show/{id}/NotFound', 'App\Http\Controllers\Admin\NotEcoProductAdminController@notFound')->name("admin.notEcoProduct.notFound");
+Route::get('/admin/notEcoProduct/show/{id}', 'App\Http\Controllers\Admin\NotEcoProductAdminController@show')->name('admin.notEcoProduct.show');
+Route::get('/admin/notEcoProduct/list', 'App\Http\Controllers\Admin\NotEcoProductAdminController@list')->name('admin.notEcoProduct.list');
+Route::get('/admin/notEcoProduct/show/{id}/NotFound', 'App\Http\Controllers\Admin\NotEcoProductAdminController@notFound')->name('admin.notEcoProduct.notFound');
 Route::get('/admin/notEcoProduct/create', 'App\Http\Controllers\Admin\NotEcoProductAdminController@create')->name('admin.notEcoProduct.create');
 Route::get('/admin/notEcoProduct/delete/{id}', 'App\Http\Controllers\Admin\NotEcoProductAdminController@delete')->name("admin.notEcoProduct.delete");
 Route::post('/admin/notEcoProduct/save', 'App\Http\Controllers\Admin\NotEcoProductAdminController@save')->name('admin.notEcoProduct.save');

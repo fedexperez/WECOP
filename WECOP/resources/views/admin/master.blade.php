@@ -18,12 +18,12 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('home.index') }}">
-                    Admin-WECOP
+                    @lang('messages.AdminWECOP')
                 </a>
-                <a class="nav-link" href="{{ route('admin.ecoProduct.create') }}">CreateEco</a>
-                <a class="nav-link" href="{{ route('admin.ecoProduct.list') }}">ListEco</a>
-                <a class="nav-link" href="{{ route('admin.notEcoProduct.create') }}">CreateNotEco</a>
-                <a class="nav-link" href="{{ route('admin.notEcoProduct.list') }}">ListNotEco</a>
+                <a class="nav-link" href="{{ route('admin.ecoProduct.create') }}">@lang('messages.CreateECO')</a>
+                <a class="nav-link" href="{{ route('admin.ecoProduct.list') }}">@lang('messages.ListECO')</a>
+                <a class="nav-link" href="{{ route('admin.notEcoProduct.create') }}">@lang('messages.CreateNotECO')</a>
+                <a class="nav-link" href="{{ route('admin.notEcoProduct.list') }}">@lang('messages.ListNotECO')</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="{{ __('Toggle navigation') }}">

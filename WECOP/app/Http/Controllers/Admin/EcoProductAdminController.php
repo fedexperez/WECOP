@@ -14,6 +14,7 @@ use App\Models\EcoProduct;
 use App\Models\NotEcoProduct;  
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Lang;
 use App\Models\User;  
 
 /**
@@ -39,7 +40,8 @@ class EcoProductAdminController extends Controller
     public function create()
     {
         $data = []; //to be sent to the view
-        $data["title"] = "Create EcoProduct";
+        $title = Lang::get('messages.CreateEcoProducts');
+        $data['title'] = $title;
       
         $notEcoProducts = NotEcoProduct::all();
         $data["notEcoProducts"] = $notEcoProducts;
@@ -66,7 +68,8 @@ class EcoProductAdminController extends Controller
     public function list()
     {
         $data = [];
-        $data["title"] = "List of EcoProducts";
+        $title = Lang::get('messages.ListEcoProducts');
+        $data["title"] = $title;
         $data["ecoProducts"] = ecoProduct::all();
 
         return view('admin.ecoProduct.list')->with("data", $data);
@@ -86,7 +89,7 @@ class EcoProductAdminController extends Controller
     }
 
     public function notFound(){
-        return view('admin.ecoProduct.notFound');
+        return view('admin.notFound');
     }
 
 }

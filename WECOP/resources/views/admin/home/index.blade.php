@@ -5,9 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Welcome to WECOP-Admin page!</div>
+                <div class="card-header">@lang('messages.WelcomeAdmin')</div>
                 <div class="card-body">
-                    Description
+                @lang('messages.AdminDescription')
                 </div>
             </div>
         </div>

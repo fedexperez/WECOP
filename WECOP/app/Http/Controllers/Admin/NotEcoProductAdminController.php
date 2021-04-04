@@ -11,6 +11,7 @@ use App\Models\NotEcoProduct;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Lang;
 use App\Models\User;  
 
 /** 
@@ -34,7 +35,8 @@ class NotEcoProductAdminController extends Controller
     public function create()
     {
         $data = []; //to be sent to the view
-        $data["title"] = "Create EcoProduct";
+        $title = Lang::get('messages.CreateNotEcoProducts');
+        $data["title"] = $title;
 
         return view('admin.notEcoProduct.create')->with("data",$data);
     }
@@ -50,7 +52,8 @@ class NotEcoProductAdminController extends Controller
     public function list()
     {
         $data = []; //to be sent to the view
-        $data["title"] = "List of NotEcoProduct";
+        $title = Lang::get('messages.ListNotEcoProducts');
+        $data["title"] = $title;
 
         $notEcoProducts = NotEcoProduct::All();
         $data["notEcoProducts"] = $notEcoProducts;
@@ -63,7 +66,7 @@ class NotEcoProductAdminController extends Controller
         $data = []; //to be sent to the view
         $notEcoProduct = NotEcoProduct::find($id);
         if($notEcoProduct == NULL){
-            return redirect()->route('notEcoProduct.notFound', ['id' => $id]);
+            return redirect()->route('admin.notEcoProduct.notFound', ['id' => $id]);
         } else {
             $data["title"] = $notEcoProduct->getName();
             $data["notEcoProduct"] = $notEcoProduct;
@@ -72,7 +75,7 @@ class NotEcoProductAdminController extends Controller
     }
 
     public function notFound(){
-        return view('admin.notEcoProduct.notFound');
+        return view('admin.notFound');
     }
 
     public function delete($id)

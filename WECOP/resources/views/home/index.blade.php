@@ -5,19 +5,19 @@
 <section class="page-section portfolio" id="portfolio">
     <div class="container">
         <!-- Portfolio Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Emision Calculator</h2>
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">@lang('messages.EmisionCalculator')</h2>
         <!-- Icon Divider-->
         <div class="divider-custom">
             <div class="divider-custom-line"></div>
             <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
             <div class="divider-custom-line"></div>
         </div>
-        <h4 class="text-center  text-secondary mb-0">Here you can calculate the emision you are not producing if you buy any of the products available in our store.</h2><br>
+        <h4 class="text-center  text-secondary mb-0">@lang('messages.CalculatorInstructions')</h2><br>
         <div class="text-center lead">
             <!-- EmsionCalculator-->
             <form method="POST" action="{{ route('home.emisionCalculator') }}">
                 @csrf
-                <label for="eco_product">Choose an EcoProduct to calculate emision:</label>
+                <label for="eco_product">@lang('messages.CalculatorChooseProduct')</label>
                 <select name="eco_product_id" id="eco_product_id">
                     @foreach($data['ecoProducts'] as $ecoProduct)
                     <option value="{{ $ecoProduct->getId() }}"> {{ $ecoProduct->getName() }} </option>

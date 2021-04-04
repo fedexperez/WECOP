@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 use App\Models\EcoProduct;
 use App\Models\NotEcoProduct;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Lang;
 
 /** 
  * Class HomeController
@@ -25,10 +26,10 @@ class HomeController extends Controller
         return view('home.index')->with("data", $data);
     }
 
-    public function home()
+    /*public function home()
     {
         return redirect()->route('home.index');
-    }
+    }*/
 
     public function calculateEmision(Request $request)
     {
@@ -37,14 +38,18 @@ class HomeController extends Controller
         $ecoProductEmision = floatval($ecoProduct->getEmision());
         $ecoProductLife = floatval($ecoProduct->getProductLife());
         $notEcoProductId = $ecoProduct->getNotEcoProduct();
-        $notEcoProduct = EcoProduct::find($notEcoProductId);
+        echo $notEcoProductId;
+        $notEcoProduct = NotEcoProduct::find($notEcoProductId);
+        echo $notEcoProduct;
         $notEcoProductEmision = floatval($notEcoProduct->getEmision());
         $notEcoProductLife = floatval($notEcoProduct->getProductLife());
 
         //Calculate emision
         $emision = $notEcoProductEmision * ($ecoProductLife/$notEcoProductLife) - $ecoProductEmision;
-
-        $message = "If you buy a/an " . $ecoProduct->getName() . " you stop ejecting " . strval($emision) . " grams of CO2 to the atmosphere per unit used";
+        $IfCalculateMessage = Lang::get('messages.IfCalculateMessage');
+        $StopCalculateMessage = Lang::get('messages.StopCalculateMessage');
+        $GramsCalculateMessage = Lang::get('messages.GramsCalculateMessage');
+        $message = $IfCalculateMessage . $ecoProduct->getName() . $StopCalculateMessage . strval($emision) . $GramsCalculateMessage;
 
         return back()->with('emision', $message);
     }

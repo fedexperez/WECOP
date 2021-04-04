@@ -1,6 +1,6 @@
 @extends('admin.master')
 
-@section("title", $data["title"])
+@section("title", $data['title'])
 
 @section('content')
 <div class="container">
@@ -8,7 +8,7 @@
         <div class="col-md-8">
             @include('util.message')
             <div class="card">
-                <div class="card-header">Create EcoProduct</div>
+                <div class="card-header">@lang('messages.CreateEcoProducts')</div>
                 <div class="card-body">
                     @if($errors->any())
                     <ul id="errors">
@@ -20,21 +20,21 @@
 
                     <form method="POST" action="{{ route('admin.ecoProduct.save') }}">
                         @csrf
-                        <input type="text" placeholder="Enter name" name="name" value="{{ old('name') }}" />
-                        <input type="number" step="0.01" placeholder="Enter price" name="price"
+                        <input type="text" placeholder="@lang('messages.EnterName')" name="name" value="{{ old('name') }}" />
+                        <input type="number" step="0.01" placeholder="@lang('messages.EnterPrice')" name="price"
                             value="{{ old('price') }}" />
-                        <input type="number" placeholder="Enter stock" name="stock" value="{{ old('stock') }}" />
-                        <input type="text" placeholder="Enter facts" name="facts" value="{{ old('facts') }}" />
-                        <input type="text" placeholder="Enter description" name="description"
+                        <input type="number" placeholder="@lang('messages.EnterStock')" name="stock" value="{{ old('stock') }}" />
+                        <input type="text" placeholder="@lang('messages.EnterFact')" name="facts" value="{{ old('facts') }}" />
+                        <input type="text" placeholder="@lang('messages.EnterDescp')" name="description"
                             value="{{ old('description') }}" />
-                        <input type="text" placeholder="Enter categories" name="categories"
+                        <input type="text" placeholder="@lang('messages.EnterCategories')" name="categories"
                             value="{{ old('categories') }}" />
-                        <input type="number" step="0.01" placeholder="Enter emision" name="emision"
+                        <input type="number" step="0.01" placeholder="@lang('messages.EnterEmision')" name="emision"
                             value="{{ old('emision') }}" />
-                        <input type="number" placeholder="Enter product life" name="product_life"
+                        <input type="number" placeholder="@lang('messages.EnterProductLife')" name="product_life"
                             value="{{ old('product_life') }}" />
-                        <input type="text" placeholder="Enter photo name" name="photo" value="{{ old('photo') }}" />
-                        <label for="not_eco_product">Choose a NotEcoProduct:</label>
+                        <input type="text" placeholder="@lang('messages.EnterPhoto')" name="photo" value="{{ old('photo') }}" />
+                        <label for="not_eco_product">@lang('messages.ChooseNotEco')</label>
                         <select name="not_eco_product" id="not_eco_product">
                             @foreach($data["notEcoProducts"] as $notEcoProduct)
                             <option value="{{ $notEcoProduct->getId() }}">{{ $notEcoProduct->getName() }}</option>
