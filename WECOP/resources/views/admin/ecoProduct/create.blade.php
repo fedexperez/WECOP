@@ -1,6 +1,6 @@
 @extends('admin.master')
 
-@section("title", $data['title'])
+@section('title', $data['title'])
 
 @section('content')
 <div class="container">
@@ -36,7 +36,7 @@
                         <input type="text" placeholder="@lang('messages.EnterPhoto')" name="photo" value="{{ old('photo') }}" />
                         <label for="not_eco_product">@lang('messages.ChooseNotEco')</label>
                         <select name="not_eco_product" id="not_eco_product">
-                            @foreach($data["notEcoProducts"] as $notEcoProduct)
+                            @foreach($data['notEcoProducts'] as $notEcoProduct)
                             <option value="{{ $notEcoProduct->getId() }}">{{ $notEcoProduct->getName() }}</option>
                             @endforeach
                         </select>

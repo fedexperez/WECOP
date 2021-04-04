@@ -1,6 +1,6 @@
 @extends('admin.master')
 
-@section("title", $data["title"])
+@section('title', $data['title'])
 
 @section('content')
 <div class="container">

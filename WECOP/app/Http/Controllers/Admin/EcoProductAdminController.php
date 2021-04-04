@@ -18,23 +18,29 @@ use Illuminate\Support\Facades\Lang;
 use App\Models\User;  
 
 /**
- * class ecoProductAdminController
+ * Class ecoProductAdminController
  * 
  * @package App\Http\Controllers
  */
 class EcoProductAdminController extends Controller
 {
-
+    /**
+     * This function is run every time an AdminHomeController is instanced. It checks
+     * if the user is a client or an admin for access permisions.
+     * 
+     * @return next with the previous request.
+     */
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware(function ($request, $next) {
-            if(Auth::user()->getRole() == "client"){
-                return redirect()->route('home.index');
+        $this->middleware(
+            function ($request, $next) {
+                if (Auth::user()->getRole() == "client") {
+                    return redirect()->route('home.index');
+                }
+                return $next($request);
             }
-    
-            return $next($request);
-        });
+        );
     }
 
     public function create()
@@ -46,7 +52,7 @@ class EcoProductAdminController extends Controller
         $notEcoProducts = NotEcoProduct::all();
         $data["notEcoProducts"] = $notEcoProducts;
 
-        return view('admin.ecoProduct.create')->with("data",$data);
+        return view('admin.ecoProduct.create')->with("data", $data);
     }
 
     public function save(Request $request)
@@ -54,7 +60,7 @@ class EcoProductAdminController extends Controller
         EcoProduct::validate($request);
         EcoProduct::create($request->only(['name', 'price', 'stock', 'facts', 'description', 'categories', 'emision', 'not_eco_product', 'product_life', 'photo']));
 
-        return back()->with('success','Item created successfully!');
+        return back()->with('success', 'Item created successfully!');
     }
 
     public function delete($id)
@@ -79,16 +85,17 @@ class EcoProductAdminController extends Controller
     {
         $data = []; //to be sent to the view
         $ecoProduct = EcoProduct::find($id);
-        if($ecoProduct == NULL){
+        if ($ecoProduct == null) {
             return redirect()->route('admin.ecoProduct.notFound', ['id' => $id]);
         } else {
             $data["title"] = $ecoProduct->getName();
             $data["ecoProduct"] = $ecoProduct;
-            return view('admin.ecoProduct.show')->with("data",$data);
+            return view('admin.ecoProduct.show')->with("data", $data);
         }
     }
 
-    public function notFound(){
+    public function notFound()
+    {
         return view('admin.notFound');
     }
 

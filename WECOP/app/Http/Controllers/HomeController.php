@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Lang;
 
 /** 
  * Class HomeController
+ * 
  * @package App\Http\Controllers
  */
 class HomeController extends Controller
@@ -23,14 +24,16 @@ class HomeController extends Controller
         $data = [];
         $data['ecoProducts'] = EcoProduct::all();
 
-        return view('home.index')->with("data", $data);
+        return view('home.index')->with('data', $data);
     }
 
-    /*public function home()
-    {
-        return redirect()->route('home.index');
-    }*/
-
+    /**
+     * This function calculates the emision not emited when selecting any EcoProduct. 
+     * Using the next fromula: notEcoProductEmison * (ecoProductLife/notEcoProductLife) - ecoProductEmision
+     * 
+     * @param request is an ecoProduct colected from a form
+     * @return back with a messages.
+     */
     public function calculateEmision(Request $request)
     {
         $ecoProductId = $request->input('eco_product_id');

@@ -1,6 +1,8 @@
 <?php
 
 /** 
+ * WECOP
+ * 
  * @author clopezr9
  * PHP version: 8.0.2
  * */
@@ -20,16 +22,23 @@ use App\Models\User;
  */
 class NotEcoProductAdminController extends Controller
 {
+    /**
+     * This function is run every time an AdminHomeController is instanced. It checks
+     * if the user is a client or an admin for access permisions.
+     * 
+     * @return next with the previous request.
+     */
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware(function ($request, $next) {
-            if(Auth::user()->getRole() == "client"){
-                return redirect()->route('home.index');
+        $this->middleware(
+            function ($request, $next) {
+                if (Auth::user()->getRole() == "client") {
+                    return redirect()->route('home.index');
+                }
+                return $next($request);
             }
-    
-            return $next($request);
-        });
+        );
     }
 
     public function create()
@@ -38,7 +47,7 @@ class NotEcoProductAdminController extends Controller
         $title = Lang::get('messages.CreateNotEcoProducts');
         $data["title"] = $title;
 
-        return view('admin.notEcoProduct.create')->with("data",$data);
+        return view('admin.notEcoProduct.create')->with("data", $data);
     }
 
     public function save(Request $request)
@@ -46,7 +55,7 @@ class NotEcoProductAdminController extends Controller
         NotEcoProduct::validate($request);
         NotEcoProduct::create($request->only(['name', 'price', 'emision', 'product_life']));
 
-        return back()->with('success','Item created successfully!');
+        return back()->with('success', 'Item created successfully!');
     }
 
     public function list()
@@ -58,23 +67,24 @@ class NotEcoProductAdminController extends Controller
         $notEcoProducts = NotEcoProduct::All();
         $data["notEcoProducts"] = $notEcoProducts;
 
-        return view('admin.notEcoProduct.list')->with("data",$data);
+        return view('admin.notEcoProduct.list')->with("data", $data);
     }
 
     public function show($id)
     {
         $data = []; //to be sent to the view
         $notEcoProduct = NotEcoProduct::find($id);
-        if($notEcoProduct == NULL){
+        if ($notEcoProduct == null) {
             return redirect()->route('admin.notEcoProduct.notFound', ['id' => $id]);
         } else {
             $data["title"] = $notEcoProduct->getName();
             $data["notEcoProduct"] = $notEcoProduct;
-            return view('admin.notEcoProduct.show')->with("data",$data);
+            return view('admin.notEcoProduct.show')->with("data", $data);
         }
     }
 
-    public function notFound(){
+    public function notFound()
+    {
         return view('admin.notFound');
     }
 
