@@ -13,14 +13,14 @@
                             <div>
                                 <form action="{{ route('address.create') }}">
                                     <button type="submit" class="btn btn-primary">
-                                    @lang('messages.Create')
+                                        @lang('messages.Create')
                                     </button>
                                 </form>
                             </div>
                             <div>
                                 <form action="{{ route('address.list') }}">
                                     <button type="submit" class="btn btn-primary">
-                                    @lang('messages.List')
+                                        @lang('messages.List')
                                     </button>
                                 </form>
                             </div>

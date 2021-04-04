@@ -15,6 +15,11 @@ use App\Models\User;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Auth;
 
+/** 
+ * Class AddressController
+ * 
+ * @package App\Http\Controllers
+ */
 class AddressController extends Controller
 {
 

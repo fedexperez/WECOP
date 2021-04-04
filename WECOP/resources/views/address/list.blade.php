@@ -13,9 +13,9 @@
     </div>
     <div class="text-center">
         @foreach ($data['address'] as $address)
-        <li>
-            <a href="{{ route('address.show', $address->getId()) }}">{{ $address->getAddress() }}</a>
-        </li>
+            <li>
+                <a href="{{ route('address.show', $address->getId()) }}">{{ $address->getAddress() }}</a>
+            </li>
         @endforeach
     </div>
 </section>
