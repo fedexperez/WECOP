@@ -9,4 +9,4 @@
 5). La base de datos estara vacia por lo tanto debe crear datos ejecutando los scripts de SQL que se encuentran en la carpeta "docs/SqlScripts".  
 
 ## DNS
-Tambien se puede acceder al proyecto que esta en AWS con el siguiente [link](http://ec2-52-86-218-146.compute-1.amazonaws.com/WECOP/WECOP/public/)
+Tambien se puede acceder al proyecto que esta en AWS con el siguiente [link](http://ec2-52-86-218-146.compute-1.amazonaws.com/WECOP/WECOP/public/).
