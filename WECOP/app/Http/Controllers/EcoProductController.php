@@ -18,7 +18,13 @@ use App\Models\EcoProduct;
  */
 class EcoProductController extends Controller
 {
-
+    
+    /**
+     * This function list the ecoProducts depending on the specified filter.
+     * 
+     * @param filter is the condition to be aplied.
+     * @return back with a view and data.
+     */
     public function list($filter)
     {
         $data = [];
