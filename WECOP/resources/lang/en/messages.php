@@ -46,6 +46,9 @@ return [
     'Address'           => 'Address',
     'PostalCode'        => 'Postal Code',
     'YourAddresses'     => 'Your Addresses',
+    'AddressOptions'    => 'Address Options',
+    'ShowAddress'       => 'Show Address',
+    'AddressList'       => 'Addresses List',
 
     //For User
     'Login'             => 'Login',
@@ -58,10 +61,12 @@ return [
     'UserName'          => 'User Name',
     'RememberMe'        => 'Remember Me',
     'ForgotPassword'    => 'Forgot Your Password?',
+    
 
     //SearchBar
     'Search'            => 'Search',
+    'Results'           => 'Results',
     'InStock'           => 'In Stock!',
     'OutStock'          => 'Out of Stock :C',
-    'ProductNotFound'    => 'Not EcoProducts found'
+    'ProductNotFound'   => 'Not EcoProducts found'
 ];

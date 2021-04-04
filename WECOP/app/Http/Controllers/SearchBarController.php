@@ -12,6 +12,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\EcoProduct;
+use Illuminate\Support\Facades\Lang;
 
 /** 
  * Class SearchBarController
@@ -32,6 +33,8 @@ class SearchBarController extends Controller
     {
 
         $data = [];
+        $title = Lang::get('messages.Results');
+        $data["pageTitle"] = $title;
 
         // Get the search value from the request.
         $search = $request->input('search');

@@ -26,14 +26,16 @@ class AddressController extends Controller
     public function options()
     {
         $data = []; 
-        $data["pageTitle"] = "Address Options";
+        $title = Lang::get('messages.AddressOptions');
+        $data["pageTitle"] = $title;
         return view('address.options')->with("data", $data);
     }
 
     public function show($id)
     {
-        $data = []; 
-        $data["pageTitle"] = "Show Address";
+        $data = [];
+        $title = Lang::get('messages.ShowAddress');
+        $data["pageTitle"] = $title;
         $address = Address::findOrFail($id);
         $data['address'] = $address;
         return view('address.show')->with('data', $data);
@@ -41,8 +43,9 @@ class AddressController extends Controller
 
     public function create()
     {
-        $data = []; 
-        $data["pageTitle"] = "Add an Address";
+        $data = [];
+        $title = Lang::get('messages.CreateAddress');
+        $data["pageTitle"] = $title;
         return view('address.create')->with("data", $data);
     }
 
@@ -73,7 +76,8 @@ class AddressController extends Controller
     public function list()
     {   
         $data = [];
-        $data["pageTitle"] = "Addresses List";
+        $title = Lang::get('messages.AddressList');
+        $data["pageTitle"] = $title;
         $data["address"] = Address::all();
         return view('address.list')->with("data", $data);
     }

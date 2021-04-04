@@ -15,8 +15,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 //Home
-Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home.index'); // DRY?
-//Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
+Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home.index');
 Route::post('/home/emisionCalculator/', 'App\Http\Controllers\HomeController@calculateEmision')->name('home.emisionCalculator');
 
 //Order routes
