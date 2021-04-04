@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2021 at 11:38 PM
+-- Generation Time: Apr 04, 2021 at 04:29 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -44,7 +44,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `user_name`, `name`, `credit_card`, `email`, `password`, `role`, `created_at`, `updated_at`) VALUES
-(2, 'catas', 'catalina', NULL, 'catalina.lopez1999@gmail.com', '$2y$10$zeQtmhVWKhIdNEPdyUyfzuCNdn6Lj5VGIPyFfYNJctzRN2ywwmhri', 'admin', '2021-03-23 01:45:10', '2021-03-23 01:45:10');
+(1, 'catas', 'catalina', NULL, 'catalina.lopez1999@gmail.com', '$2y$10$qffTcEm3OoQGi2V7AmGpEOzHYHHDc7x7PKw8lywNKtQkB9pNcnv3i', 'admin', '2021-03-23 04:19:13', '2021-03-23 04:19:13'),
+(2, 'Shiroke', 'Andrés Chaves', NULL, 'adchavesp@eafit.edu.co', '$2y$10$oiZxxr/5eIjCe5P6UYNiPOls5MqfrJI6nReuGPdQT7w8QEz4GF9sS', 'admin', '2021-04-04 07:22:06', '2021-04-04 07:22:06'),
+(3, 'Fedex', 'Federico Perez', NULL, 'fperezm1@eafit.edu.co', '$2y$10$oQRl4nTCHl6c5YGO9BvDFu/DDjRx6tgvDGl9.dtvg6mRgRQEKF5MK', 'admin', '2021-04-04 07:23:35', '2021-04-04 07:23:35'),
+(4, 'Pachito', 'Pedrito Gonzalez', NULL, 'pgonzalez@eafit.edu.co', '$2y$10$bjtYYiIRsoTZCyGQKamf6.MvFg87RTC4SYpxDUkw5S5oGM3AoISWG', 'client', '2021-04-04 07:24:30', '2021-04-04 07:24:30'),
+(5, 'Chucho', 'Miguel Cardona', NULL, 'mcardona2@eafit.edu.co', '$2y$10$6i0Xwgv8VK05nYwsNjlTLelgMab0VUXVGYg/F/GQPUrQsTYtLcUdW', 'client', '2021-04-04 07:25:18', '2021-04-04 07:25:18'),
+(6, 'Profe', 'Daniel Correa', NULL, 'dcorreab@eafit.edu.co', '$2y$10$XLGCedgdJZ5RR/avqVk0y.zRgExoYmtHqkWPn1D.OCDGBZ9Yg9c8S', 'admin', '2021-04-04 07:27:37', '2021-04-04 07:27:37');
 
 --
 -- Indexes for dumped tables
@@ -64,7 +69,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
