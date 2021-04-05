@@ -90,7 +90,7 @@ return [
     'CreateAddress'     => 'Create an Address',
     'SuccesfullAddress' => 'Address successfully created',
     'Create'            => 'Create',
-    'List'              => 'List',
+    'ListAddress'       => 'List Addresses',
     'Country'           => 'Country',
     'City'              => 'City',
     'Address'           => 'Address',
@@ -99,6 +99,7 @@ return [
     'AddressOptions'    => 'Address Options',
     'ShowAddress'       => 'Show Address',
     'AddressList'       => 'Addresses List',
+    'WhatToDo'          => 'What do you want to do with your Addresses?',
 
     //For User
     'Login'             => 'Login',
