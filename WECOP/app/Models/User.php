@@ -15,6 +15,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Http\Request;
 
+/** 
+ * Class User
+ * 
+ * @package App/Models
+ */
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
@@ -128,11 +133,11 @@ class User extends Authenticatable
     public static function validate(Request $request)
     {
         $request->validate([
-            "user_name" => "required",
-            "name" => "required",
-            "credit_card" => "required",
-            "email"  => "required",
-            "password"  => "required",
+            'user_name' => 'required',
+            'name' => 'required',
+            'credit_card' => 'required',
+            'email'  => 'required',
+            'password'  => 'required',
         ]);
     }
 }

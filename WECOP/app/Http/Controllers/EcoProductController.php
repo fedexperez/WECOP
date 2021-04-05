@@ -4,12 +4,13 @@
  * WECOP
  * 
  * @author clopezr9
- * PHP: 8.0.2
+ * PHP version: 8.0.2
  */
 
 namespace App\Http\Controllers;
 
 use App\Models\EcoProduct;
+use App\Models\Review;
 
 /**
  * Class ecoProductController
@@ -53,12 +54,14 @@ class EcoProductController extends Controller
             $data['ecoProducts'] = $ecoProducts;
         } 
 
-        return view('ecoProduct.list')->with("data", $data);
+        return view('ecoProduct.list')->with('data', $data);
     }
 
     public function show($id)
     {
         $data = [];
+        $data['reviews'] = Review::where('eco_product', $id)->get()->take(5);
+        $data['filter'] = [0,1,2,3,4,5];
         $ecoProduct = EcoProduct::find($id);
         if ($ecoProduct == null) {
             return redirect() -> route('ecoProduct.notFound', ['id' => $id]);

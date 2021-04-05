@@ -84,10 +84,10 @@ class Address extends Model
     {
 
         $request->validate([
-            "postal_code" => "required", 
-            "address" => "required", 
-            "country" => "required", 
-            "city" => "required",
+            'postal_code' => 'required', 
+            'address' => 'required', 
+            'country' => 'required', 
+            'city' => 'required',
         ]);
     }
     

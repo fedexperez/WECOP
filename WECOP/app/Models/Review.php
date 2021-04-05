@@ -13,6 +13,11 @@ use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/** 
+ * Class Review
+ * 
+ * @package App/Models
+ */
 class Review extends Model
 {
     use HasFactory;
@@ -68,15 +73,25 @@ class Review extends Model
     public function setMessage($message)
     {
         $this->attributes['message'] = $message;
+    }    
+    
+    public function getEcoProduct()
+    {
+        return $this->attributes['eco_product'];
+    }
+
+    public function setEcoProduct($message)
+    {
+        $this->attributes['eco_product'] = $message;
     }
 
     public static function validate(Request $request)
     {
 
         $request->validate([
-            "rating" => "required|numeric|gt:0|max:5",
-            "title" => "required",
-            "message" => "required",
+            'rating' => 'required|numeric|gt:0|max:5',
+            'title' => 'required',
+            'message' => 'required',
         ]);
     }
     

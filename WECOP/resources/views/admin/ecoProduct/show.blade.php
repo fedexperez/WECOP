@@ -18,7 +18,11 @@
                     <strong>@lang('messages.ProductCategories')</strong> {{ $data['ecoProduct']->getCategories() }}<br />
                     <strong>@lang('messages.ProductEmision')</strong> {{ $data['ecoProduct']->getEmision() }}<br />
                     <strong>@lang('messages.ProductLife')</strong> {{ $data['ecoProduct']->getProductLife() }}<br />
-                    <strong>@lang('messages.ProductPhoto')</strong> {{ $data['ecoProduct']->getPhoto() }}<br /><br />
+                    <strong>@lang('messages.ProductPhoto')</strong> {{ $data['ecoProduct']->getPhoto() }}<br /><br /> 
+                    <form action="{{ route('admin.review.list', $data['ecoProduct']->getId()) }}">
+                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block"
+                            id="button_style1">@lang('messages.Reviews')</button>
+                    </form>
                     <form action="{{ route('admin.ecoProduct.delete', $data['ecoProduct']->getId()) }}">
                         <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block"
                             id="button_style1">@lang('messages.Delete')</button>

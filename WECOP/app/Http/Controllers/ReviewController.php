@@ -1,42 +1,56 @@
 <?php
 
+/**
+ * WECOP
+ * 
+ * @author fperezm1
+ * PHP version: 8.0.2
+ */
+
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Models\Review;
+use App\Models\EcoProduct;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;
 
+/**
+ * Class ReviewController
+ * 
+ * @package App\Http\Controllers
+ */
 class ReviewController extends Controller
 {
 
     public function show($id)
     {
-        $data = []; //to be sent to the view
+        $data = []; //to be sent to the viewS
         $review = Review::findOrFail($id);
+        $ecoProduct = EcoProduct::findOrFail($review->getEcoProduct());
+        $data['ecoProduct'] = $ecoProduct;
 
-        $data["review"] = $review;
-        $data["title"] = $review->getTitle();
+        $data['review'] = $review;
+        $data['title'] = $review->getTitle();
 
-        return view('review.show')->with("data", $data);
+        return view('review.show')->with('data', $data);
     }
 
 
     public function create()
     {
         $data = []; //to be sent to the view
-        $data["pageTitle"] = "Write your review";
+        $data['pageTitle'] = 'Write your review';
 
-        return view('review.create')->with("data", $data);
+        return view('review.create')->with('data', $data);
     }
 
 
     public function save(Request $request)
     {
-        Review::create($request->only(["rating", "title", "message"]));
+        Review::create($request->only(['rating', 'title', 'message']));
         Review::validate($request);
 
-        $message = Lang::get("messages.SuccesfullReview");
+        $message = Lang::get('messages.SuccesfullReview');
         return back()->with('success', $message);
     }
 
@@ -47,75 +61,38 @@ class ReviewController extends Controller
         return redirect()->route('review.list');
     }
 
-    public function list()
-    {
-        return view('review.list');
-    }    
-    
-    public function all()
+    /**
+     * This function shows all the reviews from an ecoProduct. 
+     * 
+     * @param request is an id colected from a form
+     * @return back with the reviews.
+     */
+    public function all($id)
     {
         $data = []; //to be sent to the view
-        $data["reviews"] = Review::all();
+        $data['reviews'] = Review::where('eco_product', $id)->get();
+        $data['ecoProduct'] = EcoProduct::find($id);
 
         $filter = 0;
-        $data["filter"] = $filter;
+        $data['filter'] = $filter;
 
-        return view('review.filter')->with("data", $data);
+        return view('review.filter')->with('data', $data);
     }
 
-    public function oneStar()
+    /**
+     * This function shows the reviews from an ecoProduct filtered by stars.
+     * 
+     * @param request is an id colected from a form.
+     * @return back with the reviews filtered.
+     */
+    public function filter($id,$filter)
     {
         $data = []; //to be sent to the view
-        $data["reviews"] = Review::where('rating', 1.00)->get();
+        $data['filter'] = $filter;
+        $data['reviews'] = Review::where('rating', $filter)->where('eco_product', $id)->get();
+        $data['ecoProduct'] = EcoProduct::find($id);
 
-        $filter = 1;
-        $data["filter"] = $filter;
-
-        return view('review.filter')->with("data", $data);
-    }
-
-    public function twoStars()
-    {
-        $data = []; //to be sent to the view
-        $data["reviews"] = Review::where('rating', 2.00)->get();
-
-        $filter = 2;
-        $data["filter"] = $filter;
-
-        return view('review.filter')->with("data", $data);
-    }
-
-    public function threeStars()
-    {
-        $data = []; //to be sent to the view
-        $data["reviews"] = Review::where('rating', 3.00)->get();
-
-        $filter = 3;
-        $data["filter"] = $filter;
-
-        return view('review.filter')->with("data", $data);
-    }
-
-    public function fourStars()
-    {
-        $data = []; //to be sent to the view
-        $data["reviews"] = Review::where('rating', 4.00)->get();
-
-        $filter = 4;
-        $data["filter"] = $filter;
-
-        return view('review.filter')->with("data", $data);
-    }
-
-    public function fiveStars()
-    {
-        $data = []; //to be sent to the view
-        $data["reviews"] = Review::where('rating', 5.00)->get();
-
-        $filter = 5;
-        $data["filter"] = $filter;
-
-        return view('review.filter')->with("data", $data);
+        return view('review.filter')->with('data', $data);
     }
 
 }

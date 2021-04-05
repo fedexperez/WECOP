@@ -33,7 +33,7 @@ class HomeController extends Controller
      * This function calculates the emision not emited when selecting any EcoProduct. 
      * Using the next fromula: notEcoProductEmison * (ecoProductLife/notEcoProductLife) - ecoProductEmision
      * 
-     * @param request is an ecoProduct colected from a form
+     * @param request is an ecoProduct colected from a form.
      * @return back with a messages.
      */
     public function calculateEmision(Request $request)

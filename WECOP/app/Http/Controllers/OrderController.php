@@ -9,10 +9,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Models\Order;
-use Illuminate\Support\Facades\Lang;
 
 class OrderController extends Controller
 {
@@ -40,8 +37,8 @@ class OrderController extends Controller
     public function list()
     {       
         $data = [];
-        $data["orders"] = Order::all();
+        $data['orders'] = Order::all();
         
-        return view('order.list')->with("data", $data);
+        return view('order.list')->with('data', $data);
     }
 }

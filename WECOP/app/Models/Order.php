@@ -15,6 +15,11 @@ use Illuminate\Database\Eloquent\Model;
 use App\Address;
 use App\Item;
 
+/** 
+ * Class Order
+ * 
+ * @package App/Models
+ */
 class Order extends Model
 {
     use HasFactory;
@@ -98,8 +103,8 @@ class Order extends Model
     {
 
         $request->validate([
-            "paymentType" => "required",
-            "shipping" => "required",
+            'paymentType' => 'required',
+            'shipping' => 'required',
         ]);
     }
     

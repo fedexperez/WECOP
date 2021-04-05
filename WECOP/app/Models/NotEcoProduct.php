@@ -81,10 +81,10 @@ class NotEcoProduct extends Model
     {
         $request->validate(
             [
-            "name" => "required",
-            "emision" => "required | numeric | gt:0",
-            "product_life" => "required | numeric |gt:0",
-            "price" => "required | numeric | gt:0 ",
+            'name' => 'required',
+            'emision' => 'required | numeric | gt:0',
+            'product_life' => 'required | numeric |gt:0',
+            'price' => 'required | numeric | gt:0 ',
             ]
         );
     }

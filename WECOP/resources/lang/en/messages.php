@@ -26,6 +26,7 @@ return [
     'MessageInput' => 'Enter Message',
     'Rating'       => 'Rating',
     'Review'       => 'Review',
+    'Reviews'       => 'Reviews',
     'Title'        => 'Title',
     'Message'      => 'Message',
     'SuccesfullReview' => 'Review successfully created',
@@ -38,6 +39,8 @@ return [
     'Review3' => '3 stars',
     'Review4' => '4 stars',
     'Review5' => '5 stars',
+    'ReviewOf' => 'Review of the product:',
+    'ReviewsOf' => 'Reviews of the product:',
      
     //For order
     'Order'       => 'Order',
@@ -74,6 +77,7 @@ return [
     'EnterEmision'  => 'Enter Emission',
     'EnterProductLife'=> 'Enter Product Life (days)',
     'ProductNotExits'   => 'Product Does Not Exist',
+
     //ecoProducts
     'CreateEcoProducts' => 'Create EcoProducts',
     'ListEcoProducts'   => 'List of ecoProducts',
@@ -89,6 +93,7 @@ return [
     'EnterCategories'   => 'Enter categories',
     'EnterPhoto'        => 'Enter photo (.jpg/.png)',
     'ChooseNotEco'      => 'Choose a NotEcoProduct',
+
     //notEcoProducts
     'CreateNotEcoProducts'=> 'Create NotEcoProducts',
     'ListNotEcoProducts'=> 'List of NotEcoProducts',
@@ -118,7 +123,6 @@ return [
     'UserName'          => 'User Name',
     'RememberMe'        => 'Remember Me',
     'ForgotPassword'    => 'Forgot Your Password?',
-    
 
     //SearchBar
     'Search'            => 'Search',
