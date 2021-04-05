@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * WECOP
+ * 
+ * @author fperezm1
+ * PHP: 8.0.2
+ */
+
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
@@ -7,6 +14,11 @@ use App\Models\Review;
 use App\Models\EcoProduct;
 use Illuminate\Support\Facades\Auth;
 
+/** 
+ * Class ReviewAdminController
+ * 
+ * @package App\Http\Controllers
+ */
 class ReviewAdminController extends Controller
 {
     /**

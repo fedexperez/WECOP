@@ -15,6 +15,11 @@ use Illuminate\Database\Eloquent\Model;
 use App\Address;
 use App\Item;
 
+/** 
+ * Class Order
+ * 
+ * @package App/Models
+ */
 class Order extends Model
 {
     use HasFactory;

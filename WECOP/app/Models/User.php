@@ -15,6 +15,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Http\Request;
 
+/** 
+ * Class User
+ * 
+ * @package App/Models
+ */
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;

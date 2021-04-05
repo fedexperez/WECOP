@@ -1,13 +1,24 @@
 <?php
 
-namespace App\Http\Controllers;
+/**
+ * WECOP
+ * 
+ * @author fperezm1
+ * PHP version: 8.0.2
+ */
 
-use Illuminate\Http\Request;
+namespace App\Http\Controllers;
 
 use App\Models\Review;
 use App\Models\EcoProduct;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;
 
+/**
+ * Class ReviewController
+ * 
+ * @package App\Http\Controllers
+ */
 class ReviewController extends Controller
 {
 
@@ -50,7 +61,12 @@ class ReviewController extends Controller
         return redirect()->route('review.list');
     }
 
-    
+    /**
+     * This function shows all the reviews from an ecoProduct. 
+     * 
+     * @param request is an id colected from a form
+     * @return back with the reviews.
+     */
     public function all($id)
     {
         $data = []; //to be sent to the view
@@ -63,6 +79,12 @@ class ReviewController extends Controller
         return view('review.filter')->with('data', $data);
     }
 
+    /**
+     * This function shows the reviews from an ecoProduct filtered by stars.
+     * 
+     * @param request is an id colected from a form.
+     * @return back with the reviews filtered.
+     */
     public function filter($id,$filter)
     {
         $data = []; //to be sent to the view

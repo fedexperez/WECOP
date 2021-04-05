@@ -4,7 +4,7 @@
  * WECOP
  * 
  * @author clopezr9
- * PHP: 8.0.2
+ * PHP version: 8.0.2
  */
 
 namespace App\Http\Controllers\Admin;

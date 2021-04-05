@@ -13,11 +13,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /** 
- * Class EcoProduct
+ * Class Item
  * 
  * @package App/Models
  */
-class EcoProduct extends Model
+class Item extends Model
 {
     use HasFactory;
 
