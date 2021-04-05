@@ -77,6 +77,7 @@ return [
     'EnterEmision'  => 'Enter Emission',
     'EnterProductLife'=> 'Enter Product Life (days)',
     'ProductNotExits'   => 'Product Does Not Exist',
+
     //ecoProducts
     'CreateEcoProducts' => 'Create EcoProducts',
     'ListEcoProducts'   => 'List of ecoProducts',
@@ -92,6 +93,7 @@ return [
     'EnterCategories'   => 'Enter categories',
     'EnterPhoto'        => 'Enter photo (.jpg/.png)',
     'ChooseNotEco'      => 'Choose a NotEcoProduct',
+
     //notEcoProducts
     'CreateNotEcoProducts'=> 'Create NotEcoProducts',
     'ListNotEcoProducts'=> 'List of NotEcoProducts',
@@ -121,7 +123,6 @@ return [
     'UserName'          => 'User Name',
     'RememberMe'        => 'Remember Me',
     'ForgotPassword'    => 'Forgot Your Password?',
-    
 
     //SearchBar
     'Search'            => 'Search',
