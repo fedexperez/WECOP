@@ -20,6 +20,7 @@ class CreateReviewsTable extends Migration
             $table->text('message');
             $table->unsignedBigInteger('eco_product');
             $table->foreign('eco_product')->references('id')->on('eco_products');
+            $table->text('user');
             $table->timestamps();
         });
     }

@@ -24,7 +24,7 @@ return [
     'GramsCalculateMessage'  =>' grams of CO2 to the atmosphere per unit used',
 
     //For reviews
-    'CreateReview' => 'Create Review',
+    'CreateReview' => 'Create review for',
     'RatingInput'  => 'Rating 1 to 5',
     'TitleInput'   => 'Enter Title',
     'MessageInput' => 'Enter Message',
@@ -45,6 +45,7 @@ return [
     'Review5'   => '5 stars',
     'ReviewOf'  => 'Review of the product:',
     'ReviewsOf' => 'Reviews of the product:',
+    'MakeReview' => 'Make review',
      
     //For order
     'Order'       => 'Order',
