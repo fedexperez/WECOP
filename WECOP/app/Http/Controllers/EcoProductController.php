@@ -57,16 +57,33 @@ class EcoProductController extends Controller
         return view('ecoProduct.list')->with('data', $data);
     }
 
-    public function show($id)
+
+    /**
+     * This function shows the EcoProduct selected and the reviews filtered according the selection of stars.
+     * 
+     * @param id is the id of th EcoProduct.
+     * @param filter is the characteristic to filter the reviews of the EcoProduct
+     * @return view with a data array.
+     */
+    public function show($id, $filter)
     {
         $data = [];
-        $data['reviews'] = Review::where('eco_product', $id)->get()->take(5);
-        $data['filter'] = [0,1,2,3,4,5];
         $ecoProduct = EcoProduct::find($id);
+        $data['ecoProduct'] = $ecoProduct;
         if ($ecoProduct == null) {
             return redirect() -> route('ecoProduct.notFound', ['id' => $id]);
         } else {
-            $data['ecoProduct'] = $ecoProduct;
+            if ($filter == 'Some-Reviews') {
+                $reviews = Review::where('eco_product', $id)->get()->take(5);
+                $data['reviews'] = $reviews;
+            } else if ( $filter == 'All' ){
+                $reviews = Review::where('eco_product', $id)->get();
+                $data['reviews'] = $reviews;
+            } else {
+                $reviews = Review::where('rating', $filter)->where('eco_product', $id)->get();
+                $data['reviews'] = $reviews;
+            }
+            
             return view('ecoProduct.show') -> with('data', $data);
         }
     }
