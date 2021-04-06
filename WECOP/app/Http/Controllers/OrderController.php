@@ -22,8 +22,6 @@ class OrderController extends Controller
         $data['order'] = $order;
         $title = Lang::get('messages.ShowOrder');
         $id = strval($order->getId());
-        echo gettype($id);
-        echo gettype($title);
         $data['pageTitle'] = $title." ".$id   ;
         return view('order.show')->with('data', $data);
     }
