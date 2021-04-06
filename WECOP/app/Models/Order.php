@@ -69,12 +69,12 @@ class Order extends Model
     
     public function getAddress()
     {
-        return $this->attributes['address_id'];
+        return $this->attributes['address'];
     }
 
     public function setAddress($address)
     {
-        $this->attributes['address_id'] = $address;
+        $this->attributes['address'] = $address;
     }
 
     public function getTotal()
@@ -85,6 +85,16 @@ class Order extends Model
     public function setTotal($total)
     {
         $this->attributes['total'] = $total;
+    }
+
+    public function getUser()
+    {
+        return $this->attributes['user'];
+    }
+
+    public function setUser($user)
+    {
+        $this->attributes['user'] = $user;
     }
 
     public function items(){
@@ -101,7 +111,6 @@ class Order extends Model
 
     public static function validate(Request $request)
     {
-
         $request->validate([
             'paymentType' => 'required',
             'shipping' => 'required',
