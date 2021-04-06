@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $data['order']->getId())
+@section('title',  $data['pageTitle'])
 
 @section('content')
 <div class="container">
@@ -18,11 +18,6 @@
                         <div class="col-5">
                             <form action="{{ route('order.list')}}">
                                 <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('messages.Back')</button>
-                            </form>
-                        </div>
-                        <div class="col-5">
-                            <form action="{{ route('order.return', $data['order']->getId()) }}">
-                                <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('messages.ReturnOrder')</button>
                             </form>
                         </div>
                     </div>
