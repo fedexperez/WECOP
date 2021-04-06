@@ -10,7 +10,7 @@ INSERT INTO `reviews` (`id`, `rating`, `title`, `message`, `eco_product`, `user`
 (4, 4.00, 'Awesome', 'The best straw ever', 4, 'Fedex', '2021-04-04 15:45:28', NULL),
 (5, 3.00, 'Basic', 'Not a great product', 4, 'Fedex', '2021-04-04 15:49:28', NULL),
 (6, 5.00, 'Top tier', 'Amazing product', 4, 'Fedex', '2021-04-04 15:49:28', NULL),
-(7, 3.00, 'Not great', 'Not a great product', 5 'Fedex',, '2021-04-04 15:00:28', NULL),
+(7, 3.00, 'Not great', 'Not a great product', 5, 'Fedex', '2021-04-04 15:00:28', NULL),
 (8, 3.00, 'Expected more', 'What i said, expected more', 5, 'Fedex', '2021-04-04 15:03:28', NULL),
 (9, 5.00, 'LOVE IT', 'I have been amazed at how easy this works', 5, 'Fedex', '2021-03-11 15:49:28', NULL),
 (10, 5.00, 'Hype', 'I have been thoroughly impressed by this', 6, 'Fedex', '2021-03-04 15:49:28', NULL),
