@@ -3,14 +3,14 @@
 return [
 
     //FOR FINAL USER
-    'Menu' => 'Menu',
+    'Menu'       => 'Menu',
     'HomePage'   => 'Home Page',
     'Delete'     => 'Delete',
     'Brand'      => 'WECOP',
     'EcoProducts'=> 'WECOP',
     'ProductNotFound'=> 'The product you are looking for was not found',
-    'Slogan'     => 'For achieving a change',
-    'About'      => 'About us',
+    'Slogan'         => 'For achieving a change',
+    'About'          => 'About us',
     'SomeProducts'   => 'Some products',
     'AboutMessage1'  => 'We are a three students group from Colombia wanting to make a change in the world. As a result of living in such a green country we are very concerned about what is going to be of our planet in the future and by following the present steps of humanity earth does not have one.',
     'AboutMessage2'  => 'WECOP (World Ecological Products) is a solution created to facilite the acquisition of environmental friendly products to the ones that are not conscious of the current state of our planet accomplishing a bright and green future.',
@@ -21,7 +21,7 @@ return [
     'CalculatorChooseProduct'=>'Choose a product to calculate emision:',
     'IfCalculateMessage'     =>'If you buy a/an ',
     'StopCalculateMessage'   =>' you stop ejecting ',
-    'GramsCalculateMessage'   =>' grams of CO2 to the atmosphere per unit used',
+    'GramsCalculateMessage'  =>' grams of CO2 to the atmosphere per unit used',
 
     //For reviews
     'CreateReview' => 'Create Review',
@@ -30,20 +30,20 @@ return [
     'MessageInput' => 'Enter Message',
     'Rating'       => 'Rating',
     'Review'       => 'Review',
-    'Reviews'       => 'Reviews',
+    'Reviews'      => 'Reviews',
     'Title'        => 'Title',
     'Message'      => 'Message',
     'SuccesfullReview' => 'Review successfully created',
-    'Return'  => 'Return',
-    'Great'   => 'Great',
-    'Send'    => 'Send',
-    'All'     => 'All',
-    'Review1' => '1 star',
-    'Review2' => '2 stars',
-    'Review3' => '3 stars',
-    'Review4' => '4 stars',
-    'Review5' => '5 stars',
-    'ReviewOf' => 'Review of the product:',
+    'Return'    => 'Return',
+    'Great'     => 'Great',
+    'Send'      => 'Send',
+    'All'       => 'All',
+    'Review1'   => '1 star',
+    'Review2'   => '2 stars',
+    'Review3'   => '3 stars',
+    'Review4'   => '4 stars',
+    'Review5'   => '5 stars',
+    'ReviewOf'  => 'Review of the product:',
     'ReviewsOf' => 'Reviews of the product:',
      
     //For order
@@ -55,6 +55,9 @@ return [
     'ReturnOrder' => 'Return Order',
     'Date'        => 'Date',
     'Back'        => 'Go back',
+    'Orders'      => 'Orders',
+    'ShowOrder'   => 'Show Order',
+    'NotCurrentOrders' => 'You do not have current orders',
 
     //For ecoProducts
     'EcoProducts'  => 'EcoProducts',
@@ -62,8 +65,8 @@ return [
     'PriceHighLow' => 'Price, Highest to Lowest',
     'DateNewestOldest' => 'Date, Newest to Oldest',
     'DateOldestNewest' => 'Date, Oldest to Newest',
-    'EmissionLowHigh' => 'Emission, Lowest to Highest',
-    'EmissionHighLow' => 'Emission, Highest to Lowest',
+    'EmissionLowHigh'  => 'Emission, Lowest to Highest',
+    'EmissionHighLow'  => 'Emission, Highest to Lowest',
 
     //FOR ADMIN
     'ProductName'   => 'Product name:',
@@ -76,11 +79,11 @@ return [
     'ListNotECO'    => 'ListNotECO',
     'WelcomeAdmin'  => 'Welcome to WECOP-Admin page!',
     'AdminDescription' => 'Description',
-    'EnterName'     => 'Enter Name',
-    'EnterPrice'    => 'Enter Price',
-    'EnterEmision'  => 'Enter Emission',
-    'EnterProductLife'=> 'Enter Product Life (days)',
-    'ProductNotExits'   => 'Product Does Not Exist',
+    'EnterName'        => 'Enter Name',
+    'EnterPrice'       => 'Enter Price',
+    'EnterEmision'     => 'Enter Emission',
+    'EnterProductLife' => 'Enter Product Life (days)',
+    'ProductNotExits'  => 'Product Does Not Exist',
 
     //ecoProducts
     'CreateEcoProducts' => 'Create EcoProducts',
@@ -99,8 +102,8 @@ return [
     'ChooseNotEco'      => 'Choose a NotEcoProduct',
 
     //notEcoProducts
-    'CreateNotEcoProducts'=> 'Create NotEcoProducts',
-    'ListNotEcoProducts'=> 'List of NotEcoProducts',
+    'CreateNotEcoProducts' => 'Create NotEcoProducts',
+    'ListNotEcoProducts'   => 'List of NotEcoProducts',
 
     //For address
     'CreateAddress'     => 'Create an Address',

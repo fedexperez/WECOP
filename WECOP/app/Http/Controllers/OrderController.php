@@ -8,6 +8,7 @@
  */
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Lang;
 
 use App\Models\Order;
 
@@ -18,11 +19,12 @@ class OrderController extends Controller
     {
         $data = []; //to be sent to the view
         $order = Order::findOrFail($id);
-
         $data['order'] = $order;
-        $data['order_id'] = $order->getId();
-        
-
+        $title = Lang::get('messages.ShowOrder');
+        $id = strval($order->getId());
+        echo gettype($id);
+        echo gettype($title);
+        $data['pageTitle'] = $title." ".$id   ;
         return view('order.show')->with('data', $data);
     }
 
@@ -37,8 +39,9 @@ class OrderController extends Controller
     public function list()
     {       
         $data = [];
+        $title = Lang::get('messages.Orders');
+        $data['pageTitle'] = $title;
         $data['orders'] = Order::all();
-        
         return view('order.list')->with('data', $data);
     }
 }
