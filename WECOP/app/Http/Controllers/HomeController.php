@@ -25,7 +25,6 @@ class HomeController extends Controller
     {
         $data = [];
         $data['ecoProducts'] = EcoProduct::all();
-        $data['someEcoProducts'] = EcoProduct::all()->take(3);
 
         return view('home.index')->with('data', $data);
     }
