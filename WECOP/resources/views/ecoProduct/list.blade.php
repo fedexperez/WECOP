@@ -67,12 +67,12 @@
     <div class="text-center row">
         <div class="text-center col-6 mx-auto">
             @foreach ($data['ecoProducts'] as $ecoProduct)
-            <a href="{{ route('ecoProduct.show', $ecoProduct->getId()) }}">
+            <a href="{{ route('ecoProduct.show', ['id' =>  $ecoProduct->getId(), 'filter' => 'Some-Reviews']) }}">
                 <h1 class="text-center text-uppercase text-secondary">{{ $ecoProduct->getName() }}</h1>
             </a>
             <div class="row">
                 <div class="col-md-6 col-lg-4">
-                    <a href="{{ route('ecoProduct.show', $ecoProduct->getId()) }}">
+                    <a href="{{ route('ecoProduct.show', ['id' =>  $ecoProduct->getId(), 'filter' => 'Some-Reviews']) }}">
                         <img class="img-fluid" src="{{ url('img/ecoProducts/'.$ecoProduct->getPhoto()) }}"
                             alt="product" />
                     </a>
