@@ -6,7 +6,7 @@ SET time_zone = "+00:00";
 -- Volcado de datos para la tabla `reviews`
 --
 INSERT INTO `reviews` (`id`, `rating`, `title`, `message`, `eco_product`, `user`, `created_at`, `updated_at`) VALUES 
-(22, '3', 'Freak', 'A lot', '4', 'Fedex', '2021-04-06 18:13:02', NULL);
+(22, '3', 'Freak', 'A lot', '4', 'Fedex', '2021-04-06 18:13:02', NULL),
 (4, 4.00, 'Awesome', 'The best straw ever', 4, 'Fedex', '2021-04-04 15:45:28', NULL),
 (5, 3.00, 'Basic', 'Not a great product', 4, 'Fedex', '2021-04-04 15:49:28', NULL),
 (6, 5.00, 'Top tier', 'Amazing product', 4, 'Fedex', '2021-04-04 15:49:28', NULL),
