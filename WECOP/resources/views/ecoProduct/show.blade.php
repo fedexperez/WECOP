@@ -25,45 +25,45 @@
                 <p class="lead">{{ $data['ecoProduct']->getFacts() }}</p><br>
                 @if (Auth::user())
                 <form action="{{ route('review.create', ['id' =>  $data['ecoProduct']->getId()])}}">
-                    <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('messages.MakeReview')</button>
+                    <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('review.MakeReview')</button>
                 </form>
                 @endif
             </div>
         </div>
         <br><br>
         <div>
-            <h1 class="text-center text-uppercase text-secondary">@lang('messages.Reviews')</h1>
+            <h1 class="text-center text-uppercase text-secondary">@lang('review.Reviews')</h1>
         </div>
         <div class="col-md-12">
             <div class="row p-5">
                 <div class="col-2">
                     <form action="{{ route('ecoProduct.show', ['id' =>  $data['ecoProduct']->getId(), 'filter' => 'All'])}}">
-                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('messages.All')</button>
+                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('review.All')</button>
                     </form>
                 </div>
                 <div class="col-2">
                     <form action="{{ route('ecoProduct.show', ['id' =>  $data['ecoProduct']->getId(), 'filter' => '1'])}}">
-                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('messages.Review1')</button>
+                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('review.Review1')</button>
                     </form>
                 </div>
                 <div class="col-2">
                     <form action="{{ route('ecoProduct.show', ['id' =>  $data['ecoProduct']->getId(), 'filter' => '2'])}}">
-                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('messages.Review2')</button>
+                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('review.Review2')</button>
                     </form>
                 </div>
                 <div class="col-2">
                     <form action="{{ route('ecoProduct.show', ['id' =>  $data['ecoProduct']->getId(), 'filter' => '3'])}}">
-                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('messages.Review3')</button>
+                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('review.Review3')</button>
                     </form>
                 </div>
                 <div class="col-2">
                     <form action="{{ route('ecoProduct.show', ['id' =>  $data['ecoProduct']->getId(), 'filter' => '4'])}}">
-                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('messages.Review4')</button>
+                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('review.Review4')</button>
                     </form>
                 </div>
                 <div class="col-2">
                     <form action="{{ route('ecoProduct.show', ['id' =>  $data['ecoProduct']->getId(), 'filter' => '5'])}}">
-                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('messages.Review5')</button>
+                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('review.Review5')</button>
                     </form>
                 </div>
             </div>

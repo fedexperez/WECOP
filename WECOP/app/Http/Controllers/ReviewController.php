@@ -26,13 +26,14 @@ class ReviewController extends Controller
 
     public function show($id)
     {
-        $data = []; //to be sent to the viewS
-        $review = Review::findOrFail($id);
-        $ecoProduct = EcoProduct::findOrFail($review->getEcoProduct());
-        $data['ecoProduct'] = $ecoProduct;
+        $data = []; //to be sent to the views
 
+        $review = Review::findOrFail($id);
         $data['review'] = $review;
         $data['title'] = $review->getTitle();
+        
+        $ecoProduct = EcoProduct::findOrFail($review->getEcoProduct());
+        $data['ecoProduct'] = $ecoProduct;
 
         return view('review.show')->with('data', $data);
     }
@@ -41,7 +42,7 @@ class ReviewController extends Controller
     public function create($id)
     {
         $data = []; //to be sent to the view
-        $data['pageTitle'] = 'Write your review';
+        $data['pageTitle'] = Lang::get('messages.WriteReview');
         $data['ecoProduct'] = EcoProduct::findOrFail($id);
 
         return view('review.create')->with('data', $data);
@@ -53,12 +54,12 @@ class ReviewController extends Controller
         Review::validate($request);
 
         $user = User::findOrFail(Auth::user()->getId());
-        $review = new Review;
+        $review = new Review();
         $review->rating = $request['rating'];
         $review->title = $request['title'];
         $review->message = $request['message'];
         $review->eco_product = $id;
-        $review->user = $user->getUserName();
+        $review->user = $user->getId();
         $review->created_at = date('Y-m-d H:i:s');
         $review->save();
 

@@ -46,6 +46,7 @@ return [
     'ReviewOf'  => 'Review of the product:',
     'ReviewsOf' => 'Reviews of the product:',
     'MakeReview' => 'Make review',
+    'WriteReview' => 'Write your review',
      
     //For order
     'Order'       => 'Order',

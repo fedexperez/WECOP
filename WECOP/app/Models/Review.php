@@ -27,14 +27,6 @@ class Review extends Model
     //attributes id, rating, title, message
     protected $fillable = ['rating', 'title', 'message'];
 
-    /**
-     * Get the EcoProduct that owns the Review.
-     */
-    public function EcoProduct()
-    {
-        return $this->belongsTo(EcoProduct::class);
-    }
-
     public function getId()
     {
         return $this->attributes['id'];
@@ -73,16 +65,27 @@ class Review extends Model
     public function setMessage($message)
     {
         $this->attributes['message'] = $message;
-    }    
-    
+    }
+
     public function getEcoProduct()
     {
         return $this->attributes['eco_product'];
     }
-
-    public function setEcoProduct($message)
+    
+    /**
+     * Get the EcoProduct that owns the Review.
+     */
+    public function EcoProduct()
     {
-        $this->attributes['eco_product'] = $message;
+        return $this->belongsTo(EcoProduct::class);
+    }
+
+    /**
+     * Get the User who post the Review.
+     */
+    public function User()
+    {
+        return $this->belongsTo(User::class);
     }
 
     public static function validate(Request $request)
