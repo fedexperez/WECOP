@@ -57,12 +57,12 @@ class ReviewController extends Controller
         $review->rating = $request['rating'];
         $review->title = $request['title'];
         $review->message = $request['message'];
-        $review->eco_product = $id;
-        $review->user = $user->getId();
+        $review->eco_product_id = $id;
+        $review->user_id = $user->getId();
         $review->created_at = date('Y-m-d H:i:s');
         $review->save();
 
-        $message = Lang::get('messages.succesfull_review');
+        $message = Lang::get('review.succesfull_review');
         return back()->with('success', $message);
     }
 

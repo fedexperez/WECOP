@@ -74,10 +74,10 @@ class EcoProductController extends Controller
             return redirect() -> route('ecoProduct.notFound', ['id' => $id]);
         } else {
             if ( $filter == 'All' ){
-                $reviews = Review::where('eco_product', $id)->paginate(5);
+                $reviews = Review::where('eco_product_id', $id)->paginate(5);
                 $data['reviews'] = $reviews;
             } else {
-                $reviews = Review::where('rating', $filter)->where('eco_product', $id)->paginate(5);
+                $reviews = Review::where('rating', $filter)->where('eco_product_id', $id)->paginate(5);
                 $data['reviews'] = $reviews;
             }
             

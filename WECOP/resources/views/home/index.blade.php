@@ -1,21 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- Masthead-->
-<header class="masthead bg-primary text-white text-center">
-    <div class="container d-flex align-items-center flex-column">
-        <!-- Masthead Heading-->
-        <h1 class="masthead-heading text-uppercase mb-0">@lang('messages.brand')</h1>
-        <!-- Icon Divider-->
-        <div class="divider-custom divider-light">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-globe-americas"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
-        <!-- Masthead Subheading-->
-        <p class="masthead-subheading font-weight-light mb-0">@lang('messages.slogan')</p>
-    </div>
-</header>
 <!-- emision calculator Section-->
 <section class="page-section portfolio" id="portfolio">
     <div class="container">
@@ -33,7 +18,7 @@
                 <!-- EmsionCalculator-->
                 <form method="POST" action="{{ route('home.emisionCalculator') }}">
                     @csrf
-                    <label for="eco_product">@lang('messages.calculator_choose_product')</label>
+                    <label for="eco_product_id">@lang('messages.calculator_choose_product')</label>
                     <select name="eco_product_id" id="eco_product_id">
                         @foreach($data['ecoProducts'] as $ecoProduct)
                         <option value="{{ $ecoProduct->getId() }}"> {{ $ecoProduct->getName() }} </option>
