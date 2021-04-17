@@ -49,9 +49,9 @@ class HomeController extends Controller
 
         //Calculate emision
         $emision = $notEcoProductEmision * ($ecoProductLife/$notEcoProductLife) - $ecoProductEmision;
-        $IfCalculateMessage = Lang::get('messages.IfCalculateMessage');
-        $StopCalculateMessage = Lang::get('messages.StopCalculateMessage');
-        $GramsCalculateMessage = Lang::get('messages.GramsCalculateMessage');
+        $IfCalculateMessage = Lang::get('messages.if_calculate_message');
+        $StopCalculateMessage = Lang::get('messages.stop_calculate_message');
+        $GramsCalculateMessage = Lang::get('messages.grams_calculate_message');
         $message = $IfCalculateMessage . $ecoProduct->getName() . $StopCalculateMessage . strval($emision) . $GramsCalculateMessage;
 
         return back()->with('emision', $message);

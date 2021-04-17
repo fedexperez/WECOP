@@ -46,7 +46,7 @@ class EcoProductAdminController extends Controller
     public function create()
     {
         $data = []; //to be sent to the view
-        $title = Lang::get('messages.CreateEcoProducts');
+        $title = Lang::get('messages.create_eco_products');
         $data['title'] = $title;
       
         $notEcoProducts = NotEcoProduct::all();
@@ -74,7 +74,7 @@ class EcoProductAdminController extends Controller
     public function list()
     {
         $data = [];
-        $title = Lang::get('messages.ListEcoProducts');
+        $title = Lang::get('messages.list_eco_products');
         $data['title'] = $title;
         $data['ecoProducts'] = ecoProduct::all();
 

@@ -18,8 +18,10 @@ class CreateReviewsTable extends Migration
             $table->float('rating');
             $table->text('title');
             $table->text('message');
-            $table->unsignedBigInteger('eco_product');
-            $table->foreign('eco_product')->references('id')->on('eco_products');
+            $table->unsignedBigInteger('eco_product_id');
+            $table->foreign('eco_product_id')->references('id')->on('eco_products');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

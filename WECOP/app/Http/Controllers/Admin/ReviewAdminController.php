@@ -43,7 +43,7 @@ class ReviewAdminController extends Controller
     public function list($id)
     {
         $data = []; //to be sent to the view
-        $data['reviews'] = Review::where('eco_product', $id)->get();
+        $data['reviews'] = Review::where('eco_product_id', $id)->get();
         $ecoProduct = EcoProduct::findOrFail($id);
         $data['ecoProduct'] = $ecoProduct;
 

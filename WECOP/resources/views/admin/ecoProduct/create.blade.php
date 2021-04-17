@@ -8,7 +8,7 @@
         <div class="col-md-8">
             @include('util.message')
             <div class="card">
-                <div class="card-header">@lang('messages.CreateEcoProducts')</div>
+                <div class="card-header">@lang('messages.create_eco_products')</div>
                 <div class="card-body">
                     @if($errors->any())
                     <ul id="errors">
@@ -20,18 +20,18 @@
 
                     <form method="POST" action="{{ route('admin.ecoProduct.save') }}">
                         @csrf
-                        <input type="text" placeholder="@lang('messages.EnterName')" name="name" value="{{ old('name') }}" />
-                        <input type="number" step="0.01" placeholder="@lang('messages.EnterPrice')" name="price"
+                        <input type="text" placeholder="@lang('messages.enter_name')" name="name" value="{{ old('name') }}" />
+                        <input type="number" step="0.01" placeholder="@lang('messages.enter_price')" name="price"
                             value="{{ old('price') }}" />
-                        <input type="number" placeholder="@lang('messages.EnterStock')" name="stock" value="{{ old('stock') }}" />
-                        <input type="text" placeholder="@lang('messages.EnterFact')" name="facts" value="{{ old('facts') }}" />
-                        <input type="text" placeholder="@lang('messages.EnterDescp')" name="description"
+                        <input type="number" placeholder="@lang('messages.enter_stock')" name="stock" value="{{ old('stock') }}" />
+                        <input type="text" placeholder="@lang('messages.enter_fact')" name="facts" value="{{ old('facts') }}" />
+                        <input type="text" placeholder="@lang('messages.enter_descp')" name="description"
                             value="{{ old('description') }}" />
-                        <input type="text" placeholder="@lang('messages.EnterCategories')" name="categories"
+                        <input type="text" placeholder="@lang('messages.enter_categories')" name="categories"
                             value="{{ old('categories') }}" />
-                        <input type="number" step="0.01" placeholder="@lang('messages.EnterEmision')" name="emision"
+                        <input type="number" step="0.01" placeholder="@lang('messages.enter_emision')" name="emision"
                             value="{{ old('emision') }}" />
-                        <input type="number" placeholder="@lang('messages.EnterProductLife')" name="product_life"
+                        <input type="number" placeholder="@lang('messages.enter_product_life')" name="product_life"
                             value="{{ old('product_life') }}" />
                         <input type="text" placeholder="@lang('messages.EnterPhoto')" name="photo" value="{{ old('photo') }}" />
                         <label for="not_eco_product_id">@lang('messages.ChooseNotEco')</label>

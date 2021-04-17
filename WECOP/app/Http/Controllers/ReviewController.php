@@ -11,8 +11,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Review;
 use App\Models\EcoProduct;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * Class ReviewController
@@ -24,33 +26,43 @@ class ReviewController extends Controller
 
     public function show($id)
     {
-        $data = []; //to be sent to the viewS
-        $review = Review::findOrFail($id);
-        $ecoProduct = EcoProduct::findOrFail($review->getEcoProduct());
-        $data['ecoProduct'] = $ecoProduct;
+        $data = []; //to be sent to the views
 
+        $review = Review::findOrFail($id);
         $data['review'] = $review;
         $data['title'] = $review->getTitle();
+        
+        $data['ecoProduct'] = $review->ecoProduct;
 
         return view('review.show')->with('data', $data);
     }
 
 
-    public function create()
+    public function create($id)
     {
         $data = []; //to be sent to the view
-        $data['pageTitle'] = 'Write your review';
+        $data['pageTitle'] = Lang::get('messages.write_review');
+        $data['ecoProduct'] = EcoProduct::findOrFail($id);
 
         return view('review.create')->with('data', $data);
     }
 
 
-    public function save(Request $request)
+    public function save(Request $request, $id)
     {
-        Review::create($request->only(['rating', 'title', 'message']));
         Review::validate($request);
 
-        $message = Lang::get('messages.SuccesfullReview');
+        $user = User::findOrFail(Auth::user()->getId());
+        $review = new Review();
+        $review->rating = $request['rating'];
+        $review->title = $request['title'];
+        $review->message = $request['message'];
+        $review->eco_product_id = $id;
+        $review->user_id = $user->getId();
+        $review->created_at = date('Y-m-d H:i:s');
+        $review->save();
+
+        $message = Lang::get('review.succesfull_review');
         return back()->with('success', $message);
     }
 

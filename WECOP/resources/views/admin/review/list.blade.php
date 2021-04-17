@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">@lang('messages.ReviewsOf') {{ $data["ecoProduct"]->getName() }}</div>
+                <div class="card-header">@lang('messages.reviews_of') {{ $data["ecoProduct"]->getName() }}</div>
                 <div class="card-body">
                     <ul id="errors">
                         @foreach($data["reviews"] as $review)
@@ -16,7 +16,7 @@
                     </ul>
                     <div class="col-4">
                         <form action="{{ route('admin.ecoProduct.show', $data['ecoProduct']->getId()) }}">
-                            <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('messages.Back')</button>
+                            <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('messages.back')</button>
                         </form>
                     </div>
                 </div>

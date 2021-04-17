@@ -25,8 +25,8 @@ Route::get('order/return/{id}', 'App\Http\Controllers\OrderController@return')->
 
 //Review routes
 Route::get('/review/show/{id}', 'App\Http\Controllers\ReviewController@show')->name('review.show');
-Route::get('/review/create', 'App\Http\Controllers\ReviewController@create')->name('review.create');
-Route::post('/review/save', 'App\Http\Controllers\ReviewController@save')->name('review.save');
+Route::get('/review/create/{id}', 'App\Http\Controllers\ReviewController@create')->name('review.create');
+Route::post('/review/save/{id}', 'App\Http\Controllers\ReviewController@save')->name('review.save');
 
 //EcoProduct routes
 Route::get('/ecoProduct/show/{id}/review/{filter}', 'App\Http\Controllers\EcoProductController@show')->name('ecoProduct.show');
