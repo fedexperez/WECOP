@@ -1,6 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
+<!-- Masthead-->
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <!-- Masthead Heading-->
+        <h1 class="masthead-heading text-uppercase mb-0">@lang('messages.brand')</h1>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-globe-americas"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Masthead Subheading-->
+        <p class="masthead-subheading font-weight-light mb-0">@lang('messages.slogan')</p>
+    </div>
+</header>
 <!-- emision calculator Section-->
 <section class="page-section portfolio" id="portfolio">
     <div class="container">
@@ -10,7 +25,7 @@
         <!-- Icon Divider-->
         <div class="divider-custom">
             <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-icon"><i class="fas fa-globe-americas"></i></div>
             <div class="divider-custom-line"></div>
         </div>
         <h4 class="text-center  text-secondary mb-0">@lang('messages.calculator_instructions')</h2><br>
@@ -38,7 +53,7 @@
         <!-- Icon Divider-->
         <div class="divider-custom divider-light">
             <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-icon"><i class="fas fa-globe-americas"></i></div>
             <div class="divider-custom-line"></div>
         </div>
         <!-- About Section Content-->
@@ -61,7 +76,7 @@
         <!-- Icon Divider-->
         <div class="divider-custom">
             <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-icon"><i class="fas fa-globe-americas"></i></div>
             <div class="divider-custom-line"></div>
         </div>
         <!-- Some Products-->
@@ -69,25 +84,19 @@
             <div class="row">
                 <div class="col-4 text-center">
                     <a href="{{ route('ecoProduct.show', [$data['ecoProducts']['4']->getId(), 'filter' => 'Some-Reviews']) }}">
-                        <img class="img-fluid"
-                            src="{{ url('img/ecoProducts/'.$data['ecoProducts']['4']->getPhoto() ) }}"
-                            alt="product" />
+                        <img class="img-fluid" src="{{ url('img/ecoProducts/'.$data['ecoProducts']['4']->getPhoto() ) }}" alt="product" />
                         <strong class="lead">{{ $data['ecoProducts']['4']->getName() }}</strong>
                     </a>
                 </div>
                 <div class="col-4 text-center">
                     <a href="{{ route('ecoProduct.show', [$data['ecoProducts']['1']->getId(), 'filter' => 'Some-Reviews']) }}">
-                        <img class="img-fluid"
-                            src="{{ url('img/ecoProducts/'.$data['ecoProducts']['1']->getPhoto() ) }}"
-                            alt="product" />
+                        <img class="img-fluid" src="{{ url('img/ecoProducts/'.$data['ecoProducts']['1']->getPhoto() ) }}" alt="product" />
                         <strong class="lead">{{ $data['ecoProducts']['1']->getName() }}</strong>
                     </a>
                 </div>
                 <div class="col-4 text-center">
                     <a href="{{ route('ecoProduct.show', [$data['ecoProducts']['3']->getId(), 'filter' => 'Some-Reviews']) }}">
-                        <img class="img-fluid"
-                            src="{{ url('img/ecoProducts/'.$data['ecoProducts']['3']->getPhoto() ) }}"
-                            alt="product" />
+                        <img class="img-fluid" src="{{ url('img/ecoProducts/'.$data['ecoProducts']['3']->getPhoto() ) }}" alt="product" />
                         <strong class="lead">{{ $data['ecoProducts']['3']->getName() }}</strong>
                     </a>
                 </div>
