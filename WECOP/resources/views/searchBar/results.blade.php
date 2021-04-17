@@ -3,11 +3,11 @@
 @section('content')
 <section class="page-section">
     <div class="container">
-        <h1 class="text-center text-uppercase text-secondary">@lang('messages.Results')</h1>
+        <h1 class="text-center text-uppercase text-secondary">@lang('messages.results')</h1>
         <!-- Icon Divider-->
         <div class="divider-custom">
             <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-icon"><i class="fas fa-globe-americas"></i></div>
             <div class="divider-custom-line"></div>
         </div>
     </div>
@@ -16,12 +16,12 @@
         <div class="text-center col-6 mx-auto">
             @if($data['ecoProducts']->isNotEmpty())
             @foreach ($data['ecoProducts'] as $ecoProduct)
-            <a href="{{ route('ecoProduct.show', $ecoProduct->getId()) }}">
+            <a href="{{ route('ecoProduct.show', ['id'=>$ecoProduct->getId(), 'filter'=>'All']) }}">
                 <h1 class="text-center text-uppercase text-secondary">{{ $ecoProduct->getName() }}</h1>
             </a>
             <div class="row">
                 <div class="col-md-6 col-lg-4">
-                    <a href="{{ route('ecoProduct.show', $ecoProduct->getId()) }}">
+                    <a href="{{ route('ecoProduct.show', ['id'=>$ecoProduct->getId(), 'filter'=>'All']) }}">
                         <img class="img-fluid" src="{{ url('img/ecoProducts/'.$ecoProduct->getPhoto()) }}"
                             alt="product" />
                     </a>
@@ -30,9 +30,9 @@
                     <p class="lead">{{ $ecoProduct->getDescription() }}</p>
                     <p class="lead">$ {{ $ecoProduct->getPrice() }}</p>
                     @if( $ecoProduct->getStock() > 0)
-                    <p class="lead" style="color:green">@lang('messages.InStock')</p><br>
+                    <p class="lead" style="color:green">@lang('messages.in_stock')</p><br>
                     @else
-                    <p class="lead" style="color:red">@lang('messages.OutStock')</p><br>
+                    <p class="lead" style="color:red">@lang('messages.out_stock')</p><br>
                     @endif
                 </div>
             </div>

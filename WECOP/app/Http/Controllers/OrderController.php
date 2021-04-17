@@ -20,7 +20,7 @@ class OrderController extends Controller
         $data = []; //to be sent to the view
         $order = Order::findOrFail($id);
         $data['order'] = $order;
-        $title = Lang::get('messages.ShowOrder');
+        $title = Lang::get('messages.show_order');
         $id = strval($order->getId());
         $data['pageTitle'] = $title." ".$id   ;
         return view('order.show')->with('data', $data);

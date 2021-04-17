@@ -7,7 +7,7 @@
         <!-- Icon Divider-->
         <div class="divider-custom">
             <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-icon"><i class="fas fa-globe-americas"></i></div>
             <div class="divider-custom-line"></div>
         </div>
         <div class="row">
@@ -18,52 +18,52 @@
                 <p class="lead">{{ $data['ecoProduct']->getDescription() }}</p>
                 <p class="lead">$ {{ $data['ecoProduct']->getPrice() }}</p>
                 @if( $data['ecoProduct']->getStock() > 0)
-                <p class="lead" style="color:green">@lang('messages.InStock')</p><br>
+                <p class="lead" style="color:green">@lang('messages.in_stock')</p><br>
                 @else
-                <p class="lead" style="color:red">@lang('messages.OutStock')</p><br>
+                <p class="lead" style="color:red">@lang('messages.out_stock')</p><br>
                 @endif
                 <p class="lead">{{ $data['ecoProduct']->getFacts() }}</p><br>
                 @if (Auth::user())
                 <form action="{{ route('review.create', ['id' =>  $data['ecoProduct']->getId()])}}">
-                    <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('messages.MakeReview')</button>
+                    <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('review.make_review')</button>
                 </form>
                 @endif
             </div>
         </div>
         <br><br>
         <div>
-            <h1 class="text-center text-uppercase text-secondary">@lang('messages.Reviews')</h1>
+            <h1 class="text-center text-uppercase text-secondary">@lang('review.reviews')</h1>
         </div>
         <div class="col-md-12">
             <div class="row p-5">
                 <div class="col-2">
                     <form action="{{ route('ecoProduct.show', ['id' =>  $data['ecoProduct']->getId(), 'filter' => 'All'])}}">
-                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('messages.All')</button>
+                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('review.all')</button>
                     </form>
                 </div>
                 <div class="col-2">
                     <form action="{{ route('ecoProduct.show', ['id' =>  $data['ecoProduct']->getId(), 'filter' => '1'])}}">
-                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('messages.Review1')</button>
+                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('review.review1')</button>
                     </form>
                 </div>
                 <div class="col-2">
                     <form action="{{ route('ecoProduct.show', ['id' =>  $data['ecoProduct']->getId(), 'filter' => '2'])}}">
-                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('messages.Review2')</button>
+                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('review.review2')</button>
                     </form>
                 </div>
                 <div class="col-2">
                     <form action="{{ route('ecoProduct.show', ['id' =>  $data['ecoProduct']->getId(), 'filter' => '3'])}}">
-                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('messages.Review3')</button>
+                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('review.review3')</button>
                     </form>
                 </div>
                 <div class="col-2">
                     <form action="{{ route('ecoProduct.show', ['id' =>  $data['ecoProduct']->getId(), 'filter' => '4'])}}">
-                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('messages.Review4')</button>
+                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('review.review4')</button>
                     </form>
                 </div>
                 <div class="col-2">
                     <form action="{{ route('ecoProduct.show', ['id' =>  $data['ecoProduct']->getId(), 'filter' => '5'])}}">
-                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('messages.Review5')</button>
+                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('review.review5')</button>
                     </form>
                 </div>
             </div>
@@ -79,6 +79,7 @@
                 @endforeach
             </div>
         </div>
+        {{ $data['reviews']->links('util.pagination') }}
     </div>
 
 </section>
