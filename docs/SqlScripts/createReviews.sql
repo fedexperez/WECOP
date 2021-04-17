@@ -42,6 +42,7 @@ CREATE TABLE `reviews` (
 -- Volcado de datos para la tabla `reviews`
 --
 
+
 INSERT INTO `reviews` (`id`, `rating`, `title`, `message`, `eco_product_id`, `user_id`, `created_at`, `updated_at`) VALUES
 (1, 4.00, 'Student', 'Meh', 4, 'Fedex', NULL, NULL),
 (2, 5.00, 'Hiiii', 'WOW', 4, 'Fedex', '2021-04-07 03:53:13', NULL),
@@ -101,3 +102,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+

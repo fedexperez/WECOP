@@ -24,14 +24,6 @@ class NotEcoProduct extends Model
     //Attributes id, name, emision, productLife
     protected $fillable = ['name', 'emision', 'price', 'product_life'];
 
-    /**
-     * Get the EcoProduct that owns the NotEcoProduct.
-     */
-    public function ecoProduct()
-    {
-        return $this->belongsTo(EcoProduct::class);
-    }
-
     public function getId()
     {
         return $this->attributes['id'];
@@ -72,6 +64,14 @@ class NotEcoProduct extends Model
         $this->attributes['product_life'] = $product_life;
     }
 
+    /**
+     * Get the EcoProduct that owns the NotEcoProduct.
+     */
+    public function ecoProducts()
+    {
+        return $this->hasMany(EcoProduct::class);
+    }
+    
     /** 
      * This static function validates that the data sent has specific data type and is required.
      *  
