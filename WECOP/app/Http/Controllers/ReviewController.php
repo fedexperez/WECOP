@@ -32,8 +32,7 @@ class ReviewController extends Controller
         $data['review'] = $review;
         $data['title'] = $review->getTitle();
         
-        $ecoProduct = EcoProduct::findOrFail($review->getEcoProduct());
-        $data['ecoProduct'] = $ecoProduct;
+        $data['ecoProduct'] = $review->ecoProduct;
 
         return view('review.show')->with('data', $data);
     }

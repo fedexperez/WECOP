@@ -16,12 +16,12 @@
         <div class="text-center col-6 mx-auto">
             @if($data['ecoProducts']->isNotEmpty())
             @foreach ($data['ecoProducts'] as $ecoProduct)
-            <a href="{{ route('ecoProduct.show', $ecoProduct->getId()) }}">
+            <a href="{{ route('ecoProduct.show', ['id'=>$ecoProduct->getId(), 'filter'=>'All']) }}">
                 <h1 class="text-center text-uppercase text-secondary">{{ $ecoProduct->getName() }}</h1>
             </a>
             <div class="row">
                 <div class="col-md-6 col-lg-4">
-                    <a href="{{ route('ecoProduct.show', $ecoProduct->getId()) }}">
+                    <a href="{{ route('ecoProduct.show', ['id'=>$ecoProduct->getId(), 'filter'=>'All']) }}">
                         <img class="img-fluid" src="{{ url('img/ecoProducts/'.$ecoProduct->getPhoto()) }}"
                             alt="product" />
                     </a>

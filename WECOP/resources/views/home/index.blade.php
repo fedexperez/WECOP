@@ -83,19 +83,19 @@
         <div class="col-12 mx-auto">
             <div class="row">
                 <div class="col-4 text-center">
-                    <a href="{{ route('ecoProduct.show', [$data['ecoProducts']['4']->getId(), 'filter' => 'Some-Reviews']) }}">
+                    <a href="{{ route('ecoProduct.show', [$data['ecoProducts']['4']->getId(), 'filter' => 'All']) }}">
                         <img class="img-fluid" src="{{ url('img/ecoProducts/'.$data['ecoProducts']['4']->getPhoto() ) }}" alt="product" />
                         <strong class="lead">{{ $data['ecoProducts']['4']->getName() }}</strong>
                     </a>
                 </div>
                 <div class="col-4 text-center">
-                    <a href="{{ route('ecoProduct.show', [$data['ecoProducts']['1']->getId(), 'filter' => 'Some-Reviews']) }}">
+                    <a href="{{ route('ecoProduct.show', [$data['ecoProducts']['1']->getId(), 'filter' => 'All']) }}">
                         <img class="img-fluid" src="{{ url('img/ecoProducts/'.$data['ecoProducts']['1']->getPhoto() ) }}" alt="product" />
                         <strong class="lead">{{ $data['ecoProducts']['1']->getName() }}</strong>
                     </a>
                 </div>
                 <div class="col-4 text-center">
-                    <a href="{{ route('ecoProduct.show', [$data['ecoProducts']['3']->getId(), 'filter' => 'Some-Reviews']) }}">
+                    <a href="{{ route('ecoProduct.show', [$data['ecoProducts']['3']->getId(), 'filter' => 'All']) }}">
                         <img class="img-fluid" src="{{ url('img/ecoProducts/'.$data['ecoProducts']['3']->getPhoto() ) }}" alt="product" />
                         <strong class="lead">{{ $data['ecoProducts']['3']->getName() }}</strong>
                     </a>

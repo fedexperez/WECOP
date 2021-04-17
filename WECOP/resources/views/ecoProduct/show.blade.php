@@ -32,13 +32,13 @@
         </div>
         <br><br>
         <div>
-            <h1 class="text-center text-uppercase text-secondary">@lang('review.Reviews')</h1>
+            <h1 class="text-center text-uppercase text-secondary">@lang('review.reviews')</h1>
         </div>
         <div class="col-md-12">
             <div class="row p-5">
                 <div class="col-2">
                     <form action="{{ route('ecoProduct.show', ['id' =>  $data['ecoProduct']->getId(), 'filter' => 'All'])}}">
-                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('review.All')</button>
+                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('review.all')</button>
                     </form>
                 </div>
                 <div class="col-2">
@@ -79,6 +79,7 @@
                 @endforeach
             </div>
         </div>
+        {{ $data['reviews']->links('util.pagination') }}
     </div>
 
 </section>
