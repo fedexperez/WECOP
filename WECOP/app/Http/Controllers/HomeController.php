@@ -42,10 +42,8 @@ class HomeController extends Controller
         $ecoProduct = EcoProduct::find($ecoProductId);
         $ecoProductEmision = floatval($ecoProduct->getEmision());
         $ecoProductLife = floatval($ecoProduct->getProductLife());
-        $notEcoProductId = $ecoProduct->getNotEcoProduct();
-        echo $notEcoProductId;
-        $notEcoProduct = NotEcoProduct::find($notEcoProductId);
-        echo $notEcoProduct;
+        $notEcoProductId = $ecoProduct->notEcoProduct;
+        $notEcoProduct = NotEcoProduct::find($notEcoProductId->getId());
         $notEcoProductEmision = floatval($notEcoProduct->getEmision());
         $notEcoProductLife = floatval($notEcoProduct->getProductLife());
 

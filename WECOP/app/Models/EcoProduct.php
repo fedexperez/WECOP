@@ -23,15 +23,7 @@ class EcoProduct extends Model
     use HasFactory;
 
     //Attributes id, name, price, stock, description, facts, categories, emision, product_life, photo
-    protected $fillable = ['name', 'price', 'stock', 'facts', 'description', 'categories', 'emision', 'not_eco_product', 'product_life', 'photo'];
-
-    /**
-     * Get the NotEcoProduct associated with the EcoProduct.
-     */
-    public function notEcoProduct()
-    {
-        return $this->hasOne(NotEcoProduct::class);
-    }
+    protected $fillable = ['name', 'price', 'stock', 'facts', 'description', 'categories', 'emision', 'not_eco_product_id', 'product_life', 'photo'];
 
     /**
      * Get the Items associated with the EcoProduct.
@@ -124,21 +116,6 @@ class EcoProduct extends Model
         return $this->attributes['emision'];
     }
 
-    public function setEmision($emision)
-    {
-        $this->attributes['emision'] = $emision;
-    }
-
-    public function getNotEcoProduct()
-    {
-        return $this->attributes['not_eco_product'];
-    }
-
-    public function setNotEcoProduct($not_eco_product)
-    {
-        $this->attributes['not_eco_product'] = $not_eco_product;
-    }
-
     public function getProductLife()
     {
         return $this->attributes['product_life'];
@@ -158,6 +135,15 @@ class EcoProduct extends Model
     {
         $this->attributes['photo'] = $photo;
     }
+
+    /**
+     * Get the NotEcoProduct associated with the EcoProduct.
+     */
+    public function notEcoProduct()
+    {
+        return $this->belongsTo(NotEcoProduct::class);
+    }
+
 
     /** 
      * This static function validates that the data sent has specific data type and is required.

@@ -34,8 +34,8 @@
                         <input type="number" placeholder="@lang('messages.EnterProductLife')" name="product_life"
                             value="{{ old('product_life') }}" />
                         <input type="text" placeholder="@lang('messages.EnterPhoto')" name="photo" value="{{ old('photo') }}" />
-                        <label for="not_eco_product">@lang('messages.ChooseNotEco')</label>
-                        <select name="not_eco_product" id="not_eco_product">
+                        <label for="not_eco_product_id">@lang('messages.ChooseNotEco')</label>
+                        <select name="not_eco_product_id" id="not_eco_product_id">
                             @foreach($data['notEcoProducts'] as $notEcoProduct)
                             <option value="{{ $notEcoProduct->getId() }}">{{ $notEcoProduct->getName() }}</option>
                             @endforeach

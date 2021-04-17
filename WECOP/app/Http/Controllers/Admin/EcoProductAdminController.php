@@ -58,7 +58,7 @@ class EcoProductAdminController extends Controller
     public function save(Request $request)
     {
         EcoProduct::validate($request);
-        EcoProduct::create($request->only(['name', 'price', 'stock', 'facts', 'description', 'categories', 'emision', 'not_eco_product', 'product_life', 'photo']));
+        EcoProduct::create($request->only(['name', 'price', 'stock', 'facts', 'description', 'categories', 'emision', 'not_eco_product_id', 'product_life', 'photo']));
 
         return back()->with('success', 'Item created successfully!');
     }

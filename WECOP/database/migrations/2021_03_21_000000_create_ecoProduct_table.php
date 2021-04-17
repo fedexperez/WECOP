@@ -24,8 +24,8 @@ class CreateEcoProductTable extends Migration
             $table->float('emision');
             $table->integer('product_life');
             $table->text('photo');
-            $table->bigInteger('not_eco_product')->unsigned();
-            $table->foreign('not_eco_product')->references('id')->on('not_eco_products');
+            $table->bigInteger('not_eco_product_id')->unsigned();
+            $table->foreign('not_eco_product_id')->references('id')->on('not_eco_products');
             $table->timestamps();
         });
     }
