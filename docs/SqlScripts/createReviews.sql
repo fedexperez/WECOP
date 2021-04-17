@@ -42,7 +42,7 @@ CREATE TABLE `reviews` (
 -- Volcado de datos para la tabla `reviews`
 --
 
-INSERT INTO `reviews` (`id`, `rating`, `title`, `message`, `eco_product`, `user`, `created_at`, `updated_at`) VALUES
+INSERT INTO `reviews` (`id`, `rating`, `title`, `message`, `eco_product_id`, `user_id`, `created_at`, `updated_at`) VALUES
 (1, 4.00, 'Student', 'Meh', 4, 'Fedex', NULL, NULL),
 (2, 5.00, 'Hiiii', 'WOW', 4, 'Fedex', '2021-04-07 03:53:13', NULL),
 (3, 3.00, 'Freak', 'A lot', 4, 'Fedex', '2021-04-06 23:13:02', NULL),
