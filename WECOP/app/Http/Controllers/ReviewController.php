@@ -42,7 +42,7 @@ class ReviewController extends Controller
     public function create($id)
     {
         $data = []; //to be sent to the view
-        $data['pageTitle'] = Lang::get('messages.WriteReview');
+        $data['pageTitle'] = Lang::get('messages.write_review');
         $data['ecoProduct'] = EcoProduct::findOrFail($id);
 
         return view('review.create')->with('data', $data);
@@ -63,7 +63,7 @@ class ReviewController extends Controller
         $review->created_at = date('Y-m-d H:i:s');
         $review->save();
 
-        $message = Lang::get('messages.SuccesfullReview');
+        $message = Lang::get('messages.succesfull_review');
         return back()->with('success', $message);
     }
 

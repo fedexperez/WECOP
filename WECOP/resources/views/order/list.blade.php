@@ -8,7 +8,7 @@
                 @if($data['orders']->isNotEmpty())
                 @foreach($data['orders'] as $order)
                 <li>
-                    <a href="{{ route('order.show', $order->getId()) }}"> @lang('messages.Order') {{ $order->getId() }}
+                    <a href="{{ route('order.show', $order->getId()) }}"> @lang('messages.order') {{ $order->getId() }}
                     </a>
                 </li>
                 @endforeach
@@ -17,7 +17,7 @@
                     <div class="text-center col-6 mx-auto">
                         <br><br><br><br><br><br>
                         <h1 class="text-center text-uppercase" style="color:blueviolet">
-                            @lang('messages.NotCurrentOrders')
+                            @lang('messages.not_current_orders')
                         </h1>
                         <br><br><br><br><br><br>
                     </div>

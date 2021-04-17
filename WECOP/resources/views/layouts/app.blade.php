@@ -21,32 +21,39 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="{{ route('home.index') }}">@lang('messages.Brand')</a>
+                <a class="navbar-brand js-scroll-trigger" href="{{ route('home.index') }}">@lang('messages.brand')</a>
                 <form class="form-inline" action="{{ route('searchBar.results') }}" method="GET">
                     <div class="form-group mx-sm-3 mb-2">
                         <input type="text" class="form-control" name="search" required/>
                     </div>
-                    <button type="submit" class="btn btn-primary">@lang('messages.Search')</button>
+                    <button type="submit" class="btn btn-primary">@lang('messages.search')</button>
                 </form>
                 <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                @lang('messages.Menu')
+                @lang('messages.menu')
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('ecoProduct.list', 'All') }}">@lang('messages.EcoProducts')</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('ecoProduct.list', 'All') }}">@lang('messages.eco_products')</a></li>
                     @guest
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('login') }}">@lang('messages.Login')</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('register') }}">@lang('messages.Register')</a></li>
-                        @else
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('address.options') }}">@lang('messages.Address')</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('order.list') }}">@lang('messages.Orders')</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">@lang('messages.LogOut')</a></li>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('login') }}">@lang('messages.login')</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('register') }}">@lang('messages.register')</a></li>
+                        @else.
+                        <div class="dropdown">
+                            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@lang('messages.user')</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('address.options') }}">@lang('messages.address')</a></a>
+                                <a class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('order.list') }}">@lang('messages.orders')</a></a>
+                                @if (Auth::user()->getRole() == 'admin')
+                                <a class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('admin.home.index') }}">@lang('messages.admin_page')</a></a>
+                                @endif
+                                <a class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">@lang('messages.log_out')</a></a>
+                            </div>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
-                        </form>
+                            </form>
+                        </div>
                     @endguest
                     </ul>
                 </div>
@@ -56,7 +63,7 @@
         <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">@lang('messages.Brand')</h1>
+                <h1 class="masthead-heading text-uppercase mb-0">@lang('messages.brand')</h1>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
@@ -64,7 +71,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">@lang('messages.Slogan')</p>
+                <p class="masthead-subheading font-weight-light mb-0">@lang('messages.slogan')</p>
             </div>
         </header>
 

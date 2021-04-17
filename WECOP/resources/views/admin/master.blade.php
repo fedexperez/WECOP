@@ -18,12 +18,12 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('admin.home.index') }}">
-                    @lang('messages.AdminWECOP')
+                    @lang('messages.admin_WECOP')
                 </a>
-                <a class="nav-link" href="{{ route('admin.ecoProduct.create') }}">@lang('messages.CreateECO')</a>
-                <a class="nav-link" href="{{ route('admin.ecoProduct.list') }}">@lang('messages.ListECO')</a>
-                <a class="nav-link" href="{{ route('admin.notEcoProduct.create') }}">@lang('messages.CreateNotECO')</a>
-                <a class="nav-link" href="{{ route('admin.notEcoProduct.list') }}">@lang('messages.ListNotECO')</a>
+                <a class="nav-link" href="{{ route('admin.ecoProduct.create') }}">@lang('messages.create_ECO')</a>
+                <a class="nav-link" href="{{ route('admin.ecoProduct.list') }}">@lang('messages.list_ECO')</a>
+                <a class="nav-link" href="{{ route('admin.notEcoProduct.create') }}">@lang('messages.create_not_ECO')</a>
+                <a class="nav-link" href="{{ route('admin.notEcoProduct.list') }}">@lang('messages.list_not_ECO')</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="{{ __('Toggle navigation') }}">

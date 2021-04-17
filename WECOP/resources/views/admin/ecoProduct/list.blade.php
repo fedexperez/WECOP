@@ -7,7 +7,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">@lang('messages.ListEcoProducts')</div>
+                <div class="card-header">@lang('messages.list_eco_products')</div>
                 <div class="card-body">
                     @foreach($data['ecoProducts'] as $ecoProduct)
                     <li>

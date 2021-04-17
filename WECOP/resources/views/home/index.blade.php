@@ -6,19 +6,19 @@
     <div class="container">
         <!-- Portfolio Section Heading-->
         <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
-            @lang('messages.EmisionCalculator')</h2>
+            @lang('messages.emision_calculator')</h2>
         <!-- Icon Divider-->
         <div class="divider-custom">
             <div class="divider-custom-line"></div>
             <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
             <div class="divider-custom-line"></div>
         </div>
-        <h4 class="text-center  text-secondary mb-0">@lang('messages.CalculatorInstructions')</h2><br>
+        <h4 class="text-center  text-secondary mb-0">@lang('messages.calculator_instructions')</h2><br>
             <div class="text-center lead">
                 <!-- EmsionCalculator-->
                 <form method="POST" action="{{ route('home.emisionCalculator') }}">
                     @csrf
-                    <label for="eco_product">@lang('messages.CalculatorChooseProduct')</label>
+                    <label for="eco_product">@lang('messages.calculator_choose_product')</label>
                     <select name="eco_product_id" id="eco_product_id">
                         @foreach($data['ecoProducts'] as $ecoProduct)
                         <option value="{{ $ecoProduct->getId() }}"> {{ $ecoProduct->getName() }} </option>
@@ -34,7 +34,7 @@
 <section class="page-section bg-primary text-white mb-0" id="about">
     <div class="container">
         <!-- About Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase text-white">@lang('messages.About')</h2>
+        <h2 class="page-section-heading text-center text-uppercase text-white">@lang('messages.about')</h2>
         <!-- Icon Divider-->
         <div class="divider-custom divider-light">
             <div class="divider-custom-line"></div>
@@ -44,10 +44,10 @@
         <!-- About Section Content-->
         <div class="row">
             <div class="col-lg-4 ml-auto">
-                <p class="lead">@lang('messages.AboutMessage1')</p>
+                <p class="lead">@lang('messages.about_message1')</p>
             </div>
             <div class="col-lg-4 mr-auto">
-                <p class="lead">@lang('messages.AboutMessage2')</p>
+                <p class="lead">@lang('messages.about_message2')</p>
             </div>
         </div>
     </div>
@@ -56,7 +56,7 @@
 <section class="page-section" id="contact">
     <div class="container">
         <!-- Some producs Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">@lang('messages.SomeProducts')
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">@lang('messages.some_products')
         </h2>
         <!-- Icon Divider-->
         <div class="divider-custom">
