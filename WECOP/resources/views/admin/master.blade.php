@@ -17,9 +17,8 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ route('admin.home.index') }}">
-                    @lang('messages.admin_WECOP')
-                </a>
+                <a class="navbar-brand" href="{{ route('home.index') }}">@lang('messages.brand')</a>
+                <a class="navbar-brand" href="{{ route('admin.home.index') }}">@lang('messages.admin_WECOP')</a>
                 <a class="nav-link" href="{{ route('admin.ecoProduct.create') }}">@lang('messages.create_ECO')</a>
                 <a class="nav-link" href="{{ route('admin.ecoProduct.list') }}">@lang('messages.list_ECO')</a>
                 <a class="nav-link" href="{{ route('admin.notEcoProduct.create') }}">@lang('messages.create_not_ECO')</a>
@@ -38,6 +37,7 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        <li style="text-align:right;"> {{Auth::user()->getName()}} </li>
                         <!-- Future authentication Links -->
                     </ul>
                 </div>
