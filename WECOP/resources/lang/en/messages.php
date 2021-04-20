@@ -23,22 +23,10 @@ return [
     'if_calculate_message'     =>'If you buy a/an ',
     'stop_calculate_message'   =>' you stop ejecting ',
     'grams_calculate_message'  =>' grams of CO2 to the atmosphere per unit used',
-     
-    //For order
-    'order'       => 'Order',
-    'status'      => 'Status',
-    'payment_type' => 'Payment Type',
-    'address'     => 'Address',
-    'total'       => 'Total',
-    'return_order' => 'Return Order',
-    'date'        => 'Date',
-    'back'        => 'Go back',
-    'orders'      => 'Orders',
-    'show_order'   => 'Show Order',
-    'not_current_orders' => 'You do not have current orders',
 
     //For ecoProducts
     'eco_products'  => 'EcoProducts',
+    'eco_product'  => 'EcoProduct',
     'price_low_high' => 'Price, Lowest to Highest',
     'price_high_low' => 'Price, Highest to Lowest',
     'date_newest_oldest' => 'Date, Newest to Oldest',

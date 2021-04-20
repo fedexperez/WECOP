@@ -2,7 +2,7 @@
 
 /**
  * WECOP
- * 
+ *
  * @author clopezr9
  * PHP version: 8.0.2
  */
@@ -14,7 +14,7 @@ use App\Models\Review;
 
 /**
  * Class ecoProductController
- * 
+ *
  * @package App\Http\Controllers
  */
 class EcoProductController extends Controller
@@ -22,7 +22,7 @@ class EcoProductController extends Controller
     
     /**
      * This function list the ecoProducts depending on the specified filter.
-     * 
+     *
      * @param filter is the condition to be aplied.
      * @return back with a view and data.
      */
@@ -52,7 +52,7 @@ class EcoProductController extends Controller
         } elseif ($filter == 'In-Stock') {
             $ecoProducts = ecoProduct::where('stock', '>', '0')->get();
             $data['ecoProducts'] = $ecoProducts;
-        } 
+        }
 
         return view('ecoProduct.list')->with('data', $data);
     }
@@ -60,7 +60,7 @@ class EcoProductController extends Controller
 
     /**
      * This function shows the EcoProduct selected and the reviews filtered according the selection of stars.
-     * 
+     *
      * @param id is the id of th EcoProduct.
      * @param filter is the characteristic to filter the reviews of the EcoProduct
      * @return view with a data array.
@@ -73,7 +73,7 @@ class EcoProductController extends Controller
         if ($ecoProduct == null) {
             return redirect() -> route('ecoProduct.notFound', ['id' => $id]);
         } else {
-            if ( $filter == 'All' ){
+            if ($filter == 'All') {
                 $reviews = Review::where('eco_product_id', $id)->paginate(5);
                 $data['reviews'] = $reviews;
             } else {
@@ -89,5 +89,4 @@ class EcoProductController extends Controller
     {
         return view('util.notFound');
     }
-
 }

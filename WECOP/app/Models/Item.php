@@ -1,8 +1,8 @@
 <?php
 
-/** 
+/**
  * WECOP
- * 
+ *
  * @author clopezr9
  * PHP version: 8.0.2
  */
@@ -12,9 +12,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-/** 
+/**
  * Class Item
- * 
+ *
  * @package App/Models
  */
 class Item extends Model
@@ -71,5 +71,4 @@ class Item extends Model
     {
         $this->attributes['order_id'] = $order_id;
     }
-
 }

@@ -1,8 +1,8 @@
 <?php
 
-/** 
+/**
  * WECOP
- * 
+ *
  * @author clopezr9
  * PHP version: 8.0.2
  */
@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
-/** 
+/**
  * Class NotEcoProduct
  * @package App/Models
  */
@@ -72,12 +72,12 @@ class NotEcoProduct extends Model
         return $this->hasMany(EcoProduct::class);
     }
     
-    /** 
+    /**
      * This static function validates that the data sent has specific data type and is required.
-     *  
-     * @param request 
+     *
+     * @param request
      * */
-    public static function validate(Request $request) 
+    public static function validate(Request $request)
     {
         $request->validate(
             [

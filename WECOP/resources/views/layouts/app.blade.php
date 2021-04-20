@@ -41,11 +41,12 @@
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('login') }}">@lang('messages.login')</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('register') }}">@lang('messages.register')</a></li>
                     @else.
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('order.order') }}">@lang('order.order') <i class="fas fa-shopping-bag"></i></a></li>
                     <div class="dropdown">
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@lang('messages.user')</a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('address.options') }}">@lang('messages.address')</a></a>
-                            <a class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('order.list') }}">@lang('messages.orders')</a></a>
+                            <a class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('address.options') }}">@lang('order.address')</a></a>
+                            <a class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('order.list') }}">@lang('order.orders')</a></a>
                             @if (Auth::user()->getRole() == 'admin')
                             <a class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('admin.home.index') }}">@lang('messages.admin_page')</a></a>
                             @endif

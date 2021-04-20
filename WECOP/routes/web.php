@@ -19,9 +19,12 @@ Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home.index')
 Route::post('/home/emisionCalculator/', 'App\Http\Controllers\HomeController@calculateEmision')->name('home.emisionCalculator');
 
 //Order routes
-Route::get('order/show/{id}', 'App\Http\Controllers\OrderController@show')->name('order.show');
-Route::get('order/list', 'App\Http\Controllers\OrderController@list')->name('order.list');
-Route::get('order/return/{id}', 'App\Http\Controllers\OrderController@return')->name('order.return');
+Route::get('/order/show/{id}', 'App\Http\Controllers\OrderController@show')->name('order.show');
+Route::get('/order/list', 'App\Http\Controllers\OrderController@list')->name('order.list');
+Route::get('/order/return/{id}', 'App\Http\Controllers\OrderController@return')->name('order.return');
+Route::get('/order/add/{id}', 'App\Http\Controllers\OrderController@add')->name('order.add');
+Route::get('/order/removeAll', 'App\Http\Controllers\OrderController@removeAll')->name('order.removeAll');
+Route::get('/order', 'App\Http\Controllers\OrderController@showTempOrder')->name('order.order');
 
 //Review routes
 Route::get('/review/show/{id}', 'App\Http\Controllers\ReviewController@show')->name('review.show');

@@ -46,7 +46,7 @@
             <div class="form-group row mb-0">
                 <div class="col-md-3 offset-md-4">
                     <form action="{{ route('ecoProduct.show', ['id' =>  $data['ecoProduct']->getId(), 'filter' => 'All'])}}">
-                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('messages.back')</button>
+                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('order.back')</button>
                     </form>
                 </div>
             </div>

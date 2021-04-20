@@ -1,8 +1,8 @@
 <?php
 
-/** 
+/**
  * WECOP
- * 
+ *
  * @author fperezm1
  * PHP version: 8.0.2
  */
@@ -15,16 +15,16 @@ use Illuminate\Database\Eloquent\Model;
 use App\Address;
 use App\Item;
 
-/** 
+/**
  * Class Order
- * 
+ *
  * @package App/Models
  */
 class Order extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['payment_type', 'shipping'];
+    protected $fillable = ['payment_type', 'shipping', 'user_id', 'address_id'];
     
 
     public function getId()
@@ -65,16 +65,6 @@ class Order extends Model
     public function setDate($date)
     {
         $this->attributes['date'] = $date;
-    }    
-    
-    public function getAddress()
-    {
-        return $this->attributes['address'];
-    }
-
-    public function setAddress($address)
-    {
-        $this->attributes['address'] = $address;
     }
 
     public function getTotal()
@@ -87,26 +77,28 @@ class Order extends Model
         $this->attributes['total'] = $total;
     }
 
-    public function getUser()
+    /**
+     * Get the Items of the order.
+     */
+    public function items()
     {
-        return $this->attributes['user'];
-    }
-
-    public function setUser($user)
-    {
-        $this->attributes['user'] = $user;
-    }
-
-    public function items(){
         return $this->hasMany(Item::class);
     }
 
-    public function addresses(){
-        return $this->hasMany(Address::class);
+    /**
+     * Get the Address of the order.
+     */
+    public function address()
+    {
+        return $this->belongsTo(Address::class);
     }
 
-    public function users(){
-        return $this->hasMany(User::class);
+    /**
+     * Get the User that made the order.
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
     public static function validate(Request $request)
@@ -116,5 +108,4 @@ class Order extends Model
             'shipping' => 'required',
         ]);
     }
-    
 }

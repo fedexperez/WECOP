@@ -2,7 +2,7 @@
 
 /**
  * WECOP
- * 
+ *
  * @author fperezm1
  * PHP: 8.0.2
  */
@@ -14,9 +14,9 @@ use App\Models\Review;
 use App\Models\EcoProduct;
 use Illuminate\Support\Facades\Auth;
 
-/** 
+/**
  * Class ReviewAdminController
- * 
+ *
  * @package App\Http\Controllers
  */
 class ReviewAdminController extends Controller
@@ -24,7 +24,7 @@ class ReviewAdminController extends Controller
     /**
      * This function is run every time an AdminHomeController is instanced. It checks
      * if the user is a client or an admin for access permisions.
-     * 
+     *
      * @return next with the previous request
      */
     public function __construct()
@@ -71,7 +71,4 @@ class ReviewAdminController extends Controller
         $data->delete();
         return redirect()->route('admin.review.list');
     }
-    
-
-
 }

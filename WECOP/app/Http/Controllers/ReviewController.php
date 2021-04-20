@@ -2,7 +2,7 @@
 
 /**
  * WECOP
- * 
+ *
  * @author fperezm1
  * PHP version: 8.0.2
  */
@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Auth;
 
 /**
  * Class ReviewController
- * 
+ *
  * @package App\Http\Controllers
  */
 class ReviewController extends Controller
@@ -65,5 +65,4 @@ class ReviewController extends Controller
         $message = Lang::get('review.succesfull_review');
         return back()->with('success', $message);
     }
-
 }
