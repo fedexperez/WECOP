@@ -12,6 +12,7 @@ namespace App\Http\Controllers;
 use App\Models\EcoProduct;
 use App\Models\Order;
 use App\Models\Item;
+use App\Models\Address;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;
@@ -25,6 +26,7 @@ class OrderController extends Controller
         $data = []; //to be sent to the view
         $order = Order::findOrFail($id);
         $data['order'] = $order;
+        $data['address'] = $order->address;
         $title = Lang::get('messages.show_order');
         $id = strval($order->getId());
         $data['pageTitle'] = $title." ".$id;
@@ -42,9 +44,9 @@ class OrderController extends Controller
     public function list()
     {
         $data = [];
-        $title = Lang::get('messages.orders');
+        $title = Lang::get('order.orders');
         $data['pageTitle'] = $title;
-        $data['orders'] = Order::all();
+        $data['orders'] = Order::where('user_id', Auth::user()->getId())->get();
         return view('order.list')->with('data', $data);
     }
 
@@ -108,7 +110,7 @@ class OrderController extends Controller
         $order = new Order();
         $order->status = 'Ordered';
         $order->payment_type = 'Upon Delivery';
-        $order->address_id = 1;
+        $order->address_id = $request->input('address_id');
         $order->total = $total;
         $order->user_id = $user->getId();
         $order->save();

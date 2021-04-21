@@ -20,5 +20,6 @@ return [
     'quantity' => 'Cantidad',
     'buy' => 'Comprar orden',
     'success' => 'Orden relizada exitosamente',
+    'orders' => 'Tus Ordenes',
 
 ];

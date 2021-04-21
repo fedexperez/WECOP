@@ -20,6 +20,7 @@ return [
     'quantity' => 'Quantity',
     'buy' => 'Buy Order',
     'success' => 'Successfull Order',
+    'orders' => 'Your Orders',
 
 
 ];

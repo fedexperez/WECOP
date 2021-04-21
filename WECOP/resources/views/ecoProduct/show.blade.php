@@ -28,7 +28,7 @@
                     <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('review.make_review')</button>
                 </form>
                 @endif
-                @if (Auth::user())
+                @if (Auth::user() && $data['ecoProduct']->getStock() > 0)
                 <div class="row p-4">
                     <form action="{{ route('order.add', ['id' =>  $data['ecoProduct']->getId()])}}">
                         <label for="quantity">@lang('order.quantity')</label>

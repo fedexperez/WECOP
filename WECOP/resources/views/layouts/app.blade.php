@@ -40,7 +40,7 @@
                     @guest
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('login') }}">@lang('messages.login')</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('register') }}">@lang('messages.register')</a></li>
-                    @else.
+                    @else
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('order.order') }}">@lang('order.order') <i class="fas fa-shopping-bag"></i></a></li>
                     <div class="dropdown">
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@lang('messages.user')</a>

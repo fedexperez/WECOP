@@ -9,11 +9,11 @@
             <div class="card">
                 <div class="card-header"> @lang('order.order') {{ $data['order']->getId() }}</div>
                 <div class="card-body">
-                    <b>@lang('order.status'): </b> {{ $data["order"]->getStatus() }}<br />
-                    <b>@lang('order.payment_type'): </b>{{ $data["order"]->getPaymentType() }}<br />
-                    <b>@lang('order.address'): </b>{{ $data["order"]->getAddress() }}<br />
-                    <b>@lang('order.Date'): </b>{{ $data["order"]->getDate() }}<br />
-                    <b>@lang('order.total'): </b>{{ $data["order"]->getTotal() }}<br /><br />
+                    <b>@lang('order.status'): </b> {{ $data['order']->getStatus() }}<br />
+                    <b>@lang('order.payment_type'): </b>{{ $data['order']->getPaymentType() }}<br />
+                    <b>@lang('order.address'): </b>{{ $data['address']->getAddress() }}<br />
+                    <b>@lang('order.date'): </b>{{ $data['order']->getDate() }}<br />
+                    <b>@lang('order.total'): </b>{{ $data['order']->getTotal() }}<br /><br />
                     <div class="row">
                         <div class="col-5">
                             <form action="{{ route('order.list')}}">

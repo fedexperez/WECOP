@@ -12,8 +12,7 @@ namespace App\Models;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Address;
-use App\Item;
+
 
 /**
  * Class Order
@@ -56,6 +55,11 @@ class Order extends Model
     public function setPaymentType($paymentType)
     {
         $this->attributes['payment_type'] = $paymentType;
+    }
+
+    public function getDateFormated()
+    {
+        return date('d/m/Y', strtotime($this->attributes['date']));
     }
 
     public function getDate()

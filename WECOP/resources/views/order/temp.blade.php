@@ -19,6 +19,7 @@
     </div>
     <br>
     <h2 class="text-center text-uppercase text-secondary">@lang('order.total'): {{ $data['total'] }} @lang('order.money')</h2>
+    @if ($data['total'] > 0)
     <div class="col-md-12">
         <div class="row justify-content-center">
             <div class="col-3">
@@ -27,7 +28,7 @@
                 </form>
             </div>
             <div class="col-3">
-                <form action="{{ route('order.buy', ['total' =>  $data['total']]) }}">
+                <form action="{{ route('order.buy') }}">
                     <label for="address_id">@lang('messages.address')</label>
                     <select name="address_id" id="address_id" required >
                         @foreach($data['addresses'] as $address)
@@ -39,6 +40,7 @@
             </div>
         </div>
     </div>
+    @endif
     <br>
 </div>
 @endsection
