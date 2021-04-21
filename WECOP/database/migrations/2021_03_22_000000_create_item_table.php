@@ -17,8 +17,8 @@ class CreateItemTable extends Migration
             $table->bigIncrements('id');
             $table->float('subtotal');
             $table->integer('quantity');
-            $table->bigInteger('order')->unsigned();
-            $table->foreign('order')->references('id')->on('orders');
+            $table->bigInteger('order_id')->unsigned();
+            $table->foreign('order_id')->references('id')->on('orders');
             $table->bigInteger('eco_product_id')->unsigned();
             $table->foreign('eco_product_id')->references('id')->on('eco_products');
             $table->timestamps();

@@ -11,6 +11,7 @@ namespace App\Http\Controllers;
 
 use App\Models\EcoProduct;
 use App\Models\Order;
+use App\Models\Item;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;
@@ -64,6 +65,10 @@ class OrderController extends Controller
     public function showTempOrder(Request $request)
     {
         $data = []; //to be sent to the view
+
+        $user = User::findOrFail(Auth::user()->getId());
+        $addresses = $user->address;
+
         $title = Lang::get('order.order');
         $data['pageTitle'] = $title;
         $listProducts = array();
@@ -80,8 +85,51 @@ class OrderController extends Controller
         $data['ids'] = $ids;
         $data['ecoProducts'] = $listProducts;
         $data['total'] = $total;
+        $data['addresses'] = $addresses;
         
-
         return view('order.temp')->with('data', $data);
+    }
+
+    public function buy(Request $request)
+    {
+        $data = []; //to be sent to the view
+        $title = Lang::get('order.success');
+        $total = 0;
+        $ids = $request->session()->get('ecoProducts');
+        if ($ids) {
+            $listProducts = EcoProduct::findMany(array_keys($ids));
+            foreach ($listProducts as $ecoProduct) {
+                $qnty = $ids[$ecoProduct->getId()];
+                $total = $total + ($ecoProduct->getPrice()*$qnty);
+            }
+        }
+
+        $user = User::findOrFail(Auth::user()->getId());
+        $order = new Order();
+        $order->status = 'Ordered';
+        $order->payment_type = 'Upon Delivery';
+        $order->address_id = 1;
+        $order->total = $total;
+        $order->user_id = $user->getId();
+        $order->save();
+
+        if ($ids) {
+            $listProducts = EcoProduct::findMany(array_keys($ids));
+            foreach ($listProducts as $ecoProduct) {
+                $qnty = $ids[$ecoProduct->getId()];
+
+                $item = new Item();
+                $item->subtotal = $ecoProduct->getPrice()*$qnty;
+                $item->quantity = $qnty;
+                $item->eco_product_id = $ecoProduct->getId();
+                $item->order_id = $order->getId();
+
+                $item->save();
+            }
+        }
+
+
+
+        return view('order.buy')->with('data', $data);
     }
 }

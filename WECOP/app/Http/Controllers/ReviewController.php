@@ -48,7 +48,7 @@ class ReviewController extends Controller
     }
 
 
-    public function save(Request $request, $id)
+    public function save($id, Request $request)
     {
         Review::validate($request);
 

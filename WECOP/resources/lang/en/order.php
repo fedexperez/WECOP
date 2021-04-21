@@ -19,6 +19,7 @@ return [
     'money' => 'USD',
     'quantity' => 'Quantity',
     'buy' => 'Buy Order',
+    'success' => 'Successfull Order',
 
 
 ];

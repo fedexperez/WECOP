@@ -25,6 +25,7 @@ Route::get('/order/return/{id}', 'App\Http\Controllers\OrderController@return')-
 Route::get('/order/add/{id}', 'App\Http\Controllers\OrderController@add')->name('order.add');
 Route::get('/order/removeAll', 'App\Http\Controllers\OrderController@removeAll')->name('order.removeAll');
 Route::get('/order', 'App\Http\Controllers\OrderController@showTempOrder')->name('order.order');
+Route::get('/order/buy', 'App\Http\Controllers\OrderController@buy')->name('order.buy');
 
 //Review routes
 Route::get('/review/show/{id}', 'App\Http\Controllers\ReviewController@show')->name('review.show');

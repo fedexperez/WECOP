@@ -22,11 +22,12 @@ use App\Item;
  */
 class Order extends Model
 {
+    public $timestamps = false;
+
     use HasFactory;
 
-    protected $fillable = ['payment_type', 'shipping', 'user_id', 'address_id'];
+    protected $fillable = ['payment_type', 'user_id', 'address_id'];
     
-
     public function getId()
     {
         return $this->attributes['id'];
@@ -105,7 +106,7 @@ class Order extends Model
     {
         $request->validate([
             'paymentType' => 'required',
-            'shipping' => 'required',
+            'address_id' => 'required',
         ]);
     }
 }
