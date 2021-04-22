@@ -3,8 +3,7 @@
 @section('content')
 <section class="page-section">
     <div class="container">
-        <h1 class="text-center text-uppercase text-secondary">{{ $data['address']->getAddress() }}
-        </h1>
+        <h1 class="text-center text-uppercase text-secondary">{{ $data['address']->getAddress() }}</h1>
         <!-- Icon Divider-->
         <div class="divider-custom">
             <div class="divider-custom-line"></div>

@@ -73,7 +73,7 @@ class Item extends Model
     }
 
     /**
-     * Get the Order that owns the items. 
+     * Get the Order that owns the items.
      */
     public function order()
     {

@@ -21,5 +21,6 @@ return [
     'buy' => 'Comprar orden',
     'success' => 'Orden relizada exitosamente',
     'orders' => 'Tus Ordenes',
+    'complete' => 'Orden realizada correctamente',
 
 ];
