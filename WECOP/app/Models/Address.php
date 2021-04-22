@@ -17,18 +17,10 @@ class Address extends Model
 {
     use HasFactory;
 
-    //Attributes id, postañ_code, address, country and city
-    protected $fillable = ['postal_code', 'address', 'country', 'city'];
+    //Attributes id, postal_code, address, country and city
+    protected $fillable = ['postal_code', 'address', 'country', 'city', 'user_id'];
     
     public $timestamps = false;
-    
-    /**
-     * Get the user that owns the address.
-     */
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
 
     public function getId()
     {
@@ -78,6 +70,14 @@ class Address extends Model
     public function setCity($city)
     {
         $this->attributes['city'] = $city;
+    }
+
+    /**
+     * Get the user that owns the address.
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
     public static function validate(Request $request)

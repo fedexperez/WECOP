@@ -23,10 +23,11 @@ use Illuminate\Http\Request;
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
-    //Attributes id, name, user_name, credit_card, email, password and role.
+
     /**
-     * The attributes that are mass assignable.
-     *
+     * The attributes that are mass assignable:
+     * id, name, user_name, credit_card, email, password and role.
+     * 
      * @var array
      */
     protected $fillable = ['user_name','name','credit_card','email','password'];
@@ -44,21 +45,6 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = ['email_verified_at' => 'datetime'];
-
-    public function address()
-    {
-        return $this->hasMany(Address::class);
-    }
-
-    public function review()
-    {
-        return $this->hasMany(Review::class);
-    }
-
-    public function order()
-    {
-        return $this->hasMany(Order::class);
-    }
 
     public function getId()
     {
@@ -128,6 +114,30 @@ class User extends Authenticatable
     public function setRemember($remember)
     {
         $this->attributes['remember'] = $remember;
+    }
+
+    /**
+     * User has adresses.
+     */
+    public function address()
+    {
+        return $this->hasMany(Address::class);
+    }
+
+    /**
+     * User can have many reviews.
+     */
+    public function review()
+    {
+        return $this->hasMany(Review::class);
+    }
+
+    /**
+     * User can have many orders.
+     */
+    public function order()
+    {
+        return $this->hasMany(Order::class);
     }
 
     public static function validate(Request $request)
