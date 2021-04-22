@@ -59,7 +59,7 @@ class AddressController extends Controller
         $address->address = $request['address'];
         $address->city = $request['city'];
         $address->country = $request['country'];
-        $address->user = $user->getId();
+        $address->user_id = $user->getId();
         $address->save();
         
         $message = Lang::get('Succesfully added Address');
