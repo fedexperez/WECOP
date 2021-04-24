@@ -33,7 +33,7 @@ class SearchBarController extends Controller
     {
 
         $data = [];
-        $title = Lang::get('messages.Results');
+        $title = Lang::get('messages.results');
         $data['pageTitle'] = $title;
 
         // Get the search value from the request.
@@ -45,6 +45,9 @@ class SearchBarController extends Controller
             ->orWhere('emision', 'LIKE', "%{$search}%")
             ->get();
 
+        $route = [];
+        $route[0] = [Lang::get('breadcrumbs.results'), 'searchBar.results'];
+        $data['route'] = $route;
         $data ['ecoProducts'] = $ecoProducts;
 
         return view('searchBar.results') -> with('data', $data);

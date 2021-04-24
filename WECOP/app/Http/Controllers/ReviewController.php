@@ -32,6 +32,12 @@ class ReviewController extends Controller
         $data['review'] = $review;
         $data['title'] = $review->getTitle();
         
+        $route = [];
+        $route[0] = [Lang::get('breadcrumbs.show'), 'ecoProduct.show', $review->eco_product_id, 'All'];
+        $route[1] = [Lang::get('breadcrumbs.order'), 'order.show'];
+        dd($route);
+        $data['route'] = $route;
+
         $data['ecoProduct'] = $review->ecoProduct;
 
         return view('review.show')->with('data', $data);
@@ -43,6 +49,11 @@ class ReviewController extends Controller
         $data = []; //to be sent to the view
         $data['pageTitle'] = Lang::get('messages.write_review');
         $data['ecoProduct'] = EcoProduct::findOrFail($id);
+        $route = [];
+        $route[0] = [Lang::get('breadcrumbs.ecoproducts'), 'ecoProduct.list', 'All'];
+        $route[1] = [Lang::get('breadcrumbs.show'), 'ecoProduct.show', $id, 'All'];
+        $route[2] = [Lang::get('breadcrumbs.create_review'), 'review.create', $id];
+        $data['route'] = $route;
 
         return view('review.create')->with('data', $data);
     }

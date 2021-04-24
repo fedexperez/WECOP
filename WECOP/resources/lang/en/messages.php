@@ -73,11 +73,11 @@ return [
     'product_description' => 'Product description:',
     'product_categories' => 'Product categories:',
     'product_photo'      => 'Product photo:',
-    'enter_stock'        => 'Enter stock',
-    'enter_fact'         => 'Enter fact',
-    'enter_descp'        => 'Enter description',
-    'enter_categories'   => 'Enter categories',
-    'enter_photo'        => 'Enter photo (.jpg/.png)',
+    'enter_stock'        => 'Enter Stock',
+    'enter_fact'         => 'Enter Fact',
+    'enter_descp'        => 'Enter Description',
+    'enter_categories'   => 'Enter Categories',
+    'enter_photo'        => 'Enter Photo (.jpg/.png)',
     'choose_not_eco'      => 'Choose a NotEcoProduct',
 
     //notEcoProducts

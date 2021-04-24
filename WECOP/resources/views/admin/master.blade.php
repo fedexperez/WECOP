@@ -43,6 +43,7 @@
                 </div>
             </div>
         </nav>
+        @include('util.breadcrumbs')
 
         <main class="py-4">
             @yield('content')

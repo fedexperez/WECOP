@@ -13,6 +13,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Review;
 use App\Models\EcoProduct;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Lang;
 
 /** 
  * Class ReviewAdminController
@@ -46,6 +47,10 @@ class ReviewAdminController extends Controller
         $data['reviews'] = Review::where('eco_product_id', $id)->get();
         $ecoProduct = EcoProduct::findOrFail($id);
         $data['ecoProduct'] = $ecoProduct;
+        $route = [];
+        $route[0] = [Lang::get('breadcrumbs.admin'), 'admin.home.index'];
+        $route[1] = [Lang::get('breadcrumbs.list_reviews'), 'admin.review.list'];
+        $data['route'] = $route;
 
         return view('admin.review.list')->with('data', $data);
     }
@@ -57,6 +62,12 @@ class ReviewAdminController extends Controller
         $review = Review::findOrFail($id);
         $ecoProduct = EcoProduct::findOrFail($review->getEcoProduct());
         $data['ecoProduct'] = $ecoProduct;
+
+        $route = [];
+        $route[0] = [Lang::get('breadcrumbs.admin'), 'admin.home.index'];
+        $route[1] = [Lang::get('breadcrumbs.list_reviews'), 'admin.review.list'];
+        $route[2] = [Lang::get('breadcrumbs.review'), 'admin.review.show', $id];
+        $data['route'] = $route;
 
         $data['review'] = $review;
         $data['title'] = $review->getTitle();

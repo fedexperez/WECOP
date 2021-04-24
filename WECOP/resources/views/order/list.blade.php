@@ -3,6 +3,7 @@
 @section('content')
 <div class="row p-5">
     <div class="col-md-12">
+    @include('util.breadcrumbs')
         <div class="text-center">
             <ul id="errors">
                 @if($data['orders']->isNotEmpty())
