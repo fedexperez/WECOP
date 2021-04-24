@@ -1,8 +1,8 @@
 <?php
 
-/** 
+/**
  * WECOP
- * 
+ *
  * @author Shiroke-013
  * PHP version: 8.0.2
  */
@@ -15,9 +15,9 @@ use App\Models\User;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Auth;
 
-/** 
+/**
  * Class AddressController
- * 
+ *
  * @package App\Http\Controllers
  */
 class AddressController extends Controller
@@ -25,7 +25,7 @@ class AddressController extends Controller
 
     public function options()
     {
-        $data = []; 
+        $data = [];
         $title = Lang::get('messages.address_options');
         $data['pageTitle'] = $title;
         return view('address.options')->with('data', $data);
@@ -50,7 +50,7 @@ class AddressController extends Controller
     }
 
     public function save(Request $request)
-    { 
+    {
         Address::validate($request);
 
         $user = User::findOrFail(Auth::user()->getId());
@@ -74,7 +74,7 @@ class AddressController extends Controller
     }
 
     public function list()
-    {   
+    {
         $data = [];
         $title = Lang::get('messages.address_list');
         $data['pageTitle'] = $title;

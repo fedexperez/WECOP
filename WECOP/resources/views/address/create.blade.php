@@ -35,7 +35,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="address" class="col-md-4 col-form-label text-md-right">@lang('messages.address')</label>
+                            <label for="address" class="col-md-4 col-form-label text-md-right">@lang('order.address')</label>
                             <div class="col-md-6">
                                 <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" required autocomplete="new-address">
 
@@ -59,7 +59,7 @@
                         </div>
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" value="@lang('messages.Send')" class="btn btn-primary">
+                                <button type="submit" value="@lang('messages.send')" class="btn btn-primary">
                                     @lang('messages.create')
                                 </button>
                             </div>

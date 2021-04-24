@@ -28,6 +28,15 @@
                     <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('review.make_review')</button>
                 </form>
                 @endif
+                @if (Auth::user() && $data['ecoProduct']->getStock() > 0)
+                <div class="row p-4">
+                    <form action="{{ route('order.add', ['id' =>  $data['ecoProduct']->getId()])}}">
+                        <label for="quantity">@lang('order.quantity')</label>
+                        <input type="number" min="1" max="$data['ecoProduct']->getStock()" class="form-control" name="quantity" required />
+                        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('order.add_to_order')</button>
+                    </form>
+                </div>
+                @endif
             </div>
         </div>
         <br><br>

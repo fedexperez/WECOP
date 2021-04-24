@@ -10,13 +10,13 @@
                     <ul id="errors">
                         @foreach($data["reviews"] as $review)
                         <li>
-                            @lang('messages.Review') {{ $review->getId() }}<a href="{{ route('admin.review.show', $review->getId()) }}"> {{ $review->getTitle() }} - Rating: {{ $review->getRating() }} </a>
+                            @lang('review.Review') {{ $review->getId() }}<a href="{{ route('admin.review.show', $review->getId()) }}"> {{ $review->getTitle() }} - Rating: {{ $review->getRating() }} </a>
                         </li>
                         @endforeach
                     </ul>
                     <div class="col-4">
                         <form action="{{ route('admin.ecoProduct.show', $data['ecoProduct']->getId()) }}">
-                            <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('messages.back')</button>
+                            <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('order.back')</button>
                         </form>
                     </div>
                 </div>

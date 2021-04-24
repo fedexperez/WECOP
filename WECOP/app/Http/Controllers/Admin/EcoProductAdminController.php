@@ -2,7 +2,7 @@
 
 /**
  * WECOP
- * 
+ *
  * @author clopezr9
  * PHP version: 8.0.2
  */
@@ -10,16 +10,16 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\EcoProduct;  
-use App\Models\NotEcoProduct;  
+use App\Models\EcoProduct;
+use App\Models\NotEcoProduct;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Lang;
-use App\Models\User;  
+use App\Models\User;
 
 /**
  * Class ecoProductAdminController
- * 
+ *
  * @package App\Http\Controllers
  */
 class EcoProductAdminController extends Controller
@@ -27,7 +27,7 @@ class EcoProductAdminController extends Controller
     /**
      * This function is run every time an AdminHomeController is instanced. It checks
      * if the user is a client or an admin for access permisions.
-     * 
+     *
      * @return next with the previous request.
      */
     public function __construct()
@@ -98,5 +98,4 @@ class EcoProductAdminController extends Controller
     {
         return view('admin.notFound');
     }
-
 }

@@ -1,8 +1,8 @@
 <?php
 
-/** 
+/**
  * WECOP
- * 
+ *
  * @author Shiroke-013
  * PHP version: 8.0.2
  */
@@ -60,7 +60,7 @@ class Address extends Model
     public function setCountry($country)
     {
         $this->attributes['country'] = $country;
-    }    
+    }
     
     public function getCity()
     {
@@ -84,11 +84,10 @@ class Address extends Model
     {
 
         $request->validate([
-            'postal_code' => 'required', 
-            'address' => 'required', 
-            'country' => 'required', 
+            'postal_code' => 'required',
+            'address' => 'required',
+            'country' => 'required',
             'city' => 'required',
         ]);
     }
-    
 }
