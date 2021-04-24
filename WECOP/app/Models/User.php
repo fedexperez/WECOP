@@ -1,8 +1,8 @@
 <?php
 
-/** 
+/**
  * WECOP
- * 
+ *
  * @author Shiroke-013
  * PHP version: 8.0.2
  */
@@ -15,9 +15,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Http\Request;
 
-/** 
+/**
  * Class User
- * 
+ *
  * @package App/Models
  */
 class User extends Authenticatable
@@ -27,7 +27,7 @@ class User extends Authenticatable
     /**
      * The attributes that are mass assignable:
      * id, name, user_name, credit_card, email, password and role.
-     * 
+     *
      * @var array
      */
     protected $fillable = ['user_name','name','credit_card','email','password'];

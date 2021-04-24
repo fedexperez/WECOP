@@ -1,8 +1,8 @@
 <?php
 
-/** 
+/**
  * WECOP
- * 
+ *
  * @author clopezr9
  * PHP version: 8.0.2
  * */
@@ -14,9 +14,9 @@ use App\Models\NotEcoProduct;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;
 
-/** 
+/**
  * Class HomeController
- * 
+ *
  * @package App\Http\Controllers
  */
 class HomeController extends Controller
@@ -30,9 +30,9 @@ class HomeController extends Controller
     }
 
     /**
-     * This function calculates the emision not emited when selecting any EcoProduct. 
+     * This function calculates the emision not emited when selecting any EcoProduct.
      * Using the next fromula: notEcoProductEmison * (ecoProductLife/notEcoProductLife) - ecoProductEmision
-     * 
+     *
      * @param request is an ecoProduct colected from a form.
      * @return back with a messages.
      */

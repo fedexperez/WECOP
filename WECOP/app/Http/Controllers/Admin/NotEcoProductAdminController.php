@@ -1,8 +1,8 @@
 <?php
 
-/** 
+/**
  * WECOP
- * 
+ *
  * @author clopezr9
  * PHP version: 8.0.2
  */
@@ -14,11 +14,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Lang;
-use App\Models\User;  
+use App\Models\User;
 
-/** 
+/**
  * Class NotEcoProductAdminController
- * 
+ *
  * @package App\Http\Controllers
  */
 class NotEcoProductAdminController extends Controller
@@ -26,7 +26,7 @@ class NotEcoProductAdminController extends Controller
     /**
      * This function is run every time an AdminHomeController is instanced. It checks
      * if the user is a client or an admin for access permisions.
-     * 
+     *
      * @return next with the previous request.
      */
     public function __construct()
@@ -110,5 +110,4 @@ class NotEcoProductAdminController extends Controller
 
         return redirect()->route('admin.notEcoProduct.list');
     }
-
 }

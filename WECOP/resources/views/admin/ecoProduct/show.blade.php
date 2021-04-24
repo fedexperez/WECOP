@@ -21,7 +21,7 @@
                     <strong>@lang('messages.product_photo')</strong> {{ $data['ecoProduct']->getPhoto() }}<br /><br /> 
                     <form action="{{ route('admin.review.list', $data['ecoProduct']->getId()) }}">
                         <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block"
-                            id="button_style1">@lang('messages.Reviews')</button>
+                            id="button_style1">@lang('review.reviews')</button>
                     </form>
                     <form action="{{ route('admin.ecoProduct.delete', $data['ecoProduct']->getId()) }}">
                         <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block"

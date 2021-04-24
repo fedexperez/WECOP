@@ -1,8 +1,8 @@
 <?php
 
-/** 
+/**
  * WECOP
- * 
+ *
  * @author Shiroke-013
  * PHP version: 8.0.2
  */
@@ -14,9 +14,9 @@ use Illuminate\Http\Request;
 use App\Models\EcoProduct;
 use Illuminate\Support\Facades\Lang;
 
-/** 
+/**
  * Class SearchBarController
- * 
+ *
  * @package App\Http\Controllers
  */
 class SearchBarController extends Controller
@@ -52,5 +52,4 @@ class SearchBarController extends Controller
 
         return view('searchBar.results') -> with('data', $data);
     }
-
 }
