@@ -48,6 +48,11 @@ class EcoProductAdminController extends Controller
         $data = []; //to be sent to the view
         $title = Lang::get('messages.create_eco_products');
         $data['title'] = $title;
+
+        $route = [];
+        $route[0] = [Lang::get('breadcrumbs.admin'), 'admin.home.index'];
+        $route[1] = [Lang::get('breadcrumbs.create_ecoproduct'), 'admin.ecoProduct.create'];
+        $data['route'] = $route;
       
         $notEcoProducts = NotEcoProduct::all();
         $data['notEcoProducts'] = $notEcoProducts;
@@ -76,6 +81,10 @@ class EcoProductAdminController extends Controller
         $data = [];
         $title = Lang::get('messages.list_eco_products');
         $data['title'] = $title;
+        $route = [];
+        $route[0] = [Lang::get('breadcrumbs.admin'), 'admin.home.index'];
+        $route[1] = [Lang::get('breadcrumbs.list_ecoproducts'), 'admin.ecoProduct.list'];
+        $data['route'] = $route;
         $data['ecoProducts'] = ecoProduct::all();
 
         return view('admin.ecoProduct.list')->with('data', $data);
@@ -83,13 +92,18 @@ class EcoProductAdminController extends Controller
 
     public function show($id)
     {
-        $data = []; //to be sent to the view
         $ecoProduct = EcoProduct::find($id);
         if ($ecoProduct == null) {
             return redirect()->route('admin.ecoProduct.notFound', ['id' => $id]);
         } else {
+            $data = []; //to be sent to the view
             $data['title'] = $ecoProduct->getName();
             $data['ecoProduct'] = $ecoProduct;
+            $route = [];
+            $route[0] = [Lang::get('breadcrumbs.admin'), 'admin.home.index'];
+            $route[1] = [Lang::get('breadcrumbs.list_ecoproducts'), 'admin.ecoProduct.list'];
+            $route[2] = [Lang::get('breadcrumbs.ecoproduct'), 'admin.ecoProduct.show', $id];
+            $data['route'] = $route;
             return view('admin.ecoProduct.show')->with('data', $data);
         }
     }

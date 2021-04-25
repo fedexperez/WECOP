@@ -48,6 +48,11 @@ class NotEcoProductAdminController extends Controller
         $title = Lang::get('messages.create_not_eco_products');
         $data['title'] = $title;
 
+        $route = [];
+        $route[0] = [Lang::get('breadcrumbs.admin'), 'admin.home.index'];
+        $route[1] = [Lang::get('breadcrumbs.create_notecoproduct'), 'admin.notEcoProduct.create'];
+        $data['route'] = $route;
+
         return view('admin.notEcoProduct.create')->with('data', $data);
     }
 
@@ -67,17 +72,26 @@ class NotEcoProductAdminController extends Controller
 
         $notEcoProducts = NotEcoProduct::All();
         $data['notEcoProducts'] = $notEcoProducts;
+        $route = [];
+        $route[0] = [Lang::get('breadcrumbs.admin'), 'admin.home.index'];
+        $route[1] = [Lang::get('breadcrumbs.list_notecoproducts'), 'admin.notEcoProduct.list'];
+        $data['route'] = $route;
 
         return view('admin.notEcoProduct.list')->with('data', $data);
     }
 
     public function show($id)
     {
-        $data = []; //to be sent to the view
         $notEcoProduct = NotEcoProduct::find($id);
         if ($notEcoProduct == null) {
             return redirect()->route('admin.notEcoProduct.notFound', ['id' => $id]);
         } else {
+            $data = []; //to be sent to the view
+            $route = [];
+            $route[0] = [Lang::get('breadcrumbs.admin'), 'admin.home.index'];
+            $route[1] = [Lang::get('breadcrumbs.list_notecoproducts'), 'admin.notEcoProduct.list'];
+            $route[2] = [Lang::get('breadcrumbs.notecoproduct'), 'admin.notEcoProduct.show', $id];
+            $data['route'] = $route;
             $data['title'] = $notEcoProduct->getName();
             $data['notEcoProduct'] = $notEcoProduct;
             return view('admin.notEcoProduct.show')->with('data', $data);

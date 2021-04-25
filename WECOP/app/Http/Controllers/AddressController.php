@@ -28,14 +28,23 @@ class AddressController extends Controller
         $data = [];
         $title = Lang::get('messages.address_options');
         $data['pageTitle'] = $title;
+        $route = [[Lang::get('breadcrumbs.address'), 'address.options']];
+        $data['route'] = $route;
         return view('address.options')->with('data', $data);
     }
 
     public function show($id)
     {
         $data = [];
-        $title = Lang::get('messages.show_address');
+        $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+        $title = Lang::get('messages.show_address');                                                             
         $data['pageTitle'] = $title;
+        $route = [];
+        $route[0] = [Lang::get('breadcrumbs.address'), 'address.options', 0];
+        $route[1] = [Lang::get('breadcrumbs.list'), 'address.list', $id];
+        $route[2] = [Lang::get('breadcrumbs.show'), 'address.show', $id];
+        $data['route'] = $route;
         $address = Address::findOrFail($id);
         $data['address'] = $address;
         return view('address.show')->with('data', $data);
@@ -46,6 +55,10 @@ class AddressController extends Controller
         $data = [];
         $title = Lang::get('messages.create_address');
         $data['pageTitle'] = $title;
+        $route = [];
+        $route[0] = [Lang::get('breadcrumbs.address'), 'address.options'];
+        $route[1] = [Lang::get('breadcrumbs.create'), 'address.create'];
+        $data['route'] = $route;
         return view('address.create')->with('data', $data);
     }
 
@@ -78,6 +91,8 @@ class AddressController extends Controller
         $data = [];
         $title = Lang::get('messages.address_list');
         $data['pageTitle'] = $title;
+        $route = [[Lang::get('breadcrumbs.address'), 'address.options'], [Lang::get('breadcrumbs.list'), 'address.list']];
+        $data['route'] = $route;
         $data['address'] = Address::all();
         return view('address.list')->with('data', $data);
     }

@@ -2,6 +2,8 @@
 @section('title', $data['pageTitle'])
 @section('content')
 <section class="page-section">
+    @include('util.breadcrumbs')
+    <br><br>
     <div class="container">
         <h1 class="text-center text-uppercase text-secondary">@lang('messages.your_addresses')</h1>
         <!-- Icon Divider-->

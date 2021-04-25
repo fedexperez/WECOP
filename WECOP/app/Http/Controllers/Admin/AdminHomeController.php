@@ -12,6 +12,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Lang;
 use App\Models\User;
 
 /**
@@ -42,6 +43,10 @@ class AdminHomeController extends Controller
 
     public function index()
     {
-        return view('admin.home.index');
+        $data = [];
+        $route = [];
+        $route[0] = [Lang::get('breadcrumbs.admin'), 'admin.home.index'];
+        $data['route'] = $route;
+        return view('admin.home.index')->with('data', $data);
     }
 }

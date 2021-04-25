@@ -11,6 +11,7 @@ namespace App\Http\Controllers;
 
 use App\Models\EcoProduct;
 use App\Models\Review;
+use Illuminate\Support\Facades\Lang;
 
 /**
  * Class ecoProductController
@@ -54,6 +55,10 @@ class EcoProductController extends Controller
             $data['ecoProducts'] = $ecoProducts;
         }
 
+        $route = [];
+        $route[0] = [Lang::get('breadcrumbs.ecoproducts'), 'ecoProduct.list', $filter];
+        $data['route'] = $route;
+
         return view('ecoProduct.list')->with('data', $data);
     }
 
@@ -80,7 +85,10 @@ class EcoProductController extends Controller
                 $reviews = Review::where('rating', $filter)->where('eco_product_id', $id)->paginate(5);
                 $data['reviews'] = $reviews;
             }
-            
+            $route = [];
+            $route[0] = [Lang::get('breadcrumbs.ecoproducts'), 'ecoProduct.list', 'All'];
+            $route[1] = [Lang::get('breadcrumbs.show'), 'ecoProduct.show', $id, $filter];
+            $data['route'] = $route;
             return view('ecoProduct.show') -> with('data', $data);
         }
     }

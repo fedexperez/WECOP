@@ -1,6 +1,10 @@
 @extends('layouts.app')
 @section('title', $data['pageTitle'])
 @section('content')
+
+<div class="row p-5">
+    <div class="col-md-12">
+    @include('util.breadcrumbs')
 <section class="page-section">
     @if($data['orders']->isNotEmpty())
         <div class="container">
@@ -31,4 +35,6 @@
         </div>
     @endif
 </section>
+</div>
+</div>
 @endsection

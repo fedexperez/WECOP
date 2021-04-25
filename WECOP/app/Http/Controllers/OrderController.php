@@ -24,6 +24,9 @@ class OrderController extends Controller
     public function show($id)
     {
         $data = []; //to be sent to the view
+        $route = [];
+        $route[0] = [Lang::get('breadcrumbs.show'), 'order.show'];
+        $data['route'] = $route;
         $order = Order::findOrFail($id);
         $data['order'] = $order;
         $data['address'] = $order->address;
@@ -44,6 +47,9 @@ class OrderController extends Controller
     public function list()
     {
         $data = [];
+        $route = [];
+        $route[0] = [Lang::get('breadcrumbs.orders'), 'order.list'];
+        $data['route'] = $route;
         $title = Lang::get('order.orders');
         $data['pageTitle'] = $title;
         $data['orders'] = Order::where('user_id', Auth::user()->getId())->get();
