@@ -15,6 +15,8 @@ return [
     'some_products'   => 'Some products',
     'about_message1'  => 'We are a three students group from Colombia wanting to make a change in the world. As a result of living in such a green country we are very concerned about what is going to be of our planet in the future and by following the present steps of humanity earth does not have one.',
     'about_message2'  => 'WECOP (World Ecological Products) is a solution created to facilite the acquisition of environmental friendly products to the ones that are not conscious of the current state of our planet accomplishing a bright and green future.',
+    'es'  => 'Español',
+    'en'  => 'English',
 
     //For index
     'emision_calculator'      =>'Emision Calculator',

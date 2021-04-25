@@ -74,3 +74,6 @@ Route::get('/admin/review/delete/{id}', 'App\Http\Controllers\Admin\ReviewAdminC
 
 //Auth routes
 Auth::routes();
+
+//Language
+Route::get('lang/{lang}', 'App\Http\Controllers\LanguageController@swap')->name('lang.swap');
