@@ -23,6 +23,7 @@ return [
     'dev'  => 'Global temperature deviation from 30 year global average:',
     'celsius'  => 'Celsius',
     'farenheit'  => 'Farenheit',
+    'temperature'  => 'Temperature',
 
     //For index
     'emision_calculator'      =>'Emision Calculator',

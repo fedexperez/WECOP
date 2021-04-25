@@ -22,6 +22,7 @@ return [
     'dev'  => 'Desviación de la temperatura global del promedio global de 30 años:',
     'celsius'  => 'Grados Celsius',
     'farenheit'  => 'Grados Farenheit',
+    'temperature'  => 'Temperatura',
 
 
 ];
