@@ -60,11 +60,7 @@
                     @endguest
                     <div class="dropdown">
                         <a href="#" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-toggle="dropdown" data-close-others="true">
-                            @if (config('app.locale') === 'es')
-                            <img src="img/lang/es.png" width="22" height="22" />
-                            @elseif (config('app.locale') === 'en')
-                            <img src="img/lang/en.png" width="22" height="22"/>
-                            @endif
+                            <img src="img/lang/{{config('app.locale')}}.png" width="22" height="22"/>
                         </a>
                         <ul class="dropdown-menu">
                             <li class="active padDrop">
