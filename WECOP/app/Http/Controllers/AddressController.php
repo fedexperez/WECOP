@@ -38,7 +38,7 @@ class AddressController extends Controller
         $data = [];
         $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
-        $title = Lang::get('messages.show_address');                                                             
+        $title = Lang::get('messages.show_address');
         $data['pageTitle'] = $title;
         $route = [];
         $route[0] = [Lang::get('breadcrumbs.address'), 'address.options', 0];
