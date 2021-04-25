@@ -57,6 +57,7 @@
                             @csrf
                         </form>
                     </div>
+                    @endguest
                     <div class="dropdown">
                         <a href="#" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-toggle="dropdown" data-close-others="true">
                             @if (config('app.locale') === 'es')
@@ -82,7 +83,6 @@
                             </li>
                         </ul>
                     </div>
-                    @endguest
                 </ul>
             </div>
         </div>
