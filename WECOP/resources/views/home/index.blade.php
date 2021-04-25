@@ -29,7 +29,28 @@
                 @include('util.emision')
             </div>
     </div>
+    <br>
+    <br>
+    <div class="container">
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">@lang('messages.temperature')</h2>
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-globe-americas"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <div class="text-center lead">
+            <br>
+            <h4>@lang('messages.temp')</h4>
+            <h4>{{$data['temp']['c']}} @lang('messages.celsius')</h4>
+            <h4>{{$data['temp']['f']}} @lang('messages.farenheit')</h4>
+            <br>
+            <h4>@lang('messages.dev')</h4>
+            <h4>{{$data['dev']['c']}} @lang('messages.celsius')</h4>
+            <h4>{{$data['dev']['f']}} @lang('messages.farenheit')</h4>
+        </div>
+    </div>
 </section>
+
 <!-- About Section-->
 <section class="page-section bg-primary text-white mb-0" id="about">
     <div class="container">
@@ -86,7 +107,7 @@
                     </a>
                 </div>
             </div>
-        </div> 
+        </div>
     </div>
 </section>
 @endsection
