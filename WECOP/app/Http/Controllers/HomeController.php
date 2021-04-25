@@ -13,6 +13,7 @@ use App\Models\EcoProduct;
 use App\Models\NotEcoProduct;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\Http;
 
 /**
  * Class HomeController
@@ -25,6 +26,11 @@ class HomeController extends Controller
     {
         $data = [];
         $data['ecoProducts'] = EcoProduct::all();
+        $data['temperature'] = Http::get('http://temperature.global/api.php')->json();
+        $data['temp']['c'] = round(($data['temperature']['temp'] - 32) * 5/9, 2);
+        $data['temp']['f'] = $data['temperature']['temp'];
+        $data['dev']['c'] = round(($data['temperature']['dev'] - 32) * 5/9, 2);
+        $data['dev']['f'] = $data['temperature']['dev'];
 
         return view('home.index')->with('data', $data);
     }

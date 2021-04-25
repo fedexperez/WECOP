@@ -17,6 +17,8 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ asset('/css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('/css/custom-styles.css') }}" rel="stylesheet" />
+    <!-- Ajax-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
 </head>
 
 <body id="page-top">
@@ -60,7 +62,7 @@
                     @endguest
                     <div class="dropdown">
                         <a href="#" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-toggle="dropdown" data-close-others="true">
-                            <img src="img/lang/{{config('app.locale')}}.png" width="22" height="22"/>
+                            <img src="img/lang/{{config('app.locale')}}.png" width="22" height="22" />
                         </a>
                         <ul class="dropdown-menu">
                             <li class="active padDrop">
@@ -97,6 +99,14 @@
             <!-- Masthead Subheading-->
             <p class="masthead-subheading font-weight-light mb-0">@lang('messages.slogan')</p>
         </div>
+        <br>
+        <h4>@lang('messages.temp')</h4>
+        <h4>{{$data['temp']['c']}} @lang('messages.celsius')</h4>
+        <h4>{{$data['temp']['f']}} @lang('messages.farenheit')</h4>
+        <br>
+        <h4>@lang('messages.dev')</h4>
+        <h4>{{$data['dev']['c']}} @lang('messages.celsius')</h4>
+        <h4>{{$data['dev']['f']}} @lang('messages.farenheit')</h4>
     </header>
     <br>
     @yield('content')

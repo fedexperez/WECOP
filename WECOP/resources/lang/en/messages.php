@@ -18,6 +18,12 @@ return [
     'es'  => 'Español',
     'en'  => 'English',
 
+    //For temperature API
+    'temp'  => 'Current global temperature:',
+    'dev'  => 'Global temperature deviation from 30 year global average:',
+    'celsius'  => 'Celsius',
+    'farenheit'  => 'Farenheit',
+
     //For index
     'emision_calculator'      =>'Emision Calculator',
     'calculator_instructions' =>'Here you can calculate the emision you are not producing if you buy any of the products available in our store.',
