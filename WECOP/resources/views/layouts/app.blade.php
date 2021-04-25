@@ -57,6 +57,31 @@
                             @csrf
                         </form>
                     </div>
+                    <div class="dropdown">
+                        <a href="#" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-toggle="dropdown" data-close-others="true">
+                            @if (config('app.locale') === 'es')
+                            <img src="img/lang/es.png" width="22" height="22" />
+                            @elseif (config('app.locale') === 'en')
+                            <img src="img/lang/en.png" width="22" height="22"/>
+                            @endif
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="active padDrop">
+                                <a href="{{ url('lang', ['es']) }}" class="aDrop">
+                                    <!-- "Icon made by Freepik from www.flaticon.com" -->
+                                    <img src="img/lang/es.png" width="10%" height="10%" />
+                                    <span class="marDrop">@lang('messages.es')</span>
+                                </a>
+                            </li>
+                            <li class="padDrop">
+                                <a href="{{ url('lang', ['en']) }}" class="aDrop">
+                                    <!-- "Icon made by Freepik from www.flaticon.com" -->
+                                    <img src="img/lang/en.png" width="10%" height="10%" />
+                                    <span class="marDrop">@lang('messages.en')</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                     @endguest
                 </ul>
             </div>
