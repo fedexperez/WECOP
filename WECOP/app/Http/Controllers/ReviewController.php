@@ -35,7 +35,6 @@ class ReviewController extends Controller
         $route = [];
         $route[0] = [Lang::get('breadcrumbs.show'), 'ecoProduct.show', $review->eco_product_id, 'All'];
         $route[1] = [Lang::get('breadcrumbs.order'), 'order.show'];
-        dd($route);
         $data['route'] = $route;
 
         $data['ecoProduct'] = $review->ecoProduct;
