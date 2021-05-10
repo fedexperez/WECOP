@@ -3,6 +3,7 @@
 @section('title', $data['pageTitle'])
 
 @section('content')
+@include('util.breadcrumbs')
 <div class="container">
     <h1 class="text-center text-uppercase text-secondary">{{ $data['pageTitle'] }}</h1>
     <div class="row justify-content-center">

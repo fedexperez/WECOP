@@ -90,6 +90,10 @@ class OrderController extends Controller
             }
         }
 
+        $route = [];
+        $route[0] = [Lang::get('breadcrumbs.order'), 'order.order', 0];
+        $data['route'] = $route;
+
         $data['ids'] = $ids;
         $data['ecoProducts'] = $listProducts;
         $data['total'] = $total;

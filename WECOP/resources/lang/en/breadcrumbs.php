@@ -2,7 +2,7 @@
 
 return [
 
-    //For reviews
+    //General
     'home' => 'Home',
     'admin' => 'Admin',
     'options' => 'Options',
@@ -10,7 +10,7 @@ return [
     'ecoproduct' => 'EcoProduct',
     'ecoproducts' => 'EcoProducts',
     'notecoproduct' => 'NotEcoProduct',
-    'orders' => 'Orders',
+    'order' => 'Order',
     'results' => 'Results',
     'create_ecoproduct' => 'Create EcoProduct',
     'create_notecoproduct' => 'Create NotEcoProduct',
