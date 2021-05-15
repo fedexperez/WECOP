@@ -49,7 +49,10 @@ class ReviewAdminController extends Controller
         $data['ecoProduct'] = $ecoProduct;
         $route = [];
         $route[0] = [Lang::get('breadcrumbs.admin'), 'admin.home.index'];
-        $route[1] = [Lang::get('breadcrumbs.list_reviews'), 'admin.review.list'];
+        $route[1] = [Lang::get('breadcrumbs.list_ecoproducts'), 'admin.ecoProduct.list'];
+        $route[2] = [Lang::get('breadcrumbs.ecoproduct'), 'admin.ecoProduct.show', $id];
+        $route[3] = [Lang::get('breadcrumbs.list_reviews'), 'admin.review.list', $id];
+
         $data['route'] = $route;
 
         return view('admin.review.list')->with('data', $data);
@@ -66,7 +69,9 @@ class ReviewAdminController extends Controller
         $route = [];
         $route[0] = [Lang::get('breadcrumbs.admin'), 'admin.home.index'];
         $route[1] = [Lang::get('breadcrumbs.list_reviews'), 'admin.review.list'];
-        $route[2] = [Lang::get('breadcrumbs.review'), 'admin.review.show', $id];
+        $route[2] = [Lang::get('breadcrumbs.ecoproduct'), 'admin.ecoProduct.show', $id];
+        $route[3] = [Lang::get('breadcrumbs.review'), 'admin.review.show', $id];
+        $route[4] = [Lang::get('breadcrumbs.review'), 'admin.review.show', $id];
         $data['route'] = $route;
 
         $data['review'] = $review;

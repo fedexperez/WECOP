@@ -10,6 +10,7 @@ return [
     'ecoproduct' => 'EcoProduct',
     'ecoproducts' => 'EcoProducts',
     'notecoproduct' => 'NotEcoProduct',
+    'review' => 'Review',
     'order' => 'Order',
     'results' => 'Results',
     'create_ecoproduct' => 'Create EcoProduct',
