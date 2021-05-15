@@ -24,7 +24,9 @@ class OrderController extends Controller
     {
         $data = []; //to be sent to the view
         $route = [];
-        $route[0] = [Lang::get('breadcrumbs.show'), 'order.show'];
+        $route[0] = [Lang::get('order.orders'), 'order.list'];
+        $route[1] = [Lang::get('breadcrumbs.show'), 'order.show', $id];
+
         $data['route'] = $route;
         $order = Order::findOrFail($id);
         $data['order'] = $order;
@@ -47,7 +49,7 @@ class OrderController extends Controller
     {
         $data = [];
         $route = [];
-        $route[0] = [Lang::get('breadcrumbs.orders'), 'order.list'];
+        $route[0] = [Lang::get('order.orders'), 'order.list'];
         $data['route'] = $route;
         $title = Lang::get('order.orders');
         $data['pageTitle'] = $title;
@@ -88,6 +90,10 @@ class OrderController extends Controller
                 $total = $total + ($ecoProduct->getPrice()*$qnty);
             }
         }
+
+        $route = [];
+        $route[0] = [Lang::get('breadcrumbs.order'), 'order.order', 0];
+        $data['route'] = $route;
 
         $data['ids'] = $ids;
         $data['ecoProducts'] = $listProducts;
