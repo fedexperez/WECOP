@@ -1,13 +1,15 @@
 @extends('layouts.app')
 
-@section('title',  $data['pageTitle'])
+@section('title', $data['pageTitle'])
 
 @section('content')
 <div class="container">
+    @include('util.breadcrumbs')
     <div class="row justify-content-center">
         <div class="col-md-8">
             <br>
-            <h2 class="text-center text-uppercase text-secondary"> @lang('order.order') {{ $data['order']->getId() }}</h2>
+            <h2 class="text-center text-uppercase text-secondary"> @lang('order.order') {{ $data['order']->getId() }}
+            </h2>
             <div class="card-body">
                 <b>@lang('order.status'): </b> {{ $data['order']->getStatus() }}<br />
                 <b>@lang('order.payment_type'): </b>{{ $data['order']->getPaymentType() }}<br />
