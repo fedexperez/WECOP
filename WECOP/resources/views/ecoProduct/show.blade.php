@@ -19,9 +19,9 @@
                 <p class="lead">{{ $data['ecoProduct']->getDescription() }}</p>
                 <p class="lead">$ {{ $data['ecoProduct']->getPrice() }}</p>
                 @if( $data['ecoProduct']->getStock() > 0)
-                <p class="lead" style="color:green">@lang('messages.in_stock')</p><br>
+                <p class="in-stock">@lang('messages.in_stock')</p><br>
                 @else
-                <p class="lead" style="color:red">@lang('messages.out_stock')</p><br>
+                <p class="out-stock">@lang('messages.out_stock')</p><br>
                 @endif
                 <p class="lead">{{ $data['ecoProduct']->getFacts() }}</p><br>
                 @if (Auth::user())
