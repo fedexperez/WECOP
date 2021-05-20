@@ -14,11 +14,6 @@
                     <b>@lang('review.message'): </b>{{ $data["review"]->getMessage() }}
                     <div class="row p-2">
                         <div class="col-4">
-                            <form action="{{ route('admin.review.list', $data['ecoProduct']->getId()) }}">
-                                <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('order.back')</button>
-                            </form>
-                        </div>
-                        <div class="col-4">
                             <form action="{{ route('admin.review.delete', $data['review']->getId()) }}">
                                 <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block" id="button_style1">@lang('messages.delete')</button>
                             </form>
