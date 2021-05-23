@@ -25,9 +25,4 @@ class EcoProductAPIController extends Controller
         return EcoProductResource::collection(EcoProduct::all());
     }
 
-    public function show($id)
-    {
-        return new EcoProductResource(EcoProduct::findOrFail($id));
-    }
-
 }
