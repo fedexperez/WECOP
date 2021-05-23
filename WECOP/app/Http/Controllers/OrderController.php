@@ -12,7 +12,6 @@ namespace App\Http\Controllers;
 use App\Models\EcoProduct;
 use App\Models\Order;
 use App\Models\Item;
-use App\Models\Address;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;

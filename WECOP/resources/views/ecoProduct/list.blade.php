@@ -82,9 +82,9 @@
                     <p class="lead">{{ $ecoProduct->getDescription() }}</p>
                     <p class="lead">$ {{ $ecoProduct->getPrice() }}</p>
                     @if( $ecoProduct->getStock() > 0)
-                    <p class="lead" style="color:green">@lang('messages.in_stock')</p><br><br>
+                    <p class="in-stock">@lang('messages.in_stock')</p><br><br>
                     @else
-                    <p class="lead" style="color:red">@lang('messages.out_stock')</p><br><br>
+                    <p class="out-stock">@lang('messages.out_stock')</p><br><br>
                     @endif
                 </div>
             </div>
