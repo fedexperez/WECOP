@@ -77,3 +77,6 @@ Auth::routes();
 
 //Language
 Route::get('lang/{lang}', 'App\Http\Controllers\LanguageController@swap')->name('lang.swap');
+
+//API
+Route::get('/ecoProductsJson', 'App\Http\Controllers\Api\EcoProductAPIController@index')->name('json.ecoProducts');
