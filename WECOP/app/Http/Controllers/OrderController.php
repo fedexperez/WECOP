@@ -9,6 +9,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Interfaces\OrderReportCreator;
 use App\Models\EcoProduct;
 use App\Models\Order;
 use App\Models\Item;
@@ -144,5 +145,15 @@ class OrderController extends Controller
 
 
         return view('order.buy')->with('data', $data);
+    }
+
+    public function createPDF($id){
+        $order = Order::findOrFail($id);
+        $items = [];
+        $items['order'] = $order; 
+        $items['address'] = $order->address;
+        $reportCreator = app()->makeWith(OrderReportCreator::class, ['arrayOrder' => 'pdf']);
+        
+        return $reportCreator->createReport($items);
     }
 }
