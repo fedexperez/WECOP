@@ -26,19 +26,19 @@ return [
 
     //For index
     'emision_calculator'      =>'Calculadora de Emisión',
-    'calculator_instructions' =>'Aquí puedes calcular la emisión de carbono que no estás produciendo al comprar uno de nuestros productos.',
+    'calculator_instructions' =>'Aquí puedes calcular la emisión de carbono que dejas de producir al comprar uno de nuestros productos.',
     'calculator_choose_product'=>'Escoge un producto para calcular su emisión:',
     'if_calculate_message'     =>'Si compras uno/s',
     'stop_calculate_message'   =>' paras de lanzar ',
-    'grams_calculate_message'  =>' gramos de CO2 a la atmósfera por unidad',
+    'grams_calculate_message'  =>' gramos de CO2 a la atmósfera por unidad usaba.',
 
     //For ecoProducts
     'eco_products'  => 'EcoProducts',
     'eco_product'  => 'EcoProduct',
     'price_low_high' => 'Precio, Menor a Mayor',
     'price_high_low' => 'Precio, Mayor a Menor',
-    'date_newest_oldest' => 'Fecha, Nuevo a Viejo',
-    'date_oldest_newest' => 'Fecha, Viejo a Nuevo',
+    'date_newest_oldest' => 'Fecha, Nuevo a Antiguo',
+    'date_oldest_newest' => 'Fecha, Antiguo a Nuevo',
     'emission_low_high'  => 'Emisión, Baja a Alta',
     'emission_high_low'  => 'Emisión, Alta a Baja',
 
@@ -111,8 +111,8 @@ return [
     //SearchBar
     'search'            => 'Buscar',
     'results'           => 'Resultados',
-    'in_stock'           => 'En Existencias!',
-    'out_stock'          => 'No hay Existencias :C',
+    'in_stock'           => 'Disponible!',
+    'out_stock'          => 'No disponible :C',
     'product_not_found'   => 'No se encontró ningún producto'
 
 ];
