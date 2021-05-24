@@ -22,5 +22,6 @@ return [
     'success' => 'Orden relizada exitosamente',
     'orders' => 'Tus Ordenes',
     'complete' => 'Orden realizada correctamente',
+    'items' => 'Productos comprados:'
 
 ];

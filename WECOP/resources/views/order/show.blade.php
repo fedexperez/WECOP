@@ -15,8 +15,27 @@
                 <b>@lang('order.payment_type'): </b>{{ $data['order']->getPaymentType() }}<br />
                 <b>@lang('order.address'): </b>{{ $data['address']->getAddress() }}<br />
                 <b>@lang('order.date'): </b>{{ $data['order']->getDate() }}<br />
+                <b>@lang('order.items') </b>
+                @foreach($data['items'] as $item)
+                <br>
+                <a>{{ $item->getName() }}</a>
+                @endforeach
+                <br>
                 <b>@lang('order.total'): </b>{{ $data['order']->getTotal() }}<br /><br />
             </div>
+            <div class="text-center col-9 mx-auto">
+                <div class="row">
+                    <div class="mx-auto">
+                        <a class="btn btn-primary"
+                            href="{{ route('order.createExcel', $data['order']->getId()) }}">@lang('messages.download_excel')</a>
+                    </div>
+                    <div class="mx-auto">
+                        <a class="btn btn-primary"
+                            href="{{ route('order.createPDF', $data['order']->getId()) }}">@lang('messages.download_pdf')</a>
+                    </div>
+                </div>
+            </div>
+            <br><br>
         </div>
     </div>
 </div>

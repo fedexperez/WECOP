@@ -35,7 +35,35 @@ class OrderController extends Controller
         $title = Lang::get('messages.show_order');
         $id = strval($order->getId());
         $data['pageTitle'] = $title." ".$id;
+        $items = $order->items;
+        $ecoProducts = [];
+        foreach ($items as $item) {
+            array_push($ecoProducts, $item->ecoProduct);
+        }
+
+        $data['items'] = $ecoProducts;
         return view('order.show')->with('data', $data);
+    }
+
+    public function createPDF($id){
+        $order = Order::findOrFail($id);
+        $data = [];
+        $data['order'] = $order; 
+        $data['address'] = $order->address;
+        $items = $order->items;
+        $ecoProducts = [];
+        foreach ($items as $item) {
+            array_push($ecoProducts, $item->ecoProduct);
+        }
+        $data['items'] = $ecoProducts;
+
+        $reportCreator = app()->makeWith(OrderReportCreator::class, ['arrayOrder' => 'pdf']);
+        return $reportCreator->createReport($id);
+    }
+
+    public function createExcel($id){
+        $reportCreator = app()->makeWith(OrderReportCreator::class, ['arrayOrder' => 'excel']);
+        return $reportCreator->createReport($id);
     }
 
     public function return($id)
@@ -145,15 +173,5 @@ class OrderController extends Controller
 
 
         return view('order.buy')->with('data', $data);
-    }
-
-    public function createPDF($id){
-        $order = Order::findOrFail($id);
-        $items = [];
-        $items['order'] = $order; 
-        $items['address'] = $order->address;
-        $reportCreator = app()->makeWith(OrderReportCreator::class, ['arrayOrder' => 'pdf']);
-        
-        return $reportCreator->createReport($items);
     }
 }
