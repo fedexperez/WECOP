@@ -22,6 +22,7 @@ return [
     'success' => 'Successfull Order',
     'orders' => 'Your Orders',
     'complete' => 'Order complete',
+    'items' => 'Order items:'
 
 
 ];

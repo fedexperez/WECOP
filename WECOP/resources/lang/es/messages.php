@@ -114,6 +114,10 @@ return [
     'results'           => 'Resultados',
     'in_stock'           => 'Disponible!',
     'out_stock'          => 'No disponible :C',
-    'product_not_found'   => 'No se encontró ningún producto'
+    'product_not_found'   => 'No se encontró ningún producto',
+
+    //For Download
+    'download_pdf'  => 'Descargar PDF',
+    'download_excel' => 'Descargar Excel'
 
 ];

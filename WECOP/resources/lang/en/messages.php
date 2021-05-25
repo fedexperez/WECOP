@@ -115,6 +115,10 @@ return [
     'results'           => 'Results',
     'in_stock'           => 'In Stock!',
     'out_stock'          => 'Out of Stock :C',
-    'product_not_found'   => 'Not EcoProducts found'
+    'product_not_found'   => 'Not EcoProducts found',
+
+    //For Download
+    'download_pdf'  => 'Download PDF',
+    'download_excel' => 'Download Excel'
 
 ];
