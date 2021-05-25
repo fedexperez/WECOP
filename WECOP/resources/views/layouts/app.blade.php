@@ -38,6 +38,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('teamApi.show') }}">@lang('messages.api')</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('ecoProduct.list', 'All') }}">@lang('messages.eco_products')</a></li>
                     @guest
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('login') }}">@lang('messages.login')</a></li>
@@ -61,21 +62,28 @@
                     </div>
                     @endguest
                     <div class="dropdown">
+                        @if(config('app.locale') == 'es')
                         <a href="#" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-toggle="dropdown" data-close-others="true">
-                            <img src="img/lang/{{config('app.locale')}}.png" width="22" height="22" />
+                            <img src="{{ asset('img/lang/es.png')}}" width="22" height="22" />
                         </a>
+                        @endif
+                        @if(config('app.locale') == 'en')
+                        <a href="#" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-toggle="dropdown" data-close-others="true">
+                            <img src="{{ asset('img/lang/en.png')}}" width="22" height="22" />
+                        </a>
+                        @endif
                         <ul class="dropdown-menu">
                             <li class="active padDrop">
                                 <a href="{{ url('lang', ['es']) }}" class="aDrop">
                                     <!-- "Icon made by Freepik from www.flaticon.com" -->
-                                    <img src="img/lang/es.png" width="10%" height="10%" />
+                                    <img src="{{ asset('img/lang/es.png')}}" width="10%" height="10%" />
                                     <span class="marDrop">@lang('messages.es')</span>
                                 </a>
                             </li>
                             <li class="padDrop">
                                 <a href="{{ url('lang', ['en']) }}" class="aDrop">
                                     <!-- "Icon made by Freepik from www.flaticon.com" -->
-                                    <img src="img/lang/en.png" width="10%" height="10%" />
+                                    <img src="{{ asset('img/lang/en.png')}}" width="10%" height="10%" />
                                     <span class="marDrop">@lang('messages.en')</span>
                                 </a>
                             </li>

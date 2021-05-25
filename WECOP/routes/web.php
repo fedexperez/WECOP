@@ -80,3 +80,6 @@ Route::get('lang/{lang}', 'App\Http\Controllers\LanguageController@swap')->name(
 
 //API
 Route::get('/ecoProductsJson', 'App\Http\Controllers\Api\EcoProductAPIController@index')->name('json.ecoProducts');
+
+//Team Api
+Route::get('/teamApi', 'App\Http\Controllers\TeamApiController@show')->name('teamApi.show');
