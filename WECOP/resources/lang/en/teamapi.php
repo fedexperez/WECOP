@@ -12,5 +12,6 @@ return [
     'availability' => 'Available',
     'availability_yes' => 'Yes',
     'availability_no' => 'No',
+    'ingredients' => 'Ingredients',
 
 ];

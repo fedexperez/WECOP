@@ -26,6 +26,7 @@
                             @if($product['availability'] == False)
                             <h5 class="subtitle">@lang('teamapi.availability'): @lang('teamapi.availability_no')</h5>
                             @endif
+                            <h5 class="subtitle">@lang('teamapi.ingredients'): {{ count($product['ingredients']) }}</h5>
                             <h5 class="subtitle">$ {{ $product['price'] }}</h5>
                         </div>
                     </div>
