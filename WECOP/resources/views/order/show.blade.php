@@ -27,11 +27,11 @@
                 <div class="row">
                     <div class="mx-auto">
                         <a class="btn btn-primary"
-                            href="{{ route('order.createDocument', [ $data['order']->getId(), 'type' => 'excel' ]) }}">@lang('messages.download_excel')2</a>
+                            href="{{ route('order.createDocument', [ $data['order']->getId(), 'type' => 'excel' ]) }}">@lang('messages.download_excel')</a>
                     </div>
                     <div class="mx-auto">
                         <a class="btn btn-primary"
-                            href="{{ route('order.createDocument', [ $data['order']->getId(), 'type' => 'pdf' ]) }}">@lang('messages.download_pdf')2</a>
+                            href="{{ route('order.createDocument', [ $data['order']->getId(), 'type' => 'pdf' ]) }}">@lang('messages.download_pdf')</a>
                     </div>
                 </div>
             </div>
