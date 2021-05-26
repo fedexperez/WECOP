@@ -24,5 +24,4 @@ class EcoProductAPIController extends Controller
     {
         return EcoProductResource::collection(EcoProduct::all());
     }
-
 }

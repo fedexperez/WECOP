@@ -45,10 +45,11 @@ class OrderController extends Controller
         return view('order.show')->with('data', $data);
     }
 
-    public function createPDF($id){
+    public function createPDF($id)
+    {
         $order = Order::findOrFail($id);
         $data = [];
-        $data['order'] = $order; 
+        $data['order'] = $order;
         $data['address'] = $order->address;
         $items = $order->items;
         $ecoProducts = [];
@@ -61,7 +62,8 @@ class OrderController extends Controller
         return $reportCreator->createReport($id);
     }
 
-    public function createExcel($id){
+    public function createExcel($id)
+    {
         $reportCreator = app()->makeWith(OrderReportCreator::class, ['arrayOrder' => 'excel']);
         return $reportCreator->createReport($id);
     }
