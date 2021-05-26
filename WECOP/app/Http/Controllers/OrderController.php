@@ -45,25 +45,14 @@ class OrderController extends Controller
         return view('order.show')->with('data', $data);
     }
 
-    public function createPDF($id){
-        $order = Order::findOrFail($id);
-        $data = [];
-        $data['order'] = $order; 
-        $data['address'] = $order->address;
-        $items = $order->items;
-        $ecoProducts = [];
-        foreach ($items as $item) {
-            array_push($ecoProducts, $item->ecoProduct);
+    public function createDocument($type, $id){
+        if ($type == 'excel'){
+            $reportCreator = app()->makeWith(OrderReportCreator::class, ['arrayOrder' => $type]);
+            return $reportCreator->createReport($id);
+        }else{
+            $reportCreator = app()->makeWith(OrderReportCreator::class, ['arrayOrder' => $type]);
+            return $reportCreator->createReport($id);
         }
-        $data['items'] = $ecoProducts;
-
-        $reportCreator = app()->makeWith(OrderReportCreator::class, ['arrayOrder' => 'pdf']);
-        return $reportCreator->createReport($id);
-    }
-
-    public function createExcel($id){
-        $reportCreator = app()->makeWith(OrderReportCreator::class, ['arrayOrder' => 'excel']);
-        return $reportCreator->createReport($id);
     }
 
     public function return($id)

@@ -24,8 +24,6 @@ class OrderExport implements FromCollection
         $items = $order->items;
         $ecoProducts = [];
         foreach ($items as $item) {
-            //$name = $item->ecoProduct->getName();
-            //$data[$name] = $item->ecoProduct->getName();
             array_push($ecoProducts, $item->ecoProduct->getName());
         }
         $data['items'] = $ecoProducts;

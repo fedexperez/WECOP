@@ -26,8 +26,7 @@ Route::get('/order/add/{id}', 'App\Http\Controllers\OrderController@add')->name(
 Route::get('/order/removeAll', 'App\Http\Controllers\OrderController@removeAll')->name('order.removeAll');
 Route::get('/order', 'App\Http\Controllers\OrderController@showTempOrder')->name('order.order');
 Route::get('/order/buy', 'App\Http\Controllers\OrderController@buy')->name('order.buy');
-Route::get('/order/pdf/{id}', 'App\Http\Controllers\OrderController@createPDF')->name('order.createPDF');
-Route::get('/order/excel/{id}', 'App\Http\Controllers\OrderController@createExcel')->name('order.createExcel');
+Route::get('/order/document/{type}/{id}/', 'App\Http\Controllers\OrderController@createDocument')->name('order.createDocument');
 
 //Review routes
 Route::get('/review/show/{id}', 'App\Http\Controllers\ReviewController@show')->name('review.show');
