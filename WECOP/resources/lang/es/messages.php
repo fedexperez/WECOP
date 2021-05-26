@@ -16,6 +16,7 @@ return [
     'about_message2'  => 'WECOP (World Ecological Products) es una solución creada para facilitar la adquisición de productos amigables con el medio ambiente a aquellos que no son conscientes del estado actual de nuestro planeta logrando un futuro brillante y verde.',
     'es'  => 'Español',
     'en'  => 'English',
+    'api'  => 'API',
 
     //For temperature API
     'temp'  => 'Temperatura global actual:',
